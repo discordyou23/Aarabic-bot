@@ -80,7 +80,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 'سلام عليكم') {
+  if (msg.content === 'السلام عليكم') {
     msg.reply('**و عليكم السلام**');
   }
 });
@@ -242,7 +242,7 @@ client.on("message", message => {
  if (message.content === "=help-admin") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setFooter('© EpicBot :heart: جميع الحقوق محفوظة 2017 لــبوت')
+      .setFooter('© BomBot :heart: جميع الحقوق محفوظة 2017 لــبوت')
       .setFooter('اوامر الادمنيه')
 	  .addField('=bc', `لخاصية البرودكستات`)
 	  .addField('=kick', `لخاصية طرد`)
@@ -262,8 +262,7 @@ client.on("message", message => {
                 .addField('=info', `عشان تشوف الرتبة الموضوعة في الAutorole`)
                 .addField('=mutechannel', `عشان تخلي ما فيه احد يقدر يكتب في الروم المحدد`)
                 .addField('=unmutechannel', `عشان ترجع الناس تقدر تكتب في الروم الي كتمته`)
-      .setFooter('======================================================')
-      .setFooter('THX YOU')
+      .setFooter('BomBot')
   message.author.send({embed});
       message.channel.send(":white_check_mark: | Check Your DM")
  }
@@ -298,7 +297,7 @@ client.on("message", message => {
           .addField('=Botinfo', `عشان تعرف معلومات البوت`)
           .addField('=color', `عشان تغير لونك ولازم يكون فيه رتب باسم الالوان حقة القلوب الي في صورة الامر اسماء الالوان احمر red اصفر yellow بنفسجي y2 ازرق لبني y3 اخضر y1 اسود black`)
       .setFooter('======================================================')
-      .setFooter('THX YOU')
+      .setFooter('BomBot')
 	  .addField('=cat', `يجبلك صورة قطة`)
   message.author.send({embed});
       message.channel.send(":white_check_mark: | Check Your DM")
@@ -312,7 +311,6 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('© BOMbot جميع الحقوق محفوظة 2018 لــبوت')
-      .setFooter('======================================================')
       .setFooter('الالعاب')
       .addField('=صراحة', `لعبة صراحه`)
 	  .addField('=عقاب', `لعبة عقاب`)
@@ -321,7 +319,6 @@ client.on("message", message => {
 	  .addField('=كت تويت', `لعبة كت تويت`)
 	  .addField('=لو خيروك', `لعبة لو خيروك`)
           .addField('=قرعة', `لاستعمال القرعة`)
-      .setFooter('======================================================')
   message.author.send({embed});
       message.channel.send(":white_check_mark: | Check Your DM")
  }
@@ -333,7 +330,7 @@ client.on("message", message => {
 		   if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
 		   var embed = new Discord.RichEmbed()
 		   .setTitle(">> ClickHere To Add" + `${client.user.username}` + " <<")
-		   .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "&scope=bot")
+		   .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "&scope=bot&permissions=8")
 		   .setTimestamp()
 		   .setFooter(`Requested By | ${message.author.username}`)
 		   .setColor("RANDOM")
@@ -796,7 +793,7 @@ if(message.content.startsWith('=bc')) {
 if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
 if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
 let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
-let copy = "EpicBot";
+let copy = "BomBot";
 let request = `Requested By ${message.author.username}`;
 if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
 msg.react('✅')
@@ -1491,7 +1488,7 @@ client.on('message', message => {
      const embed = new Discord.RichEmbed()
       .setColor("#ff0000")
 
-      .setDescription("**:art:تم اعطائك اللون الاحمر**")
+      .setDescription("**تم اعطائك اللون الاحمر**")
       .setFooter(message.author.tag , message.author.avatarURL)
 
 message.channel.sendEmbed(embed).then();
@@ -1517,7 +1514,7 @@ message.channel.sendEmbed(embed).then();
      const embed = new Discord.RichEmbed()
       .setColor("#0c0606")
 
-      .setDescription("**:art:تم اعطائك اللون الاسود**")
+      .setDescription("**تم اعطائك اللون الاسود**")
       .setFooter(message.author.tag , message.author.avatarURL)
 
 message.channel.sendEmbed(embed).then();
@@ -1542,7 +1539,7 @@ let y2Filter = (reaction, user) => reaction.emoji.name === '💛' && user.id ===
      const embed = new Discord.RichEmbed()
       .setColor("#e7fa02")
 
-      .setDescription("**:art:تم اعطائك اللون الاصفر**")
+      .setDescription("**تم اعطائك اللون الاصفر**")
       .setFooter(message.author.tag , message.author.avatarURL)
 
 message.channel.sendEmbed(embed).then();
@@ -1568,7 +1565,7 @@ let y3Filter = (reaction, user) => reaction.emoji.name === '💚' && user.id ===
      const embed = new Discord.RichEmbed()
       .setColor("#09fa2a")
 
-      .setDescription("**:art:تم اعطائك اللون الاخضر**")
+      .setDescription("**تم اعطائك اللون الاخضر**")
       .setFooter(message.author.tag , message.author.avatarURL)
 
 message.channel.sendEmbed(embed).then();
@@ -1590,7 +1587,7 @@ let y4Filter = (reaction, user) => reaction.emoji.name === '💜' && user.id ===
      const embed = new Discord.RichEmbed()
       .setColor("#9e1bce")
 
-      .setDescription("**:art:تم اعطائك اللون البنفسجي**")
+      .setDescription("**تم اعطائك اللون البنفسجي**")
       .setFooter(message.author.tag , message.author.avatarURL)
 
 message.channel.sendEmbed(embed).then();
@@ -1612,7 +1609,7 @@ let y5Filter = (reaction, user) => reaction.emoji.name === '💙' && user.id ===
      const embed = new Discord.RichEmbed()
       .setColor("#0bc0f7")
 
-      .setDescription("**:art:تم اعطائك اللون اللبني**")
+      .setDescription("**تم اعطائك اللون اللبني**")
       .setFooter(message.author.tag , message.author.avatarURL)
 
 message.channel.sendEmbed(embed).then();
@@ -1638,7 +1635,7 @@ let y6Filter = (reaction, user) => reaction.emoji.name === '❌' && user.id === 
      const embed = new Discord.RichEmbed()
       .setColor("#666161")
 
-      .setDescription("**:art:تم ازالة اللون**")
+      .setDescription("**تم ازالة اللون**")
       .setFooter(message.author.tag , message.author.avatarURL)
 
 message.channel.sendEmbed(embed).then();
@@ -1771,14 +1768,14 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**You
 });
 
 client.on('guildCreate', guild => {
-  client.channels.get("473877431611031563").send(`:white_check_mark: **تم اضافة البوت في سيرفر جديد مبروكك
+  client.channels.get("477437791702220803").send(`:white_check_mark: **تم اضافة البوت في سيرفر جديد مبروكك
 Server name: __${guild.name}__
 Server owner: __${guild.owner}__
 Server id: __${guild.id}__ 
 Server Count: __${guild.memberCount}__**`)
 });
 client.on('guildDelete', guild => {
-  client.channels.get("474966117190860801").send(`:negative_squared_cross_mark: **طردوني حرام والله ايش سويت انا
+  client.channels.get("477437886275387392").send(`:negative_squared_cross_mark: **طردوني حرام والله ايش سويت انا
 Server name: __${guild.name}__
 Server owner: __${guild.owner}__
 Server id: __${guild.id}__ 
@@ -2119,8 +2116,7 @@ client.on("message", message => {
           .addField('%stop', `لإخرآج البوت من الروم`)
           .addField('=nb', `لمعرفة الأغنية المشغلة حآليا`)
           .addField('=queue', `لمعرفة قآئمة التشغيل`)
-      .setFooter('======================================================')
-      .setFooter('تم انهاء كل الاوامر اتمنى تستمتعوا بالبوت')
+      .setFooter('BOM BOT')
   message.author.send({embed});
       message.channel.send(":white_check_mark: | Check Your DM")
 
@@ -2143,7 +2139,6 @@ client.on("message", message => {
           .addField('=wlc 8', `يخلي البوت يرحب بك مثل الباقي`)
           .addField('=wlc 9', `يخلي البوت يرحب بك مثل الباقي`)
           .addField('=wlc 10', `يخلي البوت يرحب بك مثل الباقي`)
-      .setFooter('======================================================')
       .setFooter('هذه اوامر تخلي بوت يرسل لك رسالة ترحيب بس لما تدخل السيرفر فيه ترحيب بيرحب بك بيه خورافي و هذا ترحيب ما تقدر تغيره و عشان يشتغل سوي روم سمه welcome')
   message.author.send({embed});
       message.channel.send(":white_check_mark: | Check Your DM")
