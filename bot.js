@@ -1085,7 +1085,7 @@ const Love = [  "**احبك / عدد قطرات المـــطر والشجر و
 
 
 
-var prefix = "=";
+
 client.on('message', message => {
     if(message.content == prefix + 'server') {
         var servername = message.guild.name
