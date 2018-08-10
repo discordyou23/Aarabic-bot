@@ -256,6 +256,8 @@ client.on("message", message => {
           .addField('=unmute', `لفك الميوت عن شخص `)
           .addField('=untempmute', `لفك الميوت عن شخص `)
           .addField('=report', `عشان تبلغ عن شخص`)
+          .addField('=setchannel', `لأنشاء روم كتابي`)
+          .addField('=setvoice', `لأنشاء روم صوتي`)
 	  .addField('=warn', `عشان تعطي احد انظار و لكي يشتغل الامر سوي روم اسمه warns`)
           .addField('=Autorole toggle', `عشان تفعل الautorole`)
           .addField('=Autorole set', `عشان تحط الرتبة الي اول ما احد يدخل ياخذها`)
@@ -276,6 +278,7 @@ client.on("message", message => {
       .setFooter('© BOMbot :heart: جميع الحقوق محفوظة 2017 لــبوت')
            .setFooter('اوامر الاعضاء')
           .addField('=invite', `لاضافة البوت الى سيرفرك`)
+  	  .addField('=bot', `لمعرفة معلومات البوت`)
 	  .addField('=roles', `لمعرفة الرتب الي في السيرفر`)
           .addField('=avatar', `يجبلك الافتار حقك يعني صورة حسابك`)
 	  .addField('=server', `يجبلك معلومات السيرفر`)
@@ -1080,25 +1083,38 @@ const Love = [  "**احبك / عدد قطرات المـــطر والشجر و
     }
 });
 
-client.on('message', function(msg) {
-         var prefix = "="
-    if(msg.content.startsWith (prefix  + 'server')) {
-      let embed = new Discord.RichEmbed()
-      .setColor('RANDOM')
-      .setThumbnail(msg.guild.iconURL)
-      .setTitle(`Showing Details Of  **${msg.guild.name}*`)
-      .addField(':globe_with_meridians:** نوع السيرفر**',`[** __${msg.guild.region}__ **]`,true)
-      .addField(':medal:** __الرتب__**',`[** __${msg.guild.roles.size}__ **]`,true)
-      .addField(':red_circle:**__ عدد الاعضاء__**',`[** __${msg.guild.memberCount}__ **]`,true)
-      .addField(':large_blue_circle:**__ عدد الاعضاء الاونلاين__**',`[** __${msg.guild.members.filter(m=>m.presence.status == 'online').size}__ **]`,true)
-      .addField(':pencil:**__ الرومات الكتابية__**',`[** __${msg.guild.channels.filter(m => m.type === 'text').size}__** ]`,true)
-      .addField(':microphone:**__ رومات الصوت__**',`[** __${msg.guild.channels.filter(m => m.type === 'voice').size}__ **]`,true)
-      .addField(':crown:**__ الأونـر__**',`**${msg.guild.owner}**`,true)
-      .addField(':id:**__ ايدي السيرفر__**',`**${msg.guild.id}**`,true)
-      .addField(':date:**__ تم عمل السيرفر في__**',msg.guild.createdAt.toLocaleString())
-      msg.channel.send({embed:embed});
-	    }
-  });
+
+
+var prefix = "=";
+client.on('message', message => {
+    if(message.content == prefix + 'server') {
+        var servername = message.guild.name
+        var اونر = message.guild.owner
+        var اعضاء = message.guild.memberCount
+        var ايدي = message.guild.id
+        var بلدالسيرفر = message.guild.region
+        var الرومات = message.guild.channels.size
+        var الرتب = message.guild.roles
+        var عمل = message.guild.createdAt
+        var الروم = message.guild.defaultChannel
+        var server = new Discord.RichEmbed()
+        .setThumbnail(message.guild.iconURL)
+        .addField('✔اسم السيرفر', servername)
+        .addField('🆔اي دي السيرفر ' , [ايدي])
+        .addField('💥أعضاء السيرفر', اعضاء)
+        .addField('🔱رومات السيرفر', الرومات)
+        .addField('💯روم الشات الأساسي', الروم)
+        .addField('🚩صاحب السيرفر', اونر)
+        .addField('ℹبلد السيرفر', بلدالسيرفر)
+        .addField('📐تاريخ افتتاح السيرفر', عمل)
+        .setColor('RANDOM')
+
+        message.channel.sendEmbed(server)
+    }
+});
+
+
+
 
   client.on("message", msg => {
            var prefix = "=";
@@ -1209,15 +1225,25 @@ client.on("guildMemberAdd", function(member) {
         
 });
 
-    client.on('guildMemberRemove', member => {
-    var MoCodes = new Discord.RichEmbed()
+
+
+
+client.on('guildMemberRemove', member => {
+    var embed = new Discord.RichEmbed()
+    .setAuthor(member.user.username, member.user.avatarURL)
     .setThumbnail(member.user.avatarURL)
-    .setDescription('😣راح صديقنا العزيز نتمنى نشوفه مرة أخرى😊 '+'<@'+`${member.user.id}`+'>'+'T-T')
-    .setColor('RANDOM')
+    .setTitle(`😣خرج عضو`)
+    .setDescription(`👋الى اللقاء...`)
+    .addField(':bust_in_silhouette:   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
+    .setColor('RED')
+    .setFooter(`BomBot`, '')
+
 var channel =member.guild.channels.find('name', 'welcome')
 if (!channel) return;
-channel.send({embed : MoCodes});
+channel.send({embed : embed});
 });
+
+
 
 
 client.on('message', message => {
@@ -2529,8 +2555,6 @@ client.on('guildCreate', guild => {
 
 
 
-
-
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
   return channel.send(`ولكم نورت السيرفر يا أسطورة 
@@ -2542,6 +2566,29 @@ client.on("guildMemberAdd", member => {
 
 
 
+client.on("message", (message) => {
+if (message.content.startsWith("=setchannel")) {
+            if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have MANAGE_CHANNELS Premissions ");
+        let args = message.content.split(" ").slice(1);
+    message.guild.createChannel(args.join(' '), 'text');
+message.channel.sendMessage('تـم إنـشاء روم كـتابـي بنجاح|✅')
+
+}
+});
+
+
+
+
+
+client.on("message", (message) => {
+if (message.content.startsWith("=setvoice")) {
+            if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have MANAGE_CHANNELS Premissions ");
+        let args = message.content.split(" ").slice(1);
+    message.guild.createChannel(args.join(' '), 'voice');
+    message.channel.sendMessage('تـم إنـشاء روم صـوتي بنجاح|✅')
+
+}
+});
 
 
 
