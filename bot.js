@@ -259,8 +259,8 @@ client.on("message", message => {
           .addField('=setchannel', `لأنشاء روم كتابي`)
           .addField('=setvoice', `لأنشاء روم صوتي`)
 	  .addField('=warn', `عشان تعطي احد انظار و لكي يشتغل الامر سوي روم اسمه warns`)
-          .addField('=Autorole toggle', `عشان تفعل الautorole`)
-          .addField('=Autorole set', `عشان تحط الرتبة الي اول ما احد يدخل ياخذها`)
+          .addField('=autorole toggle', `عشان تفعل الautorole`)
+          .addField('=autorole set', `عشان تحط الرتبة الي اول ما احد يدخل ياخذها`)
                 .addField('=info', `عشان تشوف الرتبة الموضوعة في الAutorole`)
                 .addField('=mutechannel', `عشان تخلي ما فيه احد يقدر يكتب في الروم المحدد`)
                 .addField('=unmutechannel', `عشان ترجع الناس تقدر تكتب في الروم الي كتمته`)
@@ -297,7 +297,7 @@ client.on("message", message => {
           .addField('=owner', `لارسال رسالة لاونر سيرفر`)
           .addField('=suggest', `لاقتراح شئ و لازم يكون فيه روم اسمه suggestions `)
           .addField('=uptime', `عشان تشوف البوت شغال من متى`)
-          .addField('=Botinfo', `عشان تعرف معلومات البوت`)
+          .addField('=botinfo', `عشان تعرف معلومات البوت`)
           .addField('=color', `عشان تغير لونك ولازم يكون فيه رتب باسم الالوان حقة القلوب الي في صورة الامر اسماء الالوان احمر red اصفر yellow بنفسجي y2 ازرق لبني y3 اخضر y1 اسود black`)
       .setFooter('BomBot')
 	  .addField('=cat', `يجبلك صورة قطة`)
@@ -1684,13 +1684,13 @@ message.channel.sendEmbed(embed).then();
 
 
 client.on('message', message => {
-    if (message.content.startsWith("=Botinfo")) {
+    if (message.content.startsWith("=botinfo")) {
     message.channel.send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
-            .setTitle('``INFO  EpicBot`` ')
+            .setTitle('``INFO  BomBot`` ')
             .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``servers``', [client.guilds.size], true)
             .addField('``channels``' , `[ ${client.channels.size} ]` , true)
