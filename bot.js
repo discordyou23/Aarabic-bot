@@ -296,7 +296,6 @@ client.on("message", message => {
           .addField('=uptime', `عشان تشوف البوت شغال من متى`)
           .addField('=Botinfo', `عشان تعرف معلومات البوت`)
           .addField('=color', `عشان تغير لونك ولازم يكون فيه رتب باسم الالوان حقة القلوب الي في صورة الامر اسماء الالوان احمر red اصفر yellow بنفسجي y2 ازرق لبني y3 اخضر y1 اسود black`)
-      .setFooter('======================================================')
       .setFooter('BomBot')
 	  .addField('=cat', `يجبلك صورة قطة`)
   message.author.send({embed});
@@ -1188,7 +1187,7 @@ let args = message.content.split(" ").slice(1);
 }).then(messages => message.channel.bulkDelete(messages));
 
    var embed = new Discord.RichEmbed()
-        .setTitle('تم مسح الشات بنجاح :white_check_mark: ')
+        .setTitle('تم مسح الشات بنجاح|✅')
         .setColor('RED')
        message.channel.sendEmbed(embed)
 
@@ -1202,9 +1201,9 @@ client.on("guildMemberAdd", function(member) {
         const embed = new Discord.RichEmbed()
         .setColor('B90C0C')
         .setAuthor(member.user.tag, member.user.avatarURL)
- .setDescription('***يا مرحبا وسهلاً بضيف لفانا، يزهي بك الأدب العربي وينثر لك أزهار يسقيك من نبع المشاعر وفانا، لين الهلا تثمر على غصونك أطيار. ***')
+ .setDescription('***😉أهلا وسهلاااااا فيك يا قلبي نتمنى يعجبك السيرفر يا حلوووو😍***')
 .setThumbnail(member.avatarURL)
-  .setImage('https://www.askideas.com/media/13/Welcome-Deers-Sign.jpg')
+  .setImage('https://cdn.discordapp.com/attachments/474936552909439036/477484614676381697/Screenshot_------1.png')
         .setTimestamp()
         return wc.sendEmbed(embed);
         
@@ -1213,7 +1212,7 @@ client.on("guildMemberAdd", function(member) {
     client.on('guildMemberRemove', member => {
     var MoCodes = new Discord.RichEmbed()
     .setThumbnail(member.user.avatarURL)
-    .setDescription('راح الحبيب '+'<@'+`${member.user.id}`+'>'+'T-T')
+    .setDescription('😣راح صديقنا العزيز نتمنى نشوفه مرة أخرى😊 '+'<@'+`${member.user.id}`+'>'+'T-T')
     .setColor('RANDOM')
 var channel =member.guild.channels.find('name', 'welcome')
 if (!channel) return;
@@ -2450,9 +2449,105 @@ client.on('message', message => {
 
 	  
 	  
+
+
+
+
+client.on('message', message => {
+     if (message.content === "=bot") {
+            if(!message.channel.guild) return message.reply('** This command only for servers **');
+     let embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+  .addField("**🔱عدد السيرفرات الي فيها البوت🔱:**" , client.guilds.size)
+  .addField("**👑المستخدمين👑:**", client.users.size)
+  .addField("**🚩قنوات🚩:**", client.channels.size)
+  .setTimestamp()
+message.channel.sendEmbed(embed);
+    }
+});
+
+
+
+
+
+client.on('guildMemberAdd', member => {
+
+    let channel = member.guild.channels.find('name', 'welcome');
+
+    let memberavatar = member.user.avatarURL
+
+      if (!channel) return;
+
+    let embed = new Discord.RichEmbed()
+
+        .setColor('#00ff47')
+
+        .setThumbnail(memberavatar)
+
+        .addField('?? | اسمك: ',`${member}`)
+
+        .addField('??|اطلق من دخل' , `منور السيرفر, ${member}`)
+
+        .addField('?? |ايديك:', "**[" + `${member.id}` + "]**" )
+
+                .addField('?|عضو رقم',`${member.guild.memberCount}`)
+
+               
+
+                  .addField("Name:",`<@` + `${member.id}` + `>`, true)
+
+                     
+
+                                     .addField(' الـسيرفر', `${member.guild.name}`,true)
+
+                                       
+
+     .setFooter("Welcome")
+
+        .setTimestamp()
+
+   
+
+      channel.sendEmbed(embed);
+
+    });
+
+
 	  
-	  
-	  
-	  
+
+
+
+client.on('guildCreate', guild => {
+  var embed = new Discord.RichEmbed()
+  .setColor(0x5500ff)
+  .setDescription('شكراً لك لإضافه البوت الى سيرفرك')
+      guild.owner.send(embed)
+});
+
+
+
+
+
+
+
+
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`ولكم نورت السيرفر يا أسطورة 
+اسم العضو المحترم  ${member}
+انت العضو الأسطورة رقم ${member.guild.memberCount}`) 
+}).catch(console.error)
+})
+
+
+
+
+
+
+
+
+
+
+
 	  
 client.login(process.env.BOT_TOKEN);
