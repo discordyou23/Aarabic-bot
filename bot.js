@@ -12,6 +12,13 @@ client.on('message', message => {
 });
 
 
+
+client.on('ready', () => {
+client.user.setGame(`=help | =invite | BY FOFO`,'https://www.twitch.tv/v5bz');
+});
+
+
+
 client.on('message', msg => {
   if (msg.content === '=ownerbot') {
     msg.reply('**OwnerBot <@382889731316514826>**');
