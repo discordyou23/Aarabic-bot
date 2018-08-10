@@ -13,7 +13,7 @@ client.on('message', message => {
 
 
 client.on('message', msg => {
-  if (msg.content === '%ownerbot') {
+  if (msg.content === '=ownerbot') {
     msg.reply('**OwnerBot <@382889731316514826>**');
   }
 });
@@ -232,7 +232,7 @@ if (command == "embed") {
 
 
 client.on("message", message => {
- if (message.content === "=help-Admin") {
+ if (message.content === "=help-admin") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('© EpicBot :heart: جميع الحقوق محفوظة 2017 لــبوت')
@@ -264,7 +264,7 @@ client.on("message", message => {
 
 
 client.on("message", message => {
- if (message.content === "=help-Public") {
+ if (message.content === "=help-public") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('© BOMbot :heart: جميع الحقوق محفوظة 2017 لــبوت')
@@ -301,7 +301,7 @@ client.on("message", message => {
 
 
 client.on("message", message => {
- if (message.content === "=help-Games") {
+ if (message.content === "=help-games") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('© BOMbot جميع الحقوق محفوظة 2018 لــبوت')
@@ -938,7 +938,7 @@ const Za7f = [
     "**اتصل على احد من اخوياك  خوياتك , و اطلب منهم مبلغ على اساس انك صدمت بسيارتك**.",
     "**اول واحد تشوفه عطه كف**.",
     "**سو مشهد تمثيلي عن اي شيء يطلبه منك الاعبين**.",
-    "**سامحتك خلاص مافيه عقاب لك :slight_smile:**.",
+    "**سامحتك خلاص مافيه عقاب لك**.",
     "**اتصل على ابوك و قول له انك رحت مع بنت و احين هي حامل....**.",
     "**روح اكل ملح + ليمون اذا مافيه اكل اي شيء من اختيار الي معك**.",
     "**تاخذ عقابين**.",
@@ -963,7 +963,7 @@ const Za7f = [
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL)
- .addField('xHexon Bot' ,
+ .addField('Bom Bot ♧' ,
   `${Za7f[Math.floor(Math.random() * Za7f.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[38ab] Send By: ' + message.author.username)
@@ -1070,7 +1070,7 @@ const Love = [  "**احبك / عدد قطرات المـــطر والشجر و
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL)
- .addField('EpicBot' ,
+ .addField('BomBot' ,
   `${Love[Math.floor(Math.random() * Love.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[id] Send By: ' + message.author.username)
@@ -1443,19 +1443,7 @@ if (msg.content.startsWith(prefix + 'cal')) {
 };
 });
 
-client.on('message', function(message) {
-    if (message.channel.type === "dm") {
-        if (message.author.id === client.user.id) return;
-        var norElden = new Discord.RichEmbed()
-            .setColor('RANDOM')
-            .setTimestamp()
-            .setTitle('**New Message On My DM !**')
-            .setThumbnail(`${message.author.avatarURL}`)
-            .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
-            .setFooter(`من (@${message.author.tag})  |  (${message.author.id})`)
-        client.channels.get("473878057229221888").send({ embed: norElden });
-    }
-});
+
 
 
 client.on('message', message => {
@@ -1816,7 +1804,7 @@ ${args}
 
 client.on("message", message => {
     var prefix = "=";
- if (message.content === "%help") {
+ if (message.content === "help") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription(`
@@ -1824,15 +1812,15 @@ client.on("message", message => {
              Please Choose:
 
 ─════════════ {✯BomBot✯} ════════════─
-❧ =help-Admin ➺ ⦁ اوامر الادارة ⦁
+❧ =help-admin ➺ ⦁ اوامر الادارة ⦁
 
-❧ =help-Public ➺ ⦁ اوامر العامة ⦁
+❧ =help-public ➺ ⦁ اوامر العامة ⦁
 
-❧ =help-Games ➺ ⦁اوامر الالعاب ⦁
+❧ =help-games ➺ ⦁اوامر الالعاب ⦁
 
-❧ =help-Music ➺ ⦁اوامر الاغاني ⦁
+❧ =help-music ➺ ⦁اوامر الاغاني ⦁
 
-❧ =help-Welcome ➺ ⦁معلومات الترحيب في البوت⦁
+❧ =help-welcome ➺ ⦁معلومات الترحيب في البوت⦁
 ─════════════ {✯BomBot✯} ════════════─
       `)
    message.channel.sendEmbed(embed)
@@ -2083,31 +2071,7 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
 
-const adminprefix = "=VIP";//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-const devs = ['382889731316514826'];//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-client.on('message', message => {//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-  var argresult = message.content.split(` `).slice(1).join(' ');//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-    if (!devs.includes(message.author.id)) return;//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
 
-if (message.content.startsWith(adminprefix + 'setgame')) {//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-  client.user.setGame(argresult);
-    message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
-} else
-  if (message.content.startsWith(adminprefix + 'setname')) {
-client.user.setUsername(argresult).then
-    message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
-return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
-} else
-  if (message.content.startsWith(adminprefix + 'setavatar')) {
-client.user.setAvatar(argresult);
-  message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
-      } else
-if (message.content.startsWith(adminprefix + 'setT')) {
-  client.user.setGame(argresult, "https://www.twitch.tv/idk");
-    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
-}
-
-});
 
 client.on("message", message => {
  if (message.content === `${prefix}music`) {
@@ -2135,7 +2099,7 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
 
 
 client.on("message", message => {
- if (message.content === "=help-Music") {
+ if (message.content === "=help-music") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('© BomBot :heart: جميع الحقوق محفوظة 2017 لــبوت')
@@ -2157,7 +2121,7 @@ client.on("message", message => {
 });
 
 client.on("message", message => {
- if (message.content === "=help-Welcome") {
+ if (message.content === "=help-welcome") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('© BomBot :heart: جميع الحقوق محفوظة 2017 لــبوت')
