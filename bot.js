@@ -26,38 +26,38 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 'السلام عليكم') {
-    msg.reply('**و عليكم السلام**');
+  if (msg.content === 'تمام') {
+    msg.reply('**😍دوم يا عسسسل😍**');
   }
 });
 
 client.on('message', msg => {
-  if (msg.content === 'hla') {
-    msg.reply('**Hla Fek :heartpulse: **');
+  if (msg.content === 'سلام') {
+    msg.reply('**😍الله معاك ويحميك وارجع حكينا😍 :heartpulse: **');
   }
 });
 
 client.on('message', msg => {
   if (msg.content === 'هلا') {
-    msg.reply('**هلا فيك :heartpulse:**');
+    msg.reply('**هلا فيك😙 :heartpulse:**');
   }
 });
 
 client.on('message', msg => {
-  if (msg.content === 'brb') {
-    msg.reply('**tyt :heartpulse:**');
+  if (msg.content === 'كيفكم') {
+    msg.reply('**😘تمام كيفك انت يا صديقي👍 :heartpulse:**');
   }
 });
 
 client.on('message', msg => {
-  if (msg.content === 'Brb') {
-    msg.reply('**Tyt :heartpulse:**');
+  if (msg.content === 'مرحبا') {
+    msg.reply('**🔱اهلا وسهلا فيك منور الشات :heartpulse:**');
   }
 });
 
 client.on('message', msg => {
-  if (msg.content === 'BRB') {
-    msg.reply('**Tyt :heartpulse:**');
+  if (msg.content === 'باي') {
+    msg.reply('**😊الله معك يا قلبي😊 :heartpulse:**');
   }
 });
 
@@ -75,7 +75,7 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content === 'باك') {
-    msg.reply('**Welcome Back :heartpulse:**');
+    msg.reply('**😍باكات يا عسسسل صباحك ومساك عسسسسل😍 :heartpulse:**');
   }
 });
 
@@ -1697,7 +1697,7 @@ client.on('message', message => {
             .addField('``Users``' ,`[ ${client.users.size} ]` , true)
             .addField('``My Name``' , `[ ${client.user.tag} ]` , true)
             .addField('``My ID``' , `[ ${client.user.id} ]` , true)
-                  .addField('``My Prefix``' , `%` , true)
+                  .addField('``My Prefix``' , `=` , true)
                   .addField('``My Language``' , `[ Java Script ]` , true)
                   .setFooter('By |<@382889731316514826>')
     })
