@@ -1219,7 +1219,6 @@ client.on("guildMemberAdd", function(member) {
         .setAuthor(member.user.tag, member.user.avatarURL)
  .setDescription('***👑WELCOME TO SERVER👑***')
 .setThumbnail(member.avatarURL)
-  .setImage(`${x5bzm.avatarURL}`)
         .setTimestamp()
         return wc.sendEmbed(embed);
         
