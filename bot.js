@@ -1218,7 +1218,7 @@ client.on("guildMemberAdd", function(member) {
         .setColor('B90C0C')
         .setAuthor(member.user.tag, member.user.avatarURL)
  .setDescription('***👑WELCOME TO SERVER👑***')
-        .setImage('https://cdn.discordapp.com/attachments/445335688628666388/477469283878961160/gfd.jpg')
+        .setImage('https://cdn.discordapp.com/attachments/476028851030458368/477887299326312449/PicsArt_08-11-08.13.06.png')
 .setThumbnail(member.avatarURL)
         .setTimestamp()
         return wc.sendEmbed(embed);
