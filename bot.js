@@ -1217,9 +1217,10 @@ client.on("guildMemberAdd", function(member) {
         const embed = new Discord.RichEmbed()
         .setColor('B90C0C')
         .setAuthor(member.user.tag, member.user.avatarURL)
- .setDescription('***😉أهلا وسهلاااااا فيك يا قلبي نتمنى يعجبك السيرفر يا حلوووو😍***')
+ .setDescription('***👑WELCOME TO SERVER👑***')
+.addField('?|عضو رقم',`${member.guild.memberCount}`)
 .setThumbnail(member.avatarURL)
-  .setImage('https://cdn.discordapp.com/attachments/445335688628666388/477469283878961160/gfd.jpg')
+  .setImage(`${x5bzm.avatarURL}`)
         .setTimestamp()
         return wc.sendEmbed(embed);
         
@@ -1236,6 +1237,7 @@ client.on('guildMemberRemove', member => {
     .setDescription(`👋الى اللقاء...`)
     .addField(':bust_in_silhouette:   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
     .setColor('RED')
+    .setImage(`${x5bzm.avatarURL}`)
     .setFooter(`BomBot`, '')
 
 var channel =member.guild.channels.find('name', 'welcome')
