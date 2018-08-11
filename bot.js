@@ -1218,7 +1218,6 @@ client.on("guildMemberAdd", function(member) {
         .setColor('B90C0C')
         .setAuthor(member.user.tag, member.user.avatarURL)
  .setDescription('***👑WELCOME TO SERVER👑***')
-.addField('?|عضو رقم',`${member.guild.memberCount}`)
 .setThumbnail(member.avatarURL)
   .setImage(`${x5bzm.avatarURL}`)
         .setTimestamp()
@@ -1237,7 +1236,6 @@ client.on('guildMemberRemove', member => {
     .setDescription(`👋الى اللقاء...`)
     .addField(':bust_in_silhouette:   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
     .setColor('RED')
-    .setImage(`${x5bzm.avatarURL}`)
     .setFooter(`BomBot`, '')
 
 var channel =member.guild.channels.find('name', 'welcome')
