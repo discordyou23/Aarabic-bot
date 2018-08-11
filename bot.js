@@ -1218,6 +1218,7 @@ client.on("guildMemberAdd", function(member) {
         .setColor('B90C0C')
         .setAuthor(member.user.tag, member.user.avatarURL)
  .setDescription('***👑WELCOME TO SERVER👑***')
+.setImage('https://cdn.discordapp.com/attachments/445335688628666388/477469283878961160/gfd.jpg
 .setThumbnail(member.avatarURL)
         .setTimestamp()
         return wc.sendEmbed(embed);
@@ -1234,9 +1235,9 @@ client.on('guildMemberRemove', member => {
     .setTitle(`😣خرج عضو`)
     .setDescription(`👋الى اللقاء...`)
     .addField(':bust_in_silhouette:   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
+.setImage('https://cdn.discordapp.com/attachments/445335688628666388/477597893822382091/gd.jpg')
     .setColor('RED')
     .setFooter(`BomBot`, '')
-
 var channel =member.guild.channels.find('name', 'welcome')
 if (!channel) return;
 channel.send({embed : embed});
