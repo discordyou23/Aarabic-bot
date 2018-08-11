@@ -1219,7 +1219,7 @@ client.on("guildMemberAdd", function(member) {
         .setAuthor(member.user.tag, member.user.avatarURL)
  .setDescription('***😉أهلا وسهلاااااا فيك يا قلبي نتمنى يعجبك السيرفر يا حلوووو😍***')
 .setThumbnail(member.avatarURL)
-  .setImage('https://cdn.discordapp.com/attachments/474936552909439036/477484614676381697/Screenshot_------1.png')
+  .setImage('https://cdn.discordapp.com/attachments/445335688628666388/477469283878961160/gfd.jpg')
         .setTimestamp()
         return wc.sendEmbed(embed);
         
