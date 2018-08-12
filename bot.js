@@ -51,6 +51,14 @@ client.on('message', msg => {
   });;
   
  
+client.on('message', msg => {//msg
+    if (msg.content === 'السلام عليكم') {
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/477438358902276099/478177205164310529/004ca53f54b2ff2c.png"})
+    }
+  });;
+
+
+
 
 client.on('message', msg => {
   if (msg.content === 'كيفكم') {
