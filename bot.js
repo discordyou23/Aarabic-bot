@@ -43,6 +43,15 @@ client.on('message', msg => {
   }
 });
 
+
+  client.on('message', msg => {//msg
+    if (msg.content === '=help') {
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/477439133866917890/477994948613111817/de337f8ac2f85a38.png"})
+    }
+  });;
+  
+ 
+
 client.on('message', msg => {
   if (msg.content === 'كيفكم') {
     msg.reply('**😘تمام كيفك انت يا صديقي👍 :heartpulse:**');
