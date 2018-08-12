@@ -64,6 +64,57 @@ client.on('message', msg => {
   }
 });
 
+
+  client.on('message', msg => {//msg
+    if (msg.content === '=help-admin') {
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/477954433834024967/478003277070598145/07791388c7b353b7.png"})
+    }
+  });;
+
+  client.on('message', msg => {//msg
+    if (msg.content === '=help-public') {
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/477954433834024967/478003277070598145/07791388c7b353b7.png"})
+    }
+  });;
+
+  client.on('message', msg => {//msg
+    if (msg.content === '=help-games') {
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/477954433834024967/478003277070598145/07791388c7b353b7.png"})
+    }
+  });;
+
+
+  client.on('message', msg => {//msg
+    if (msg.content === '=help-music') {
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/477954433834024967/478003277070598145/07791388c7b353b7.png"})
+    }
+  });;
+
+
+  client.on('message', msg => {//msg
+    if (msg.content === '=help-welcome') {
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/477954433834024967/478003277070598145/07791388c7b353b7.png"})
+    }
+  });;
+
+
+
+  client.on('message', msg => {//msg
+    if (msg.content === '=invite') {
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/477954433834024967/478003277070598145/07791388c7b353b7.png"})
+    }
+  });;
+
+
+  client.on('message', msg => {//msg
+    if (msg.content === '=support') {
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/477954433834024967/478003277070598145/07791388c7b353b7.png"})
+    }
+  });;
+
+
+
+
 client.on('message', msg => {
   if (msg.content === 'باي') {
     msg.reply('**😊الله معك يا قلبي😊 :heartpulse:**');
