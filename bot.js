@@ -312,7 +312,7 @@ client.on("message", message => {
       .setColor("RANDOM")
       .setFooter('© BomBot :heart: جميع الحقوق محفوظة 2017 لــبوت')
       .setFooter('اوامر الادمنيه')
-	  .addField('❖-|=msg', `📑لخاصية البرودكستات📑`)
+	  .addField('❖-|=msgserver', `📑لخاصية البرودكستات📑`)
 	  .addField('❖-|=kick', `🚫لخاصية طرد🚫`)
 	  .addField('❖-|=ban', `⚠عشان تعطي احد حظر من سيرفر للابد⚠`)
                 .addField('❖-=tempban', `🚩عشان تعطي احد حظر من السيرفر بمدة🕞`)
@@ -859,7 +859,7 @@ client.on('message', async message => {
 
 client.on('message', message => {
   if(!message.channel.guild) return;
-if(message.content.startsWith('=msg')) {
+if(message.content.startsWith('=msgserver')) {
 if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
 if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
 let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
@@ -880,10 +880,10 @@ message.guild.members.forEach(m => {
 var bc = new
 Discord.RichEmbed()
 .setColor('RANDOM')
-.setTitle('Broadcast')
-.addField('Server', message.guild.name)
-.addField('Sender', message.author.username)
-.addField('Message', args)
+.setTitle('برودكاست')
+.addField('🚩السيرفر🚩', message.guild.name)
+.addField('🔰المرسل🔰', message.author.username)
+.addField('👑الرسالة👑', args)
 .setThumbnail(message.author.avatarURL)
 .setFooter(copy, client.user.avatarURL);
 m.send({ embed: bc })
@@ -1547,7 +1547,7 @@ client.on('message', message => {
     if(!message.channel.guild) return;
        if(message.content.startsWith(prefix + 'color')) {
        if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-       message.channel.sendFile(`https://media.discordapp.net/attachments/444071272503050241/450979273206005780/colors.png`).then(msg => {
+       message.channel.sendFile(`https://cdn.discordapp.com/attachments/476028851030458368/478205880068997120/1b99bffbfc7f0b21.png`).then(msg => {
 
 
 
