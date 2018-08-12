@@ -1303,7 +1303,7 @@ client.on('guildMemberRemove', member => {
     .setTitle(`😣خرج عضو`)
     .setDescription(`👋الى اللقاء...`)
     .addField(':bust_in_silhouette:   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
-    .setImage('https://cdn.discordapp.com/attachments/478254875608875008/478267483275657232/-1.png')
+    .setImage('https://cdn.discordapp.com/attachments/478086091316920320/478336330862952458/8b1f57f07166580f.png')
     .setColor('RED')
     .setFooter(`BomBot`, '')
 var channel =member.guild.channels.find('name', 'welcome')
