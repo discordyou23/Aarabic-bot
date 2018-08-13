@@ -2665,7 +2665,6 @@ if (message.content.startsWith("=setvoice")) {
 
 const Canvas = require("canvas"); //npm i canvas
 const jimp = require("jimp"); //npm i jimp
-const moment = require("moment") //npm i moment
 // const Canvas = require("canvas-prebuilt"); // اذا كنت وندوز
 // npm i canvas-prebuilt
  
