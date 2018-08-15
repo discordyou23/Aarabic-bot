@@ -2745,7 +2745,7 @@ msg.channel.send(`${item.type}`).then(() => {
         console.log(`[Typing] ${collected.first().author} typed the word.`);
             let points = {}
             let userData = points[message.author.id];
-            let userdata = require('./fkkPTS.json');
+            let userdata = require('./3awasemPTS.json');
             userData.points++;
           })
           .catch(collected => {
