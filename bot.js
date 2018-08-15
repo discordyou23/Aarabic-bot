@@ -2739,8 +2739,9 @@ client.on('message', message => {
             message.channel.send(`✅ لقد قمت بكتابة الجواب الصحيح بالوقت المناسب
  ─═════**{نقاطك:${points[message.author.id].points}}**═════─`);
                message.channel.sendEmbed(embed)
-        }
-    });
+		
+}
+});
 
 
 
