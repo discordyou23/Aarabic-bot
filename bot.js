@@ -2720,4 +2720,43 @@ if(message.content.startsWith("=solts")) {
 
 
 
+
+let points = {}
+
+client.on('message', message => {
+if (!points[message.author.id]) points[message.author.id] = {
+    points: 0,
+  };
+if (message.content.startsWith(prefix + 'عواصم')) {
+    if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
+
+const type = require('./3awasem.json');
+const item = type[Math.floor(Math.random() * type.length)];
+const filter = response => {
+    return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+};
+message.channel.send('**👑أجب الإجابة صحيحآ👑**').then(msg => {
+
+            
+msg.channel.send(`${item.type}`).then(() => {
+        message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
+        .then((collected) => {
+        message.channel.send(`${collected.first().author} ✅ **BomBOT صحيح الجواب بطل**`);
+        console.log(`[Typing] ${collected.first().author} typed the word.`);
+            let points = {}
+            let userData = points[message.author.id];
+            let userdata = require('./fkkPTS.json');
+            userData.points++;
+          })
+          .catch(collected => {
+            console.log('[Typing] Error: No one type the word.');
+          })
+        })
+    })
+}
+});
+
+
+
+
 client.login(process.env.BOT_TOKEN);
