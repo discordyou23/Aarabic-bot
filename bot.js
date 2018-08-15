@@ -2740,7 +2740,6 @@ client.on('message', message => {
  ─═════**{نقاطك:${points[message.author.id].points}}**═════─`);
                message.channel.sendEmbed(embed)
 		
-}
 });
 
 
