@@ -2668,7 +2668,7 @@ if (!points[message.author.id]) points[message.author.id] = {
 if (message.content.startsWith(prefix + 'فكك')) {
     if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
 
-const type = require('./fkk/fkk.json');
+const type = require('./fkk.json');
 const item = type[Math.floor(Math.random() * type.length)];
 const filter = response => {
     return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
@@ -2679,12 +2679,11 @@ message.channel.send('**لديك 15 ثانيه لتفكيك الكلمه**').the
 msg.channel.send(`${item.type}`).then(() => {
         message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
         .then((collected) => {
-        message.channel.send(`${collected.first().author} ✅ **مبروك لقد كسبت نقطه
-لمعرفة نقطاك الرجاء كتابة %نقاطي**`);
+        message.channel.send(`${collected.first().author} ✅ **BomBOT WINER**`);
         console.log(`[Typing] ${collected.first().author} typed the word.`);
             let points = {}
             let userData = points[message.author.id];
-            let userdata = require('./fkk/fkkPTS.json');
+            let userdata = require('./fkkPTS.json');
             userData.points++;
           })
           .catch(collected => {
