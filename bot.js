@@ -329,12 +329,13 @@ client.on("message", message => {
       .setFooter('© BOMbot جميع الحقوق محفوظة 2018 لــبوت')
       .setFooter('🎮الالعاب🎮')
       .addField('❖-|=صراحة🎮', `لعبة صراحه🎮`)
+          .addField('❖-|=عواصم🎮', `لعبة عواصم🎮`)
 	  .addField('❖-|=عقاب🎮', `لعبة عقاب🎮`)
       .addField('❖-|=خواطر🎮', `لعبة خواط🎮`)
-	  .addField('❖-|=حب🎮', `لعبة الحب🎮`)
+          .addFiled('❖-|=حب🎮', `لعبة الحب🎮`)
 	  .addField('❖-|=كت تويت🎮', `لعبة كت تويت🎮`)
 	  .addField('❖-|=لو خيروك🎮', `لعبة لو خيروك🎮`)
-          .addField('❖-|=قرعة🎮', `لاستعمال القرعة🎮`)
+          .addFiled('❖-|=قرعة🎮', `لاستعمال القرعة🎮`)
           .addField('❖-|=فكك🎮', `لعبة فكك🎮`)
           .addField('❖-|=solts🎮', `لعبة الإيموجي🎮`)
   message.author.send({embed});
@@ -2688,7 +2689,7 @@ msg.channel.send(`${item.type}`).then(() => {
             userData.points++;
           })
           .catch(collected => {
-            message.channel.send(`:pensive:خلص الوقت للأسف:pensive:`);
+            message.channel.send(`🕓😀أنتهى الوقت أعد العب مرة آخرى😀🕓`);
           })
         })
     })
@@ -2732,13 +2733,13 @@ const item = type[Math.floor(Math.random() * type.length)];
 const filter = response => {
     return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
 };
-message.channel.send('**👑أجب الإجابة صحيحآ👑**').then(msg => {
+message.channel.send('**👑لديك 15 ثانية للإجابة على السؤال!👑**').then(msg => {
 
             
 msg.channel.send(`${item.type}`).then(() => {
         message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
         .then((collected) => {
-        message.channel.send(`${collected.first().author} ✅ **BomBOT صحيح الجواب بطل**`);
+        message.channel.send(`${collected.first().author} ✅ **الإجابة صحيحة بطل**`);
         console.log(`[Typing] ${collected.first().author} typed the word.`);
             let points = {}
             let userData = points[message.author.id];
@@ -2746,7 +2747,7 @@ msg.channel.send(`${item.type}`).then(() => {
             userData.points++;
           })
           .catch(collected => {
-            console.log('[Typing] Error: No one type the word.');
+            message.channel.send(`🕓😀أنتهى الوقت أعد العب مرة آخرى😀🕓`);
           })
         })
     })
