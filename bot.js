@@ -1239,18 +1239,7 @@ let args = message.content.split(" ").slice(1);
 });
 
 
-client.on("guildMemberAdd", function(member) {
-    const wc = member.guild.channels.find("name", "welcome")
-        const embed = new Discord.RichEmbed()
-        .setColor('B90C0C')
-        .setAuthor(member.user.tag, member.user.avatarURL)
- .setDescription('***👑WELCOME TO SERVER👑***')
-        .setImage('https://cdn.discordapp.com/attachments/405060981937537024/478264957180313612/605690199ef50f1a.png')
-.setThumbnail(member.avatarURL)
-        .setTimestamp()
-        return wc.sendEmbed(embed);
-        
-});
+
 
 
 
