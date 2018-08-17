@@ -2690,12 +2690,12 @@ if(message.content.startsWith("=حجرة")) {
   let slot1 = ['ورقة', 'حجرة', 'مقص'];
   let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
   let we;
-  if(slots1 === slots2 && slots2 === slots3) {
+  if(slots1) {
     we = "😀لقد ربحت يا بطل😀"
   } else {
     we = "😣لقد خسرت حظ آوفر😣"
   }
-  message.channel.send(`${slots1} | ${slots2} | ${slots3} - ${we}`)
+  message.channel.send(`${slots1} - ${we}`)
 }
 });
 
@@ -2706,12 +2706,12 @@ if(message.content.startsWith("=ورقة")) {
   let slot1 = ['ورقة', 'حجرة', 'مقص'];
   let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
   let we;
-  if(slots1 === slots2 && slots2 === slots3) {
+  if(slots1) {
     we = "😀لقد ربحت يا بطل😀"
   } else {
     we = "😣لقد خسرت حظ آوفر😣"
   }
-  message.channel.send(`${slots1} | ${slots2} | ${slots3} - ${we}`)
+  message.channel.send(`${slots1} - ${we}`)
 }
 });
 
