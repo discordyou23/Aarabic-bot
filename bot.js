@@ -14,7 +14,7 @@ client.on('message', message => {
 
 
 client.on('ready', () => {
-client.user.setGame(`=help | =invite`,'https://www.twitch.tv/v5bz');
+client.user.setGame(`=help | =invite |حج مبارك`,'https://www.twitch.tv/v5bz');
 });
 
 
@@ -306,7 +306,6 @@ client.on("message", message => {
   	  .addField('❖-|=bot', `🔱لمعرفة معلومات البوت🅱`)
 	  .addField('❖-|=roles', `👑لمعرفة الرتب الي في السيرفر🔱`)
           .addField('❖-|=avatar', `🔰يجبلك الافتار حقك يعني صورة حسابك🔰`)
-	  .addField('❖-|=server', `👑يجبلك معلومات السيرفر🆗`)
 	  .addField('❖-|=id', `🆔يجبلك الملف الشخصي حقك🆔`)
   	  .addField('❖-|=userinfo', `➿لمعرفة معلوماتك بلكامل🔱`)
 	 	  .addField('❖-|=servers', `➰يجبلك عدد السيرفرات التي البوت داخله➰`)
@@ -316,7 +315,6 @@ client.on("message", message => {
           .addField('❖-|=support', `🎊سيرفر الدعم حق البوت🎉`)
   	  .addField('❖-|=users1', `🎆يعرض لك جميع السيرفراا الموجودة بلبوت📝`)
 	  .addField('❖-|=image', `📷يعرض صورة سيرفر⛺`)
-	  .addField('❖-|=members', `👥حاله الاعضاء👥`)
           .addField('❖-|=credits', `👑عشان تشوف الكردتس الخاصة بك👑`)
           .addField('❖-|=daily', `💲عشان تاخذ الكردتس اليومية الخاصة بك💵`)
           .addField('❖-|=trans', `💰عشان تعطي لاحد مبلغ من الكردتس الخاصة بك💳`)
@@ -1178,19 +1176,7 @@ const Love = [  "**احبك / عدد قطرات المـــطر والشجر و
 	     }
   });
 
-  client.on('message', message => {
-    if(message.content == '=members') {
-    const embed = new Discord.RichEmbed()
-    .setDescription(`**Members info🔋
-:green_heart: online:   ${message.guild.members.filter(m=>m.presence.status == 'online').size}
-:heart:dnd:       ${message.guild.members.filter(m=>m.presence.status == 'dnd').size}
-:yellow_heart: idle:      ${message.guild.members.filter(m=>m.presence.status == 'idle').size}
-:black_heart: offline:   ${message.guild.members.filter(m=>m.presence.status == 'offline').size}
-:blue_heart:   all:  ${message.guild.memberCount}**`)
-         message.channel.send({embed});
 
-    }
-  });
 
   client.on('message', message => {
       if (message.content.startsWith(prefix + 'clear')) {
@@ -1849,25 +1835,7 @@ client.on("message", message => {
 
 
 
-client.on('message', message => {
-    if (message.content.startsWith("=server")) {
-    message.channel.send({
-        embed: new Discord.RichEmbed()
-            .setAuthor(client.user.username,client.user.avatarURL)
-            .setThumbnail(client.user.avatarURL)
-            .setColor('RANDOM')
-            .setDescription("👑Server Information👑")
-            .addField("🆔Server ID🆔", message.guild.id)
-            .addField("ℹCreated Onℹ", message.guild.createdAt)
-            .addField("✅You Joined✅", message.member.joinedAt)
-            .addField("🔢Total Members🔢", message.guild.memberCount)
-            .addField("🚩Server Owner🚩", message.guild.owner.user.username)
-            .addField("🔱Rooms🔱", message.guild.channels.size)
-            .addField("⛎Roles⛎", message.guild.roles.size)
-            .addField("➿Region➿", message.guild.region)
-    })
-}
-});
+
 
 
 
