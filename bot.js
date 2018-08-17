@@ -151,7 +151,6 @@ client.on('message', msg => {
 
 client.on('message', msg => {
         if (msg.content.startsWith(`=warn`)) {
-          if(!msg.member.hasPermission("MANAGE_MESSAGES")) return;
            let args = msg.content.split(" ").slice(1);
           if (!msg.mentions.members.first()) return msg.reply('منشن الشخص المحدد')
           if (!args[1]) return msg.reply('``اكتب السبب``')
