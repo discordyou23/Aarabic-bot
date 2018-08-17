@@ -2685,6 +2685,54 @@ if(message.content.startsWith("=solts")) {
 
 
 
+  client.on('message', message => {
+if(message.content.startsWith("=حجرة")) {
+  let slot1 = ['ورقة', 'حجرة', 'مقص'];
+  let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
+  let we;
+  if(slots1 === slots2 && slots2 === slots3) {
+    we = "😀لقد ربحت يا بطل😀"
+  } else {
+    we = "😣لقد خسرت حظ آوفر😣"
+  }
+  message.channel.send(`${slots1} | ${slots2} | ${slots3} - ${we}`)
+}
+});
+
+
+
+  client.on('message', message => {
+if(message.content.startsWith("=ورقة")) {
+  let slot1 = ['ورقة', 'حجرة', 'مقص'];
+  let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
+  let we;
+  if(slots1 === slots2 && slots2 === slots3) {
+    we = "😀لقد ربحت يا بطل😀"
+  } else {
+    we = "😣لقد خسرت حظ آوفر😣"
+  }
+  message.channel.send(`${slots1} | ${slots2} | ${slots3} - ${we}`)
+}
+});
+
+
+
+  client.on('message', message => {
+if(message.content.startsWith("=مقص")) {
+  let slot1 = ['ورقة', 'حجرة', 'مقص'];
+  let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
+  let we;
+  if(slots1) {
+    we = "😀لقد ربحت يا بطل😀"
+  } else {
+    we = "😣لقد خسرت حظ آوفر😣"
+  }
+  message.channel.send(`${slots1} - ${we}`)
+}
+});
+
+
+
 
 client.on('message', message => {
 if (!points[message.author.id]) points[message.author.id] = {
