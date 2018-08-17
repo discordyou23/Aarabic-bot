@@ -1114,25 +1114,31 @@ const Love = [  "**احبك / عدد قطرات المـــطر والشجر و
 
 
 
-client.on('message', function(msg) {
-    const prefix = '='
-    if(msg.content.startsWith (prefix  + 'server')) {
-      let embed = new Discord.RichEmbed()
-      .setColor('#00ff47')
-      .setTitle(`Showing Details Of  **${msg.guild.name}*`)
-      .addField('🌐** نوع السيرفر**',`[** __${msg.guild.region}__ **]`,true)
-      .addField('🏅** __الرتب__**',`[** __${msg.guild.roles.size}__ **]`,true)
-      .addField('🔴**__ عدد الاعضاء__**',`[** __${msg.guild.memberCount}__ **]`,true)
-      .addField('🔵**__ عدد الاعضاء الاونلاين__**',`[** __${msg.guild.members.filter(m=>m.presence.status == 'online').size}__ **]`,true)
-      .addField('📝**__ الرومات الكتابية__**',`[** __${msg.guild.channels.filter(m => m.type === 'text').size}__** ]`,true)
-      .addField('🎤**__ رومات الصوت__**',`[** __${msg.guild.channels.filter(m => m.type === 'voice').size}__ **]`,true)
-      .addField('👑**__ الأونـر__**',`**${msg.guild.owner}**`,true)
-      .addField('🆔**__ ايدي السيرفر__**',`**${msg.guild.id}**`,true)
-      .addField('📅**__ تم عمل السيرفر في__**',msg.guild.createdAt.toLocaleString())
-      msg.channel.send({embed:embed});
-    }
-  });
 
+
+  bot.on("message", async message => {
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return;
+  let prefix = botconfig.prefix;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray.slice(1);
+
+if(cmd === `${prefix}server`);
+let sicon = message.guild.displyAvatarURL;
+let serverEmbed = new Discord.RichEmbed()
+.setDescription("``Server Information``")
+.addField("Server Name", message.guild.name)
+.addField("Created On", message.guild.createdAt)
+.addField("You Joined", message.member.joinedAt)
+.addField("Total Members", message.guild.memberCount)
+.addField("Server Owner", message.guild.owner.user.username)
+.addField("Rooms", message.guild.channels.size)
+.addField("Roles", message.guild.roles.size)
+.addField("Region", message.guild.region)
+.addField("Server ID", message.guild.id);
+
+return message.channel.send(serverEmbed);
+})
 
 
 
