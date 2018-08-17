@@ -1117,12 +1117,6 @@ const Love = [  "**احبك / عدد قطرات المـــطر والشجر و
 
 
   bot.on("message", async message => {
-  if(message.author.bot) return;
-  if(message.channel.type === "dm") return;
-  let prefix = botconfig.prefix;
-  let messageArray = message.content.split(" ");
-  let cmd = messageArray.slice(1);
-
 if(cmd === `${prefix}server`);
 let sicon = message.guild.displyAvatarURL;
 let serverEmbed = new Discord.RichEmbed()
