@@ -1850,7 +1850,8 @@ client.on("message", message => {
 
 
 client.on('message', message => {
-    if (message.content.startsWith("=server")) {
+    if (message.content.startsWith("=server")) 
+    if(!message.channel.guild) return message.reply('** This command only for servers**');
     message.channel.send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
