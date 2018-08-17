@@ -1847,6 +1847,32 @@ client.on("message", message => {
    }
    });
 
+
+
+client.on('message', message => {
+    if (message.content.startsWith("=server")) {
+    message.channel.send({
+        embed: new Discord.RichEmbed()
+            .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('RANDOM')
+            .setDescription("``Server Information``")
+            .addField("Server Name", message.guild.name)
+            .addField("Created On", message.guild.createdAt)
+            .addField("You Joined", message.member.joinedAt)
+            .addField("Total Members", message.guild.memberCount)
+            .addField("Server Owner", message.guild.owner.user.username)
+            .addField("Rooms", message.guild.channels.size)
+            .addField("Roles", message.guild.roles.size)
+            .addField("Region", message.guild.region)
+            .addField("Server ID", message.guild.id)
+    })
+}
+});
+
+
+
+
    client.on('message', msg => {
   //Code By : ‡ ♪ ℬℐℓѦℓ✋ ‡#2026
   if(msg.content.startsWith('=suggest')) {
