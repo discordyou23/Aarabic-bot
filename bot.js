@@ -1867,7 +1867,6 @@ client.on('message', message => {
             .addField("⛎Roles⛎", message.guild.roles.size)
             .addField("➿Region➿", message.guild.region)
     })
-}
 });
 
 
