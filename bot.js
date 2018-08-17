@@ -1116,23 +1116,7 @@ const Love = [  "**احبك / عدد قطرات المـــطر والشجر و
 
 
 
-  bot.on("message", async message => {
-if(cmd === `${prefix}server`);
-let sicon = message.guild.displyAvatarURL;
-let serverEmbed = new Discord.RichEmbed()
-.setDescription("``Server Information``")
-.addField("Server Name", message.guild.name)
-.addField("Created On", message.guild.createdAt)
-.addField("You Joined", message.member.joinedAt)
-.addField("Total Members", message.guild.memberCount)
-.addField("Server Owner", message.guild.owner.user.username)
-.addField("Rooms", message.guild.channels.size)
-.addField("Roles", message.guild.roles.size)
-.addField("Region", message.guild.region)
-.addField("Server ID", message.guild.id);
 
-return message.channel.send(serverEmbed);
-})
 
 
 
