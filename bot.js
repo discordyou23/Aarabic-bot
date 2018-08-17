@@ -190,6 +190,19 @@ client.on('message', message => {
 
 
 
+client.on('message', message => {
+       if (message.content.startsWith(prefix + 'users1')) {
+     let msg =  client.guilds.map(guild => `**${guild.name}** عدد الاعضاء: ${guild.memberCount}`).join('\n');
+  let embed = new Discord.RichEmbed()
+  .setTitle(`${client.guilds.size}سيرفرات `)
+  .setDescription(`${msg}`)
+  .setColor("#00ff47");
+  message.channel.send(embed);
+}
+});
+
+
+
 
 
 client.on('message', function(message) {
@@ -302,6 +315,7 @@ client.on("message", message => {
 	  .addField('❖-|=say', `🎆البوت يكرر الكلام الي انت تقوله بدون امبد📝`)
 	  .addField('❖-|=ping', `🎆يقلك كم بنق البوت🎇`)
           .addField('❖-|=support', `🎊سيرفر الدعم حق البوت🎉`)
+  	  .addField('❖-|=users1', `🎆يعرض لك جميع السيرفراا الموجودة بلبوت📝`)
 	  .addField('❖-|=image', `📷يعرض صورة سيرفر⛺`)
 	  .addField('❖-|=members', `👥حاله الاعضاء👥`)
           .addField('❖-|=credits', `👑عشان تشوف الكردتس الخاصة بك👑`)
