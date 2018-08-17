@@ -1119,7 +1119,6 @@ client.on('message', function(msg) {
     if(msg.content.startsWith (prefix  + 'server')) {
       let embed = new Discord.RichEmbed()
       .setColor('#00ff47')
-      .setThumbnail(msg.guild.iconURL)
       .setTitle(`Showing Details Of  **${msg.guild.name}*`)
       .addField('🌐** نوع السيرفر**',`[** __${msg.guild.region}__ **]`,true)
       .addField('🏅** __الرتب__**',`[** __${msg.guild.roles.size}__ **]`,true)
