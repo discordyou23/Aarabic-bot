@@ -1865,7 +1865,7 @@ client.on('message', message => {
             .addField("🔱Rooms🔱", message.guild.channels.size)
             .addField("⛎Roles⛎", message.guild.roles.size)
             .addField("➿Region➿", message.guild.region)
-	    .addFiled("👑BomBot👑")
+	    .addFooter("👑BomBot👑")
     })
 }
 });
