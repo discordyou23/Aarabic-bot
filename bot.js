@@ -2782,11 +2782,11 @@ const item = type[Math.floor(Math.random() * type.length)];
 const filter = response => {
     return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
 };
-message.channel.send('**👑لديك 15 ثانية يلا ركز يا بطل👑**').then(msg => {
+message.channel.send('**👑لديك 30 ثانية يلا ركز يا بطل👑**').then(msg => {
 
             
 msg.channel.send(`${item.type}`).then(() => {
-        message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
+        message.channel.awaitMessages(filter, { maxMatches: 1, time: 30000, errors: ['time'] })
         .then((collected) => {
         message.channel.send(`${collected.first().author} ✅ **والله أنك ذكي وحش يا بطل**`);
         console.log(`[Typing] ${collected.first().author} typed the word.`);
