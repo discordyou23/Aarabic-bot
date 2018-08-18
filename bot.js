@@ -393,7 +393,7 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('© BOMbot جميع الحقوق محفوظة 2018 لــبوت')
-      .addField('سيرفر الدعم الفني', `https://discord.gg/C8gTBkx`)
+      .addField('سيرفر الدعم الفني', `https://discord.gg/CXE42RP`)
   message.author.send({embed});
       message.channel.send(":white_check_mark: | Check Your DM تم الأرسال بلخاص")
  }
