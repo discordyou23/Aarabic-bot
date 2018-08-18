@@ -2437,6 +2437,25 @@ client.on('message', message => {
 	  
 
 
+client.on('guildMemberRemove', member => {
+    var embed = new Discord.RichEmbed()
+    .setAuthor(member.user.username, member.user.avatarURL)
+    .setThumbnail(member.user.avatarURL)
+    .setTitle(`😢Left The Server|خرج من السيرفر😢`)
+    .setDescription(`👋Good Bay|الله معاك👋`)
+    .addField('🔢👥STAY|تبقى👥🔢',`**[ ${member.guild.memberCount} ]**`,true)
+    .addFiled('👑Hope you come back again|نتمنى أن تعود مرة أخرى👑')
+    .setColor('RANDOM')
+    .setFooter(`👑BomBot♧|بوم بوت👑`, '')
+
+var channel =member.guild.channels.find('name', 'welcome')
+if (!channel) return;
+channel.send({embed : embed});
+});
+
+
+
+
 
 
 client.on('message', message => {
