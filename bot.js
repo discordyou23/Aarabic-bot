@@ -266,7 +266,7 @@ client.on("message", message => {
  if (message.content === "=help-admin") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setField('👑اوامر الادمنيه👑')
+      .setDescription('👑أوامر الأدمن👑')
 	  .addField('❖-|=msgserver', `📑لخاصية البرودكستات📑`)
 	  .addField('❖-|=kick', `🚫لخاصية طرد🚫`)
 	  .addField('❖-|=ban', `⚠عشان تعطي احد حظر من سيرفر للابد⚠`)
@@ -297,7 +297,6 @@ client.on("message", message => {
  if (message.content === "=help-public") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-           .setField('🚹اوامر الاعضاء🚹')
           .addField('❖-|=invite', `👑لاضافة البوت الى سيرفرك💯`)
   	  .addField('❖-|=bot', `🔱لمعرفة معلومات البوت🅱`)
 	  .addField('❖-|=roles', `👑لمعرفة الرتب الي في السيرفر🔱`)
@@ -332,7 +331,6 @@ client.on("message", message => {
  if (message.content === "=help-games") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setField('🎮الالعاب🎮')
           .addField('❖-|=صراحة🎮', `لعبة صراحه🎮`)
           .addField('❖-|=عواصم🎮', `لعبة عواصم🎮`)
 	  .addField('❖-|=عقاب🎮', `لعبة عقاب🎮`)
@@ -2094,7 +2092,6 @@ client.on("message", message => {
  if (message.content === "=help-music") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setFooter('اوامر الموسيقى')
 	  .addField('❖-|=play', `🎸لتشغيل أغنية برآبط أو بأسم🎵`)
 	  .addField('❖-|=skip', `♠لتجآوز الأغنية الحآلية🎺`)
 	  .addField('❖-|=pause', `🚩إيقآف الأغنية مؤقتا💯`)
@@ -2115,7 +2112,6 @@ client.on("message", message => {
  if (message.content === "=help-welcome") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setFooter('👋welcome👋')
 	  .addField('❖-|=wlc 1', `👋يخلي البوت يرسل لك ترحيب بشكل حلو👋`)
 	  .addField('❖-|=wlc 2', `👑يخلي البوت يرسل لك ترحيب بشكل تاني خورافي👑`)
 	  .addField('❖-|=wlc 3', `👋يخلي البوت يرسل لك ترحيب بشكل غير الي فاتوا👋`)
