@@ -2443,7 +2443,7 @@ client.on('guildMemberRemove', member => {
     .setThumbnail(member.user.avatarURL)
     .setTitle(`😢Left The Server|خرج من السيرفر😢`)
     .setDescription(`👋Good Bay|الله معاك👋`)
-    .addField('🔢👥STAY|تبقى👥🔢',`**[ ${member.guild.memberCount} ]**`,true)
+    .addField('🔢👥STAY|تبقى👥🔢',`**🔱 ${member.guild.memberCount} 🔱**`,true)
     .addFiled('👑Hope you come back again|نتمنى أن تعود مرة أخرى👑')
     .setColor('RANDOM')
     .setFooter(`👑BomBot♧|بوم بوت👑`, '')
