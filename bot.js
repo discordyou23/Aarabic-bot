@@ -2443,10 +2443,12 @@ client.on('guildMemberRemove', member => {
     .setThumbnail(member.user.avatarURL)
     .setTitle(`😢Left The Server|خرج من السيرفر😢`)
     .setDescription(`👋Good Bay|الله معاك👋`)
+    .addField('server|السيرفر',`**👑 ${guild.name} 👑**`,true)
     .addField('🔢👥STAY|تبقى👥🔢',`**🔱 ${member.guild.memberCount} 🔱**`,true)
     .addField('👑Hope you come back again|نتمنى أن تعود مرة أخرى👑')
     .setColor('RANDOM')
     .setFooter(`👑BomBot♧|بوم بوت👑`, '')
+    .setFooter(`🚩By FoFo🚩`, '')
 
 var channel =member.guild.channels.find('name', 'welcome')
 if (!channel) return;
