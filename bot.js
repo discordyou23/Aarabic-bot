@@ -266,7 +266,7 @@ client.on("message", message => {
  if (message.content === "=help-admin") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setFooter('اوامر الادمنيه')
+      .setField('👑اوامر الادمنيه👑')
 	  .addField('❖-|=msgserver', `📑لخاصية البرودكستات📑`)
 	  .addField('❖-|=kick', `🚫لخاصية طرد🚫`)
 	  .addField('❖-|=ban', `⚠عشان تعطي احد حظر من سيرفر للابد⚠`)
@@ -297,7 +297,7 @@ client.on("message", message => {
  if (message.content === "=help-public") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-           .setFooter('🚹اوامر الاعضاء🚹')
+           .setField('🚹اوامر الاعضاء🚹')
           .addField('❖-|=invite', `👑لاضافة البوت الى سيرفرك💯`)
   	  .addField('❖-|=bot', `🔱لمعرفة معلومات البوت🅱`)
 	  .addField('❖-|=roles', `👑لمعرفة الرتب الي في السيرفر🔱`)
@@ -332,7 +332,7 @@ client.on("message", message => {
  if (message.content === "=help-games") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setFooter('🎮الالعاب🎮')
+      .setField('🎮الالعاب🎮')
           .addField('❖-|=صراحة🎮', `لعبة صراحه🎮`)
           .addField('❖-|=عواصم🎮', `لعبة عواصم🎮`)
 	  .addField('❖-|=عقاب🎮', `لعبة عقاب🎮`)
@@ -341,7 +341,7 @@ client.on("message", message => {
           .addField('❖-|=حب🎮', `لعبة الحب🎮`)
 	  .addField('❖-|=كت تويت🎮', `لعبة كت تويت🎮`)
 	  .addField('❖-|=لو خيروك🎮', `لعبة لو خيروك🎮`)
-          .addFiled('❖-|=قرعة🎮', `لاستعمال القرعة🎮`)
+          .addField('❖-|=قرعة🎮', `لاستعمال القرعة🎮`)
           .addField('❖-|=فكك🎮', `لعبة فكك🎮`)
           .addField('❖-|=رياضيات🎮', `لعبة الرياضيات🎮`)
           .addField('❖-|=solts🎮', `لعبة الإيموجي🎮`)
@@ -1202,22 +1202,6 @@ let args = message.content.split(" ").slice(1);
 
 
 
-client.on('guildMemberRemove', member => {
-    var embed = new Discord.RichEmbed()
-    .setAuthor(member.user.username, member.user.avatarURL)
-    .setThumbnail(member.user.avatarURL)
-    .setTitle(`😣خرج عضو`)
-    .setDescription(`👋الى اللقاء...`)
-    .addField(':bust_in_silhouette:   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
-    .setImage('https://cdn.discordapp.com/attachments/478086091316920320/478336330862952458/8b1f57f07166580f.png')
-    .setColor('RED')
-    .setFooter(`BomBot`, '')
-var channel =member.guild.channels.find('name', 'welcome')
-if (!channel) return;
-channel.send({embed : embed});
-});
-
-
 
 
 client.on('message', message => {
@@ -1810,7 +1794,7 @@ client.on("message", message => {
       .setColor("RANDOM")
       .setDescription(`
 
-             Please Choose:
+👑Commands BomBot♧|أوامر البوت الأسطورية👑
 
 ─════════════ {✯BomBot✯} ════════════─
 ❧ =help-admin ➺ 🔰اوامر الادارة🔰
