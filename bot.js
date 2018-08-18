@@ -297,6 +297,7 @@ client.on("message", message => {
  if (message.content === "=help-public") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
+      .setDescription('👑أوامر الأعضاء👑')
           .addField('❖-|=invite', `👑لاضافة البوت الى سيرفرك💯`)
   	  .addField('❖-|=bot', `🔱لمعرفة معلومات البوت🅱`)
 	  .addField('❖-|=roles', `👑لمعرفة الرتب الي في السيرفر🔱`)
@@ -331,6 +332,7 @@ client.on("message", message => {
  if (message.content === "=help-games") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
+      .setDescription('👑اوامر الألعاب👑')
           .addField('❖-|=صراحة🎮', `لعبة صراحه🎮`)
           .addField('❖-|=عواصم🎮', `لعبة عواصم🎮`)
 	  .addField('❖-|=عقاب🎮', `لعبة عقاب🎮`)
@@ -2092,6 +2094,7 @@ client.on("message", message => {
  if (message.content === "=help-music") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
+      .setDescription('👑أوامر الموسيقى👑')
 	  .addField('❖-|=play', `🎸لتشغيل أغنية برآبط أو بأسم🎵`)
 	  .addField('❖-|=skip', `♠لتجآوز الأغنية الحآلية🎺`)
 	  .addField('❖-|=pause', `🚩إيقآف الأغنية مؤقتا💯`)
@@ -2101,7 +2104,6 @@ client.on("message", message => {
           .addField('❖-|=nb', `🎼لمعرفة الأغنية المشغلة حآليا🎷`)
           .addField('❖-|=queue', `🎸لمعرفة قآئمة التشغيل🎤`)
           .addField('❖-|=music', `🔰لأرسال الأوامر بلشات🔰`)
-      .setFooter('BOM BOT')
   message.author.send({embed});
       message.channel.send(":white_check_mark: | Check Your DM تم الأرسال بلخاص")
 
@@ -2112,7 +2114,8 @@ client.on("message", message => {
  if (message.content === "=help-welcome") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-	  .addField('❖-|=wlc 1', `👋يخلي البوت يرسل لك ترحيب بشكل حلو👋`)
+        .setDescription('👑أوامر الترحيب👑')
+	.addField('❖-|=wlc 1', `👋يخلي البوت يرسل لك ترحيب بشكل حلو👋`)
 	  .addField('❖-|=wlc 2', `👑يخلي البوت يرسل لك ترحيب بشكل تاني خورافي👑`)
 	  .addField('❖-|=wlc 3', `👋يخلي البوت يرسل لك ترحيب بشكل غير الي فاتوا👋`)
 	  .addField('❖-|=wlc 4', `👑يخلي البوت يرسل لك ترحيب بشكل اخر و خورافي مرة👑`)
