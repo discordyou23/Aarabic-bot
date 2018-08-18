@@ -2434,7 +2434,31 @@ client.on('message', message => {
 });
 
 	  
-	  
+
+
+
+client.on('guildMemberAdd', member => {
+    let channel = member.guild.channels.find('name', 'welcome');
+    let memberavatar = member.user.avatarURL
+      if (!channel) return;
+    let embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(memberavatar)
+        .addField('🔱Name/أسمك🔱',`${member}`)
+        .addField('👑Welcome To server/أهلآ بك بسيرفرنا👑',`${member}`)
+        .addField('🆔ID/الأيديℹ', "**🆔" + `${member.id}` + "🆔**" )
+        .addField('❇Member number/عضو رقم✨',`${member.guild.memberCount}`)
+        .addField('🚩Server/السيرفر🚩', `${member.guild.name}`,true)
+        .setFooter("〽Welcome-By-BomBot☆〽")
+        .setTimestamp()
+   
+      channel.sendEmbed(embed);
+    });
+
+
+
+
+
 
 
 client.on('guildMemberRemove', member => {
