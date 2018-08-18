@@ -2687,11 +2687,11 @@ if(message.content.startsWith("=solts")) {
 
   client.on('message', message => {
 if(message.content.startsWith("=حجرة")) {
-  let slot1 = ['ورقة', 'حجرة', 'مقص'];
+  let slot1 = ['✂ورقة📄', '🗿حجرة🗿', '✂مقص📄'];
   let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
   let we;
   if(slots1) {
-    we = "😀لقد ربحت يا بطل😀"
+    we = "🎮ألعب مرة آخرى🎮"
   } else {
     we = "😣لقد خسرت حظ آوفر😣"
   }
@@ -2703,11 +2703,11 @@ if(message.content.startsWith("=حجرة")) {
 
   client.on('message', message => {
 if(message.content.startsWith("=ورقة")) {
-  let slot1 = ['ورقة', 'حجرة', 'مقص'];
+  let slot1 = ['✂ورقة📄', '🗿حجرة🗿', '✂مقص📄'];
   let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
   let we;
   if(slots1) {
-    we = "😀لقد ربحت يا بطل😀"
+    we = "🎮ألعب مرة آخرى🎮"
   } else {
     we = "😣لقد خسرت حظ آوفر😣"
   }
@@ -2719,11 +2719,11 @@ if(message.content.startsWith("=ورقة")) {
 
   client.on('message', message => {
 if(message.content.startsWith("=مقص")) {
-  let slot1 = ['ورقة', 'حجرة', 'مقص'];
+  let slot1 = ['✂ورقة📄', '🗿حجرة🗿', '✂مقص📄'];
   let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
   let we;
   if(slots1) {
-    we = "😀لقد ربحت يا بطل😀"
+    we = "🎮ألعب مرة آخرى🎮"
   } else {
     we = "😣لقد خسرت حظ آوفر😣"
   }
