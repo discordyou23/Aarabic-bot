@@ -2446,8 +2446,7 @@ client.on('guildMemberRemove', member => {
     .addField('🔢👥STAY|تبقى👥🔢',`**🔱 ${member.guild.memberCount} 🔱**`,true)
     .addField('👑Hope you come back again|نتمنى أن تعود مرة أخرى👑')
     .setColor('RANDOM')
-    .setFooter(`👑BomBot♧|بوم بوت👑`, '')
-    .setFooter(`🚩By FoFo🚩`, '')
+    .setFooter(`👑BomBot♧|بوم بوت|By FoFo👑`, '')
 
 var channel =member.guild.channels.find('name', 'welcome')
 if (!channel) return;
