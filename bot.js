@@ -106,7 +106,6 @@ client.on('message', msg => {
   });;
 
 
-
   client.on('message', msg => {//msg
     if (msg.content === '=invite') {
       msg.channel.send({file : "https://cdn.discordapp.com/attachments/477954433834024967/478003277070598145/07791388c7b353b7.png"})
@@ -363,6 +362,26 @@ client.on("message", message => {
 		   message.channel.send(":white_check_mark: | Check Your DM! تم الأرسال بلخاص")
 		   message.author.send({embed})
 	   }
+   });
+
+
+
+
+ client.on("message", message => {
+    var prefix = "=";
+ if (message.content === "=help-use") {
+  const embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setDescription(`
+─════════════ {✯BomBot♧✯} ════════════─
+❖-|welcome|🚩لتفعيل أمر الترحيب أنشاء غرفة أسمها welcome🚩
+❖-|welcomeleft|🚩لتفيل امر المغادرة أنشاء غرفة أسمها welcome🚩
+❖-|warn|🚩لتفعيل أمر الأنذار أنشأ غرفة أسمها warns🚩
+❖-|suggest|🚩لتفعيل الريبورت أنشاء غرفة أسمها suggestions🚩
+─════════════ {✯BomBot♧✯} ════════════─
+      `)
+   message.channel.sendEmbed(embed)
+    }
    });
 
 
@@ -1805,6 +1824,8 @@ client.on("message", message => {
 
 ❧ =help-music ➺ 🎵اوامر الاغاني🎶
 
+❧ =help-use ➺🚩للمزيد من المعلومات للبوت🚩
+
 ❧ =help-welcome ➺ 👋معلومات الترحيب في البوت👋
 ─════════════ {✯BomBot✯} ════════════─
       `)
@@ -1812,6 +1833,7 @@ client.on("message", message => {
 
    }
    });
+
 
 
 
@@ -2449,6 +2471,7 @@ client.on('guildMemberAdd', member => {
         .addField('🆔ID/الأيديℹ', "**🆔" + `${member.id}` + "🆔**" )
         .addField('❇Member number/عضو رقم✨',`${member.guild.memberCount}`)
         .addField('🚩Server/السيرفر🚩', `${member.guild.name}`,true)
+        .addImage('https://cdn.discordapp.com/attachments/419600604000681995/480459158722707479/1534620753874.png')
         .setFooter("〽Welcome-By-BomBot☆〽")
         .setTimestamp()
    
