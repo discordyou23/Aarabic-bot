@@ -2741,7 +2741,6 @@ msg.channel.send(`${item.type}`).then(() => {
 
 bot.on("guildMemberAdd", member => {
       const welcomer = bot.channels.get("477252957503750188");
-      let welcomer = member.guild.channels.find("name","welcome");
       if(!welcomer) return;
       if(welcomer) {
          moment.locale('ar-ly');
