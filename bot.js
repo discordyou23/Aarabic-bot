@@ -267,7 +267,6 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('اوامر الادمنيه')
-          .addField('─════════════ {✯أوامر الأدمن✯} ════════════─')
 	  .addField('❖-|=msgserver', `📑لخاصية البرودكستات📑`)
 	  .addField('❖-|=kick', `🚫لخاصية طرد🚫`)
 	  .addField('❖-|=ban', `⚠عشان تعطي احد حظر من سيرفر للابد⚠`)
@@ -288,7 +287,6 @@ client.on("message", message => {
                 .addField('❖-|=info', `🔰عشان تشوف الرتبة الموضوعة في الAutorole🔰`)
                 .addField('❖-|=mutechannel', `🔱عشان تخلي ما فيه احد يقدر يكتب في الروم المحدد🔱`)
                 .addField('❖-|=unmutechannel', `♈عشان ترجع الناس تقدر تكتب في الروم الي كتمته♈`)
-          .addField('─════════════ {✯أوامر الأدمن✯} ════════════─')
   message.author.send({embed});
       message.channel.send(":white_check_mark: | Check Your DM تم الأرسال بلخاص")
  }
@@ -300,8 +298,6 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
            .setFooter('🚹اوامر الاعضاء🚹')
-          .addField('─════════════ {✯أوامر الأعضاء✯} ════════════─')
-          .addField('❖-|log', `🚩ساوي غرفة أسمها log لحماية سيرفرك💯`)
           .addField('❖-|=invite', `👑لاضافة البوت الى سيرفرك💯`)
   	  .addField('❖-|=bot', `🔱لمعرفة معلومات البوت🅱`)
 	  .addField('❖-|=roles', `👑لمعرفة الرتب الي في السيرفر🔱`)
@@ -325,7 +321,6 @@ client.on("message", message => {
           .addField('❖-|=botinfo', `🚩عشان تعرف معلومات البوت🚩`)
           .addField('❖-|=color', `✴عشان تغير لونك ولازم يكون فيه رتب باسم الالوان حقة القلوب الي في صورة الامر اسماء الالوان احمر red اصفر yellow بنفسجي y2 ازرق لبني y3 اخضر y1 اسود black✴`)
           .addField('❖-|=cat', `😍يجبلك صورة قطة🐱`)
-          .addField('─════════════ {✯أوامر الأعضاء✯} ════════════─')
   message.author.send({embed});
       message.channel.send(":white_check_mark: | Check Your DM تم الأرسال بلخاص")
  }
@@ -338,7 +333,6 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setFooter('🎮الالعاب🎮')
-          .addField('─════════════ {✯أوامر الألعاب✯} ════════════─')
           .addField('❖-|=صراحة🎮', `لعبة صراحه🎮`)
           .addField('❖-|=عواصم🎮', `لعبة عواصم🎮`)
 	  .addField('❖-|=عقاب🎮', `لعبة عقاب🎮`)
@@ -351,7 +345,6 @@ client.on("message", message => {
           .addField('❖-|=فكك🎮', `لعبة فكك🎮`)
           .addField('❖-|=رياضيات🎮', `لعبة الرياضيات🎮`)
           .addField('❖-|=solts🎮', `لعبة الإيموجي🎮`)
-          .addField('─════════════ {✯أوامر الألعاب✯} ════════════─')
   message.author.send({embed});
       message.channel.send(":white_check_mark: | Check Your DM تم الأرسال بلخاص")
  }
@@ -2478,49 +2471,6 @@ message.channel.sendEmbed(embed);
 
 
 
-
-
-client.on('guildMemberAdd', member => {
-
-    let channel = member.guild.channels.find('name', 'welcome');
-
-    let memberavatar = member.user.avatarURL
-
-      if (!channel) return;
-
-    let embed = new Discord.RichEmbed()
-
-        .setColor('#00ff47')
-
-        .setThumbnail(memberavatar)
-
-        .addField('?? | اسمك: ',`${member}`)
-
-        .addField('??|اطلق من دخل' , `منور السيرفر, ${member}`)
-
-        .addField('?? |ايديك:', "**[" + `${member.id}` + "]**" )
-
-                .addField('?|عضو رقم',`${member.guild.memberCount}`)
-
-               
-
-                  .addField("Name:",`<@` + `${member.id}` + `>`, true)
-
-                     
-
-                                     .addField(' الـسيرفر', `${member.guild.name}`,true)
-
-                                       
-
-     .setFooter("Welcome")
-
-        .setTimestamp()
-
-   
-
-      channel.sendEmbed(embed);
-
-    });
 
 
 	  
