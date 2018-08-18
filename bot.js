@@ -1824,9 +1824,9 @@ client.on("message", message => {
 
 ❧ =help-music ➺ 🎵اوامر الاغاني🎶
 
-❧ =help-use ➺🚩للمزيد من المعلومات للبوت🚩
-
 ❧ =help-welcome ➺ 👋معلومات الترحيب في البوت👋
+
+❧ =help-use ➺🚩للمزيد من المعلومات للبوت🚩
 ─════════════ {✯BomBot✯} ════════════─
       `)
    message.channel.sendEmbed(embed)
@@ -2471,7 +2471,6 @@ client.on('guildMemberAdd', member => {
         .addField('🆔ID/الأيديℹ', "**🆔" + `${member.id}` + "🆔**" )
         .addField('❇Member number/عضو رقم✨',`${member.guild.memberCount}`)
         .addField('🚩Server/السيرفر🚩', `${member.guild.name}`,true)
-        .addImage('https://cdn.discordapp.com/attachments/419600604000681995/480459158722707479/1534620753874.png')
         .setFooter("〽Welcome-By-BomBot☆〽")
         .setTimestamp()
    
