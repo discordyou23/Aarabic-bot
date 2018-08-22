@@ -12,27 +12,15 @@ client.on('message', message => {
 });
 
 
-
-
-
-
-client.on('ready', function(){    
-    var ms = 150000 ;    // السرعة لا  تغيرها عشان ما تتبند 
-    var setGame = [`=help|المستخدمينusers -> ${client.users.size}`,`=help | =invite | =support`,`=help|السيرفراتservers -> ${client.guilds.size}`];    // لا تلعب بشيء
-    var i = -1;    
-    var j = 0;    
-    setInterval(function (){    
-        if( i == -1 ){    
-j = 1;    
-       }    
-        if( i == (setGame.length)-1 ){    
-            j = -1;    
-      }    
-       i = i+j;    
-        client.user.setGame(setGame[i],`https://www.twitch.tv/v5bz`);    // حقوقنا فضلا اتركها وشائنها
-}, ms);    
-    
+client.on('ready', () => {
+client.user.setGame(`=help | users : ${client.users.size} | servers : ${client.guilds.size}`,'https://www.twitch.tv/v5bz');
 });
+
+
+
+
+
+
 
 
 client.on('message', msg => {
