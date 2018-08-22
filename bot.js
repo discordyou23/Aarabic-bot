@@ -18,7 +18,7 @@ client.on('message', message => {
 
 client.on('ready', function(){    
     var ms = 150000 ;    // السرعة لا  تغيرها عشان ما تتبند 
-    var setGame = [`=help|users : ${client.users.size}`,`=help | =invite | =support`,`=help|servers : ${client.guilds.size}`];    // لا تلعب بشيء
+    var setGame = [`=help|المستخدمينusers -> ${client.users.size}`,`=help | =invite | =support`,`=help|السيرفراتservers -> ${client.guilds.size}`];    // لا تلعب بشيء
     var i = -1;    
     var j = 0;    
     setInterval(function (){    
