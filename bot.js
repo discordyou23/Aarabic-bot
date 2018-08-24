@@ -3367,7 +3367,7 @@ const prefix = '='
 		
 		
 
-	client.on('message', message => {
+client.on('message', message => {
     let args = message.content.split(' ').slice(1);
 if(message.content.split(' ')[0] == '=color'){
      const embedd = new Discord.RichEmbed()
