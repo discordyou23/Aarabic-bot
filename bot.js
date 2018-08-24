@@ -3076,27 +3076,13 @@ msg.channel.send(`${item.type}`).then(() => {
 
 
 	client.on('message', msg => {
-    if (msg.content === '%colors') {
+    if (msg.content === '=colors') {
       msg.channel.send({file : "https://cdn.discordapp.com/attachments/470638175254216716/482679181553958922/1535149909407.png"})
     }
   });
 
 
-        .setThumbnail(myUser.avatarURL)
-        .addField('- Banned User:',`**${myUser.username}**`,true)
-        .addField('- Banned By:',`**${exec}**`,true)
-        .setFooter(myUser.username,myUser.avatarURL)
-            .setTimestamp();
-          log.send(embed).catch(e => {
-            console.log(e);
-          });
-          });
-        } catch (e) {
-          console.log(e);
-        }
-      });
-  }, 1000);
-});
+
 
 
 client.on('message', message => {
