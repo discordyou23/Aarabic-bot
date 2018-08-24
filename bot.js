@@ -3350,7 +3350,7 @@ const prefix = '='
           message.channel.sendMessage({embed: new Discord.RichEmbed()
      .setColor('#502faf').setAuthor(`${message.author.username}'`, message.author.avatarURL).setDescription('``تم انشاءالالوان``')});
     }
-	});    
+});    
 		
 		
 
