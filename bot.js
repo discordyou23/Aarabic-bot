@@ -3075,14 +3075,6 @@ msg.channel.send(`${item.type}`).then(() => {
 
 
 
-	client.on('message', msg => {
-    if (msg.content === '=colors') {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/470638175254216716/482679181553958922/1535149909407.png"})
-    }
-  });
-
-
-
 
 
 
