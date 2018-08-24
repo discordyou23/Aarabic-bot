@@ -91,7 +91,7 @@ client.on('message', msg => {
 
   client.on('message', msg => {//msg
     if (msg.content === '=help-games') {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/476028851030458368/482643305335750678/1535141472722.png})
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/476028851030458368/482643305335750678/1535141472722.png"})
     }
   });;
 
