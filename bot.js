@@ -270,9 +270,9 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription('👑أوامر الأدمن👑')
-	  .addField('❖-|=msgserver', `📑لخاصية البرودكستات📑`)
-	  .addField('❖-|=kick', `🚫لخاصية طرد🚫`)
-	  .addField('❖-|=ban', `⚠عشان تعطي احد حظر من سيرفر للابد⚠`)
+	  .addField('❖-|=msgserver |📑لخاصية البرودكستات📑')
+	  .addField('❖-|=kick      |🚫لخاصية طرد🚫')
+	  .addField('❖-|=ban       |⚠عشان تعطي احد حظر من سيرفر للابد⚠')
                 .addField('❖-=tempban', `🚩عشان تعطي احد حظر من السيرفر بمدة🕞`)
 	  .addField('❖-|=unban', `❌لفك الحظر من احد❎`)
 	  .addField('❖-|=bans', `✅عشان تشوف عدد المبندين في السيرفر✴`)
@@ -2509,6 +2509,19 @@ client.on("guildMemberAdd", (member) => {
  }
 
 
+		
+		
+		
+		
+		
+  client.on('guildMemberAdd', (member) => {
+  let channel = member.guild.channels.find('name', 'welcome');
+if(member.user.bot) {
+channel.send(`${member} ولكم يا عمو البوت`)
+}
+})	
+		
+		
 client.on('guildMemberRemove', member => {
     var embed = new Discord.RichEmbed()
     .setAuthor(member.user.username, member.user.avatarURL)
@@ -2518,7 +2531,6 @@ client.on('guildMemberRemove', member => {
     .addField('🔢👥STAY|تبقى👥🔢',`**🔱 ${member.guild.memberCount} 🔱**`,true)
     .addField('👑Hope you come back again|نتمنى أن تعود مرة أخرى👑')
     .setColor('RANDOM')
-    .setFooter(`👑BomBot♧|بوم بوت|By FoFo👑`, '')
 
 var channel =member.guild.channels.find('name', 'welcome')
 if (!channel) return;
