@@ -3555,7 +3555,7 @@ hours = 12;
 }
  
  
-const w = ['./img/20180806_230413.png'];
+const w = ['./20180806_230413.png'];
               let Image = Canvas.Image,
                   canvas = new Canvas(557, 241),
                   ctx = canvas.getContext('2d');
