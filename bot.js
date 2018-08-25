@@ -314,6 +314,7 @@ client.on("message", message => {
       .setColor("RANDOM")
       .setDescription('👑أوامر الأعضاء👑')
           .addField('❖-|=invite', `👑لاضافة البوت الى سيرفرك💯`)
+          .addField('❖-|=profile', `♣لتشوف ملفك الشخصي🌷`)
   	  .addField('❖-|=bot', `🔱لمعرفة معلومات البوت🅱`)
 	  .addField('❖-|=roles', `👑لمعرفة الرتب الي في السيرفر🔱`)
           .addField('❖-|=avatar', `🔰يجبلك الافتار حقك يعني صورة حسابك🔰`)
@@ -3199,7 +3200,7 @@ setInterval(function(){})
 		
 client.on('message', message => {
     
-if(message.content.split(' ')[0] == prefix + 'tid') {
+if(message.content.split(' ')[0] == prefix + 'profile') {
 if(!message.channel.guild) return;
 
 let args = message.content.split(' ').slice(1).join(' ');
