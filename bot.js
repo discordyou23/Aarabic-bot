@@ -2288,7 +2288,32 @@ client.on('guildMemberAdd', member => {
 
 
 
-
+client.on("guildMemberAdd", (member) => {
+    let channel = member.guild.channels.find('name', 'welcome');
+    if (!channel) {
+        console.log("!channel fails");
+        return;
+    }
+    if (member.id == client.user.id) {
+        return;
+    }
+    console.log('made it till here!');
+    var guild;
+    while (!guild)
+    guild = member.guild
+    guild.fetchInvites().then((data) => {
+        data.forEach((Invite, key, map) => {
+            var Inv = Invite.code;
+            if (dat[Inv])
+                if (dat[Inv] < Invite.uses) {
+                    console.log(3);
+                    console.log(`${member} joined over ${Invite.inviter}'s invite ${Invite.code}`)
+ channel.send(` ♥ **تم دعوته من قبل ${Invite.inviter} ♥ `)            
+ }
+            dat[Inv] = Invite.uses;
+        })
+    })
+});
 
 		
 		
@@ -2298,7 +2323,7 @@ client.on('guildMemberAdd', member => {
   client.on('guildMemberAdd', (member) => {
   let channel = member.guild.channels.find('name', 'welcome');
 if(member.user.bot) {
-channel.send(`${member} ولكم يا عمو البوت`)
+channel.send(`${member} 👑ولكم يا عمو البوت فرجينا مهاراتك بلأوامر😉`)
 }
 })	
 		
@@ -2358,9 +2383,9 @@ client.on('guildCreate', guild => {
 
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
-  return channel.send(`ولكم نورت السيرفر يا أسطورة 
-اسم العضو المحترم  ${member}
-انت العضو الأسطورة رقم ${member.guild.memberCount}`) 
+  return channel.send(`👑ولكم نورت السيرفر | Welcome To Server👑 
+اسم العضو المحترم |name member🌷  ${member}
+انت العضو الأسطورة رقم |you member number is👑 ${member.guild.memberCount}`) 
 }).catch(console.error)
 })
 
