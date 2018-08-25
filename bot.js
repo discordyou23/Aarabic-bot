@@ -3340,7 +3340,7 @@ let args = message.content.split(' ').slice(1).join(' ');
            defineduser = firstMentioned;
        }
 
-       const w = ['./PicsArt_08-25-10.07.30.jpg'];
+       const w = ['./id5.png','./id6.png'];
        var Canvas = require('canvas')
 var jimp = require('jimp')
 
