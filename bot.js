@@ -3564,6 +3564,8 @@ message.channel.sendFile(canvas.toBuffer())
 
 
 client.on('guildMemberAdd',async member => {
+const Canvas = require('canvas');
+const jimp = require('jimp');
   const w = ['./welcome_4.png'];
         let Image = Canvas.Image,
             canvas = new Canvas(800, 300),
