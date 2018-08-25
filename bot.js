@@ -3373,7 +3373,6 @@ if(message.content === prefix + "roomsall"){
 
           client.on('message', message => {
             if(message.content.startsWith(prefix + 'moveall')) {
-               if(!message.guild.member(client.user).hasPermission("MOVE_MEMBERS")) return message.reply("**لايوجد لدي صلاحية السحب**");
             if (message.member.voiceChannel == null) return message.channel.send(`**الرجاء الدخول لروم صوتي**`)
              var author = message.member.voiceChannelID;
              var m = message.guild.members.filter(m=>m.voiceChannel)
