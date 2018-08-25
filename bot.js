@@ -55,6 +55,13 @@ client.on('message', msg => {
   });;
   
  
+  client.on('message', msg => {//msg
+    if (msg.content === '=color') {
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/470638175254216716/482679181553958922/1535149909407.png"})
+    }
+  });;
+
+
 client.on('message', msg => {//msg
     if (msg.content === 'السلام عليكم') {
       msg.channel.send({file : "https://cdn.discordapp.com/attachments/477438358902276099/478177205164310529/004ca53f54b2ff2c.png"})
@@ -307,7 +314,7 @@ client.on("message", message => {
           .addField('❖-|=avatar', `🔰يجبلك الافتار حقك يعني صورة حسابك🔰`)
 	  .addField('❖-|=id', `🆔يجبلك الملف الشخصي حقك🆔`)
   	  .addField('❖-|=userinfo', `➿لمعرفة معلوماتك بلكامل🔱`)
-	 	  .addField('❖-|=servers', `➰يجبلك عدد السيرفرات التي البوت داخله➰`)
+          .addField('❖-|=servers', `➰يجبلك عدد السيرفرات التي البوت داخله➰`)
 	  .addField('❖-|=embed', `👑البوت يكرر الكلام الي انت تقوله بامبد👑`)
 	  .addField('❖-|=say', `🎆البوت يكرر الكلام الي انت تقوله بدون امبد📝`)
 	  .addField('❖-|=ping', `🎆يقلك كم بنق البوت🎇`)
@@ -322,7 +329,9 @@ client.on("message", message => {
           .addField('❖-|=suggest', `🔱لاقتراح شئ و لازم يكون فيه روم اسمه suggestions👑`)
           .addField('❖-|=uptime', `🕞عشان تشوف البوت شغال من متى🅱`)
           .addField('❖-|=botinfo', `🚩عشان تعرف معلومات البوت🚩`)
-          .addField('❖-|=color', `✴عشان تغير لونك ولازم يكون فيه رتب باسم الالوان حقة القلوب الي في صورة الامر اسماء الالوان احمر red اصفر yellow بنفسجي y2 ازرق لبني y3 اخضر y1 اسود black✴`)
+          .addField('❖-|=color', `🎨لعرض قائمة الالوانء🔱`)
+          .addField('❖-|=createcolors', `لعمل 50 لون`)
+          .addField('❖-|=setcolor', `لتحط ايا لون من هول الالوان اكتب الأمر و الرقم من 1 ل50 انت اختر`)
           .addField('❖-|=cat', `😍يجبلك صورة قطة🐱`)
   message.author.send({embed});
       message.channel.send(":white_check_mark: | Check Your DM تم الأرسال بلخاص")
@@ -3116,32 +3125,17 @@ const prefix = '='
 
 
 
-	client.on('message', async message => {
-		
-			let args = message.content.split(' ').slice(1);
-	if (message.content.startsWith("=deletecolors")) {
-		if(!message.member.hasPermission('ADMINISTRATOR')) return
-		let role = message.guild.roles.find('name', '1' , '2' , '3' , '4' , '5' , '6' , '7' , '8' , '9' , '10' , '11' , '12' , '13' , '14' , '15' , '16' , '17' , '18' , '19' , '20' , '21' , '22' , '23' , '24' , '25' , '26' , '27' , '28' , '29' , '30' , '31' , '32' , '33' , '34' , '35' , '36' , '37' , '38' , '39' , '40' , '41' , '42' , '43' , '44' , '45' , '46' , '47' , '48' , '49' , '50');
-		
-		role.delete()
-		}
-	
-	});
 
 
 
 
-	client.on('message', msg => {
-    if (msg.content === '=colors') {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/470638175254216716/482679181553958922/1535149909407.png"})
-    }
-  });
+
 client.on('message', message => {
     let args = message.content.split(' ').slice(1);
 if(message.content.split(' ')[0] == '=setcolor'){
      const embedd = new Discord.RichEmbed()
 .setFooter('Requested by '+message.author.username, message.author.avatarURL)
-.setDescription(`**There's No Color With This Number ** ❌ `)
+.setDescription(`**There's No Color With This Number لازم ان تختار رقم ملحوظة لازم تكون منزل الالوان** ❌ `)
 .setColor(`RAMDOM`)
 
 if(!isNaN(args) && args.length > 0)
