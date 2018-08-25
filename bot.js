@@ -3349,29 +3349,12 @@ setInterval(function(){})
 
 
 
-client.on('message', message => {
-    if(!message.channel.guild) return;
-if(message.content.startsWith(prefix + 'channelinfo')) {
-    let channel = message.channel
-    var embed = new Discord.RichEmbed()
-      .setTitle("Channel Info")
-      .setColor("#9932CC")
-      .setDescription(`Info about <#${channel.id}>\nChannel ID: ${channel.id}`)
-      .addField("Created At", `${channel.createdAt}`)
-      .addField("Channel Type", `${channel.type}`)
-      .addField("Extra Information", `Channel is NSFW => ${channel.nsfw}\nChannel Topic=> ${channel.topic}\nChannel Parent => ${channel.parent}\nChannel Position => ${channel.position}`)
- 
-     message.channel.send({ embed: embed });
-  }
- 
-    });
+
 
 
 
 client.on('message', message => {
-  if (message.content.startsWith("link")) {
-    if(!message.guild.member(client.user).hasPermission("CREATE_INSTANT_INVITE")) return message.reply("**I Don't Have `CREATE_INSTANT_INVITE` Permission**").then(msg => msg.delete(6000))
-
+  if (message.content.startsWith("=link")) {
       message.channel.createInvite({
         thing: true,
         maxUses: 100,
@@ -3404,7 +3387,6 @@ if(message.content === prefix + "roomsall"){
 
           client.on('message', message => {
             if(message.content.startsWith(prefix + 'moveall')) {
-             if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send('**لايوجد لديك صلاحية سحب الأعضاء**');
                if(!message.guild.member(client.user).hasPermission("MOVE_MEMBERS")) return message.reply("**لايوجد لدي صلاحية السحب**");
             if (message.member.voiceChannel == null) return message.channel.send(`**الرجاء الدخول لروم صوتي**`)
              var author = message.member.voiceChannelID;
