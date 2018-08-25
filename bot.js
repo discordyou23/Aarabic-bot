@@ -114,6 +114,11 @@ client.on('message', msg => {
     }
   });;
 
+  client.on('message', msg => {//msg
+    if (msg.content === '=link') {
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/476028851030458368/482643305335750678/1535141472722.png"})
+    }
+  });;
 
   client.on('message', msg => {//msg
     if (msg.content === '=help-welcome') {
@@ -294,6 +299,7 @@ client.on("message", message => {
           .addField('❖-|=unmute', `📄لفك الميوت عن شخص📇`)
           .addField('❖-|=untempmute', `🔱لفك الميوت عن شخص♍`)
           .addField('❖-|=report', `⚠عشان تبلغ عن شخص🔞`)
+          .addField('❖-|=moveall', `➰لنقل الكل الى غرفة صوتية جديدة👑`)
           .addField('❖-|=setchannel', `♉لأنشاء روم كتابي♎`)
           .addField('❖-|=setvoice', `♓لأنشاء روم صوتي♏`)
 	  .addField('❖-|=warn', `⚠عشان تعطي احد انظار و لكي يشتغل الامر سوي روم اسمه warns⚠`)
@@ -319,10 +325,14 @@ client.on("message", message => {
 	  .addField('❖-|=roles', `👑لمعرفة الرتب الي في السيرفر🔱`)
           .addField('❖-|=avatar', `🔰يجبلك الافتار حقك يعني صورة حسابك🔰`)
 	  .addField('❖-|=id', `🆔يجبلك الملف الشخصي حقك🆔`)
+  	  .addField('❖-|=channelinfo', `♣ليعطيك معلومات الغرفة🌷`)
+  	  .addField('❖-|=say', `🎆البوت يكرر الكلام الي انت تقوله بدون امبد📝`)
   	  .addField('❖-|=userinfo', `➿لمعرفة معلوماتك بلكامل🔱`)
           .addField('❖-|=servers', `➰يجبلك عدد السيرفرات التي البوت داخله➰`)
+          .addField('❖-|=roomsall', `🔰ليقلك اسماء الرومات الموجودة بسيرفر كلها👑`)
 	  .addField('❖-|=embed', `👑البوت يكرر الكلام الي انت تقوله بامبد👑`)
 	  .addField('❖-|=say', `🎆البوت يكرر الكلام الي انت تقوله بدون امبد📝`)
+  	  .addField('❖-|=link', `😊ليعطيك رابط السيرفر بلخاص😉`)
 	  .addField('❖-|=ping', `🎆يقلك كم بنق البوت🎇`)
           .addField('❖-|=support', `🎊سيرفر الدعم حق البوت🎉`)
   	  .addField('❖-|=users1', `🎆يعرض لك جميع السيرفراا الموجودة بلبوت📝`)
@@ -361,6 +371,10 @@ client.on("message", message => {
 	  .addField('❖-|=لو خيروك🎮', `لعبة لو خيروك🎮`)
           .addField('❖-|=قرعة🎮', `لاستعمال القرعة🎮`)
           .addField('❖-|=فكك🎮', `لعبة فكك🎮`)
+          .addField('❖-|=لغز🎮', `لعبة لغز🎮`)
+          .addField('❖-|=شقلب🎮', `لعبة شقلب🎮`)
+          .addField('❖-|=كتابة🎮', `لعبة كتابة🎮`)
+          .addField('❖-|=ركب🎮', `لعبة ركب🎮`)
           .addField('❖-|=رياضيات🎮', `لعبة الرياضيات🎮`)
           .addField('❖-|=solts🎮', `لعبة الإيموجي🎮`)
   message.author.send({embed});
@@ -2886,6 +2900,143 @@ msg.channel.send(`${item.type}`).then(() => {
 
 
 
+client.on('message', message => {
+if (!points[message.author.id]) points[message.author.id] = {
+    points: 0,
+  };
+if (message.content.startsWith(prefix + 'لغز')) {
+    if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
+
+const type = require('./gamesbombot/quiz.json');
+const item = type[Math.floor(Math.random() * type.length)];
+const filter = response => {
+    return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+};
+message.channel.send('**👑لديك 30 ثانية لحل هذا الغز👑**').then(msg => {
+
+            
+msg.channel.send(`${item.type}`).then(() => {
+        message.channel.awaitMessages(filter, { maxMatches: 1, time: 30000, errors: ['time'] })
+        .then((collected) => {
+        message.channel.send(`${collected.first().author} ✅ **الجواب صحيح صح عليك**`);
+        console.log(`[Typing] ${collected.first().author} typed the word.`);
+            let points = {}
+            let userData = points[message.author.id];
+            let userdata = require('./points.json');
+            userData.points++;
+          })
+          .catch(collected => {
+            message.channel.send(`🕓😀أنتهى الوقت أعد العب مرة آخرى😀🕓`);
+          })
+        })
+    })
+}
+});
+
+
+
+              client.on('message', message => {
+                if (!points[message.author.id]) points[message.author.id] = {
+                  points: 0,
+                  };
+                if (message.content.startsWith(prefix + 'ركب')) {
+                  if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
+                
+                const type = require('./gamesbombot/RKB.json');
+                const item = type[Math.floor(Math.random() * type.length)];
+                const filter = response => {
+                    return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+                };
+                message.channel.send('**لديك 20 ثانيه لتركيب الكلمه**').then(msg => {
+                
+                      
+                msg.channel.send(`${item.type}`).then(() => {
+                        message.channel.awaitMessages(filter, { maxMatches: 1, time: 20000, errors: ['time'] })
+                        .then((collected) => {
+                    message.channel.send(`${collected.first().author} ✅ **احسنت لقد تمكنت من تركيب الكلمه بسرعه**`);
+                    console.log(`[Typing] ${collected.first().author} typed the word.`);
+                            let won = collected.first().author;
+                            points[won.id].points++;
+                          })
+                          .catch(collected => {
+                            message.channel.send(`:x: **لم يتمكن احد من تركيب الكلمه في الوقت المناسب**`);
+                      console.log('[Typing] Error: No one type the word.');
+                          })
+                    })
+                  })
+                }
+                });
+
+
+
+            
+            client.on('message', message => {
+            if (!points[message.author.id]) points[message.author.id] = {
+                points: 0,
+              };
+            if (message.content.startsWith(prefix + 'شقلب')) {
+                if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
+            
+            const type = require('./gamesbombot/SHAKLEB.json');
+            const item = type[Math.floor(Math.random() * type.length)];
+            const filter = response => {
+                return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+            };
+            message.channel.send('**لديك 15 ثانيه لشقلبة الكلمه**').then(msg => {
+            
+                        
+            msg.channel.send(`${item.type}`).then(() => {
+                    message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
+                    .then((collected) => {
+                    message.channel.send(`${collected.first().author} ✅ **احسنت,لقد تمكنت من شقلبة الكلمة في الوقت المناسب**`);
+                    console.log(`[Typing] ${collected.first().author} typed the word.`);
+                        let won = collected.first().author;
+                        points[won.id].points++;
+                      })
+                      .catch(collected => {
+                        message.channel.send(`:x: **لم يتمكن احد من شقلبة الكلمه في الوقت المناسب**`);
+                        console.log('[Typing] Error: No one type the word.');
+                      })
+                    })
+                })
+            }
+            });
+
+
+
+                client.on('message', message => {
+                  if (!points[message.author.id]) points[message.author.id] = {
+                    points: 0,
+                    };
+                  if (message.content.startsWith(prefix + 'كتابة')) {
+                    if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
+                  
+                  const type = require('./gamesbombot/type.json');
+                  const item = type[Math.floor(Math.random() * type.length)];
+                  const filter = response => {
+                      return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+                  };
+                  message.channel.send('** لديك 15 ثانيه لكتابه هذه الكلمه بسرعة**').then(msg => {
+                  
+                        
+                  msg.channel.send(`${item.type}`).then(() => {
+                          message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
+                          .then((collected) => {
+                      message.channel.send(`${collected.first().author} ✅ **احسنت لقد تمكنت من كتابه هذه الكلمه بسرعه**`);
+                      console.log(`[Typing] ${collected.first().author} typed the word.`);
+                              let won = collected.first().author;
+                              points[won.id].points++;
+                            })
+                            .catch(collected => {
+                              message.channel.send(`:x: **لم يتمكن احد من كتابه هذه الكلمه في الوقت المناسب**`);
+                        console.log('[Typing] Error: No one type the word.');
+                            })
+                      })
+                    })
+                  }
+                  });
+
+
 
 client.on('message', message => {
 const prefix = '='	
@@ -3195,6 +3346,77 @@ setInterval(function(){})
       
 }
 });
+
+
+
+client.on('message', message => {
+    if(!message.channel.guild) return;
+if(message.content.startsWith(prefix + 'channelinfo')) {
+    let channel = message.channel
+    var embed = new Discord.RichEmbed()
+      .setTitle("Channel Info")
+      .setColor("#9932CC")
+      .setDescription(`Info about <#${channel.id}>\nChannel ID: ${channel.id}`)
+      .addField("Created At", `${channel.createdAt}`)
+      .addField("Channel Type", `${channel.type}`)
+      .addField("Extra Information", `Channel is NSFW => ${channel.nsfw}\nChannel Topic=> ${channel.topic}\nChannel Parent => ${channel.parent}\nChannel Position => ${channel.position}`)
+ 
+     message.channel.send({ embed: embed });
+  }
+ 
+    });
+
+
+
+client.on('message', message => {
+  if (message.content.startsWith("link")) {
+    if(!message.guild.member(client.user).hasPermission("CREATE_INSTANT_INVITE")) return message.reply("**I Don't Have `CREATE_INSTANT_INVITE` Permission**").then(msg => msg.delete(6000))
+
+      message.channel.createInvite({
+        thing: true,
+        maxUses: 100,
+        maxAge: 86400,
+  }).then(invite =>
+    message.author.sendMessage(invite.url)
+  )
+    message.channel.send("**:link: تم أرسال رابط السيرفر بلخاص**")
+  }
+});
+
+
+
+client.on('message', message => {
+if(message.content === prefix + "roomsall"){ 
+        if (message.author.bot) return
+                      if (!message.guild) return;
+ 
+        var channels = message.guild.channels.map(channels => `${channels.name}, `).join(' ')
+        const embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .addField(`${message.guild.name}`,`**Rooms:white_check_mark:**`)
+        .addField(':arrow_down: عدد الرومات. :heavy_check_mark:',`** ${message.guild.channels.size}**`)
+         
+.addField(':arrow_down:اسماء الرومات. :heavy_check_mark::',`**[${channels}]**`)
+        message.channel.sendEmbed(embed);
+    }
+});
+
+
+          client.on('message', message => {
+            if(message.content.startsWith(prefix + 'moveall')) {
+             if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send('**لايوجد لديك صلاحية سحب الأعضاء**');
+               if(!message.guild.member(client.user).hasPermission("MOVE_MEMBERS")) return message.reply("**لايوجد لدي صلاحية السحب**");
+            if (message.member.voiceChannel == null) return message.channel.send(`**الرجاء الدخول لروم صوتي**`)
+             var author = message.member.voiceChannelID;
+             var m = message.guild.members.filter(m=>m.voiceChannel)
+             message.guild.members.filter(m=>m.voiceChannel).forEach(m => {
+             m.setVoiceChannel(author)
+             })
+             message.channel.send(`**تم سحب جميع الأعضاء إليك**`)
+            
+            
+             }
+               });
 
 
 		
