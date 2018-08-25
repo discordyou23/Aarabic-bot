@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const convert = require("hh-mm-ss")
+const dateFormat = require('dateformat');
+const fs = require('fs');
 var Canvas = require('canvas')
 var jimp = require('jimp')
 const prefix = "=";
