@@ -299,7 +299,6 @@ client.on("message", message => {
           .addField('❖-|=unmute', `📄لفك الميوت عن شخص📇`)
           .addField('❖-|=untempmute', `🔱لفك الميوت عن شخص♍`)
           .addField('❖-|=report', `⚠عشان تبلغ عن شخص🔞`)
-          .addField('❖-|=moveall', `➰لنقل الكل الى غرفة صوتية جديدة👑`)
           .addField('❖-|=setchannel', `♉لأنشاء روم كتابي♎`)
           .addField('❖-|=setvoice', `♓لأنشاء روم صوتي♏`)
 	  .addField('❖-|=warn', `⚠عشان تعطي احد انظار و لكي يشتغل الامر سوي روم اسمه warns⚠`)
@@ -332,7 +331,6 @@ client.on("message", message => {
           .addField('❖-|=roomsall', `🔰ليقلك اسماء الرومات الموجودة بسيرفر كلها👑`)
 	  .addField('❖-|=embed', `👑البوت يكرر الكلام الي انت تقوله بامبد👑`)
 	  .addField('❖-|=say', `🎆البوت يكرر الكلام الي انت تقوله بدون امبد📝`)
-  	  .addField('❖-|=link', `😊ليعطيك رابط السيرفر بلخاص😉`)
 	  .addField('❖-|=ping', `🎆يقلك كم بنق البوت🎇`)
           .addField('❖-|=support', `🎊سيرفر الدعم حق البوت🎉`)
   	  .addField('❖-|=users1', `🎆يعرض لك جميع السيرفراا الموجودة بلبوت📝`)
@@ -3370,19 +3368,6 @@ if(message.content === prefix + "roomsall"){
     }
 });
 
-
-          client.on('message', message => {
-            if(message.content.startsWith(prefix + 'moveall')) {
-             var author = message.member.voiceChannelID;
-             var m = message.guild.members.filter(m=>m.voiceChannel)
-             message.guild.members.filter(m=>m.voiceChannel).forEach(m => {
-             m.setVoiceChannel(author)
-             })
-             message.channel.send(`**تم سحب جميع الأعضاء إليك**`)
-            
-            
-             }
-               });
 
 
 		
