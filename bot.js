@@ -3536,7 +3536,7 @@ message.channel.sendFile(canvas.toBuffer())
 client.on('guildMemberAdd', member => {
 const channel = member.guild.channels.find("name","welcome")
 if (member.user.bot) return;
-var Canvas = require('canvas-prebuilt')  
+var Canvas = require('canvas')  
 var jimp = require('jimp')
   var currentTime = new Date(),
 hours = currentTime.getHours() + 3 ,
