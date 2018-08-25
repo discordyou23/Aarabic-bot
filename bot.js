@@ -2293,30 +2293,7 @@ channel.send(`${member} ♣ولكم يا عمو البوت فرجينا مهار
 		
 		
 
-client.on("guildMemberAdd", function(member) {
-    const wc = member.guild.channels.find("name", "welcome")
-        const embed = new Discord.RichEmbed()
-        .setColor('B90C0C')
-        .setAuthor(member.user.tag, member.user.avatarURL)
- .setDescription('***👑WELCOME TO SERVER BOM BOT SUPPORT👑***')
-.setThumbnail(member.avatarURL)
-        .setTimestamp()
-        return wc.sendEmbed(embed);
-        
-});
 
-
-client.on("guildMemberAdd", function(member) {
-    const wc = member.guild.channels.find("name", "welcome")
-        const embed = new Discord.RichEmbed()
-        .setColor('B90C0C')
-        .setAuthor(member.user.tag, member.user.avatarURL)
- .setDescription('***👑WELCOME TO SERVER BOM BOT SUPPORT👑***')
-.setThumbnail(member.avatarURL)
-        .setTimestamp()
-        return wc.sendEmbed(embed);
-        
-});
 
 
 client.on('message', message => {
