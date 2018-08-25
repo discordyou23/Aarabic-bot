@@ -3631,7 +3631,7 @@ sql.open("./score.sqlite");
 var Canvas = require('canvas')
 var jimp = require('jimp')
 
-const w = ['./levelup.png'];
+const w = ['./PicsArt_08-26-12.16.13.jpg'];
 
         let Image = Canvas.Image,
             canvas = new Canvas(401, 202),
