@@ -3619,7 +3619,6 @@ let welcomer = member.guild.channels.find("name","welcome");
 
 
 client.on('message', message => {
-sql.open("./score.sqlite");
   sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
     if (!row) {
       sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
