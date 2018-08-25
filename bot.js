@@ -3353,19 +3353,6 @@ setInterval(function(){})
 
 
 
-client.on('message', message => {
-  if (message.content.startsWith("=link")) {
-        thing: true,
-        maxUses: 100,
-        maxAge: 86400,
-  }).then(invite =>
-    message.author.sendMessage(invite.url)
-  )
-    message.channel.send("**:link: تم أرسال رابط السيرفر بلخاص**")
-  }
-});
-
-
 
 client.on('message', message => {
 if(message.content === prefix + "roomsall"){ 
