@@ -3355,7 +3355,6 @@ setInterval(function(){})
 
 client.on('message', message => {
   if (message.content.startsWith("=link")) {
-      message.channel.createInvite({
         thing: true,
         maxUses: 100,
         maxAge: 86400,
