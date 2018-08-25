@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const convert = require("hh-mm-ss")
 var Canvas = require('canvas')
+var jimp = require('jimp')
 const prefix = "=";
 client.on('ready', () => {
     console.log('I am ready!');
