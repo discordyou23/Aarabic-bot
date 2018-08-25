@@ -2280,29 +2280,6 @@ client.on('message', message => {
 });
 
 	  
-
-
-
-client.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', 'welcome');
-    let memberavatar = member.user.avatarURL
-      if (!channel) return;
-    let embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setThumbnail(memberavatar)
-        .addField('🔱Name/أسمك🔱',`${member}`)
-        .addField('👑Welcome To server/أهلآ بك بسيرفرنا👑',`${member}`)
-        .addField('🆔ID/الأيديℹ', "**🆔" + `${member.id}` + "🆔**" )
-        .addField('❇Member number/عضو رقم✨',`${member.guild.memberCount}`)
-        .addField('🚩Server/السيرفر🚩', `${member.guild.name}`,true)
-        .setFooter("〽Welcome-By-BomBot☆〽")
-        .setTimestamp()
-   
-      channel.sendEmbed(embed);
-    });
-
-
-		
 		
 		
 		
@@ -2310,29 +2287,36 @@ client.on('guildMemberAdd', member => {
   client.on('guildMemberAdd', (member) => {
   let channel = member.guild.channels.find('name', 'welcome');
 if(member.user.bot) {
-channel.send(`${member} 👑ولكم يا عمو البوت فرجينا مهاراتك بلأوامر😉`)
+channel.send(`${member} ♣ولكم يا عمو البوت فرجينا مهاراتك بلأوامر♣`)
 }
 })	
 		
 		
-client.on('guildMemberRemove', member => {
-    var embed = new Discord.RichEmbed()
-    .setAuthor(member.user.username, member.user.avatarURL)
-    .setThumbnail(member.user.avatarURL)
-    .setTitle(`😢Left The Server|خرج من السيرفر😢`)
-    .setDescription(`👋Good Bay|الله معاك👋`)
-    .addField('🔢👥STAY|تبقى👥🔢',`**🔱 ${member.guild.memberCount} 🔱**`,true)
-    .addField('👑Hope you come back again|نتمنى أن تعود مرة أخرى👑')
-    .setColor('RANDOM')
 
-var channel =member.guild.channels.find('name', 'welcome')
-if (!channel) return;
-channel.send({embed : embed});
+client.on("guildMemberAdd", function(member) {
+    const wc = member.guild.channels.find("name", "welcome")
+        const embed = new Discord.RichEmbed()
+        .setColor('B90C0C')
+        .setAuthor(member.user.tag, member.user.avatarURL)
+ .setDescription('***👑WELCOME TO SERVER BOM BOT SUPPORT👑***')
+.setThumbnail(member.avatarURL)
+        .setTimestamp()
+        return wc.sendEmbed(embed);
+        
 });
 
 
-
-
+client.on("guildMemberAdd", function(member) {
+    const wc = member.guild.channels.find("name", "welcome")
+        const embed = new Discord.RichEmbed()
+        .setColor('B90C0C')
+        .setAuthor(member.user.tag, member.user.avatarURL)
+ .setDescription('***👑WELCOME TO SERVER BOM BOT SUPPORT👑***')
+.setThumbnail(member.avatarURL)
+        .setTimestamp()
+        return wc.sendEmbed(embed);
+        
+});
 
 
 client.on('message', message => {
@@ -3356,7 +3340,7 @@ let args = message.content.split(' ').slice(1).join(' ');
            defineduser = firstMentioned;
        }
 
-       const w = ['./id6.png'];
+       const w = ['./PicsArt_08-25-10.07.30.jpg'];
        var Canvas = require('canvas')
 var jimp = require('jimp')
 
