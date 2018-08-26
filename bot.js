@@ -3333,7 +3333,6 @@ const w = ['./1535219228660.png'];
  
                         ctx.drawImage(ava, 49, 17, 200, 200);
                               ctx.closePath();
- channel.sendFile(canvas())
                           })
 })
 });
