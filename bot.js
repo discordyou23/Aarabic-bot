@@ -3335,17 +3335,11 @@ const w = ['./1535219228660.png'];
                               ctx.closePath();
 				  
 channel.sendFile(canvas.toBuffer())
+
 				  
-
-       })
-   })
-
-
-
-
-}
-
-})				  
+                          })
+})
+});				  
 
 
 client.on("guildMemberAdd", member => {
