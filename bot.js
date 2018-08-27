@@ -2278,18 +2278,6 @@ client.on('message', message => {
    message.channel.sendEmbed(EsTeKnAN);
   }
 });
-
-	  
-		
-		
-		
-		
-  client.on('guildMemberAdd', (member) => {
-  let channel = member.guild.channels.find('name', 'welcome');
-if(member.user.bot) {
-channel.send(`${member} ♣ولكم يا عمو البوت فرجينا مهاراتك بلأوامر♣`)
-}
-})	
 		
 		
 
