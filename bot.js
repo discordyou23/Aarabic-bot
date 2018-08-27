@@ -3334,13 +3334,18 @@ const w = ['./1535219228660.png'];
                         ctx.drawImage(ava, 49, 17, 200, 200);
                               ctx.closePath();
 				  
-message.channel.sendFile(canvas.toBuffer())
+channel.sendFile(canvas.toBuffer())
 				  
 
-                          })
-})
-});
+       })
+   })
 
+
+
+
+}
+
+})				  
 
 
 client.on("guildMemberAdd", member => {
