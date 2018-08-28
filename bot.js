@@ -3711,7 +3711,7 @@ if (games[sender.id].lastDaily != moment().format('day')) {
     message.channel.send(`**:stopwatch: | ${message.author.username}, your daily :yen: credits refreshes ${moment().endOf('day').fromNow()}**`)
 }
 }
-})
+});
 //مصاري//
 client.on("message", (message) => {
   if (message.author.bot) return;
