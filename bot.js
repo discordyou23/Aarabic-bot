@@ -31,6 +31,11 @@ client.on('message', message => {
 
 
 
+client.on('ready', () => {                           
+client.user.setGame(`=help |=invite |=support`,'https://www.twitch.tv/tarikrs');                                                                                                                                                                                                                                                                                                                                                                                                                             client.user.setGame(`Mhelp | Minv`,'https://www.twitch.tv/v5bz');
+});
+
+
 
 
 
@@ -3847,38 +3852,6 @@ message.channel.sendFile(canvas.toBuffer())
 
 
 
-
-const yourID = "343908666887372800";
-const setupCMD = "$rolereact"
-let initialMessage = `**@everyone  خذ رتبة**
-**اضغط على الريئكشن الي تحت الرتبة عشان تاخذها و عشان تشيلها منك شيل الريئكشن منها** `;
-const roles = ["Youtuber", "PS4 Gamer", "PC Gamer", "XBox Gamer", "Nintendo Gamer", "Twitch Streamer", "Technician", "Hacker", "Otaku"];//رتب
-const reactions = ["🔕", "👑", "🗼", "💬", "🌐", "🎮", "☕", "🗻", "💒"];//رياكشن
-
-if (roles.length !== reactions.length) throw "Roles list and reactions list are not the same length!";
-
-
-function generateMessages(){
-    var messages = [];
-    messages.push(initialMessage);
-    for (let role of roles) messages.push(`React below to get the **"${role}"** role!`); 
-    return messages;
-}
-
-
-client.on("message", message => {
-    if (message.author.id == yourID && message.content.toLowerCase() == setupCMD){
-        var toSend = generateMessages();
-        let mappedArray = [[toSend[0], false], ...toSend.slice(1).map( (message, idx) => [message, reactions[idx]])];
-        for (let mapObj of mappedArray){
-            message.channel.send(mapObj[0]).then( sent => {
-                if (mapObj[1]){
-                  sent.react(mapObj[1]);  
-                } 
-            });
-        }
-    }
-})
 
 
 
