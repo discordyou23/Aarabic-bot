@@ -3791,10 +3791,6 @@ if (message.content.startsWith("=profile")) {
           let ground = new Image;
           ground.src = Background;
           ctx.drawImage(ground, 0, 0, 300, 305);
-});
-
-
-
                 let url = getvalueof.displayAvatarURL.endsWith(".webp") ? getvalueof.displayAvatarURL.slice(5, -20) + ".png" : getvalueof.displayAvatarURL;
                 jimp.read(url, (err, ava) => {
                     if (err) return console.log(err);
