@@ -3420,7 +3420,7 @@ client.on("message", message => {
 if(!dataPro[message.author.id]) {
             dataPro[message.author.id] = {
                 ai: false,
-                wallSrc: './p2.png' ,
+                wallSrc: './Screenshot_٢٠١٨-٠٨-٢٨-٢٠-٠٥-٤٨-1-1.png' ,
                 walls: {}
             };
         }
