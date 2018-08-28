@@ -3779,7 +3779,6 @@ if (message.content.startsWith("=profile")) {
             let Image = Canvas.Image,
             canvas = new Canvas(300, 300),
             ctx = canvas.getContext('2d');       
-      fs.readFile(`${dataPro[getvalueof.id].wallSrc}`, function (err, Background) {
           fs.readFile(`${w[0]}`, function (err, Background) {
           if (err) return console.log(err);
           let BG = Canvas.Image;
