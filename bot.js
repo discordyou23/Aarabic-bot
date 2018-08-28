@@ -3024,7 +3024,7 @@ if(message.content === prefix + "roomsall"){
 		
 client.on('message', message => {
     
-if(message.content.split(' ')[0] == prefix + 'profile') {
+if(message.content.split(' ')[0] == prefix + 'id') {
 if(!message.channel.guild) return;
 
 let args = message.content.split(' ').slice(1).join(' ');
@@ -3869,7 +3869,7 @@ message.channel.sendFile(canvas.toBuffer())
 
 
 
-var prefix = "$"
+var prefix = "="
 
 let dataPro = JSON.parse(fs.readFileSync('./walls.json', 'utf8'));
 client.on("message", message => {
