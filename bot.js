@@ -3776,7 +3776,6 @@ if (message.content.startsWith("=profile")) {
           
       }
   const w = ['./p1.png'];
-if (!games[getvalueof.id]) games[getvalueof.id] = {wins: 0,loses: 0,points: 0,total: 0,credits: 100,level: 1,};          
             let Image = Canvas.Image,
             canvas = new Canvas(300, 300),
             ctx = canvas.getContext('2d');       
