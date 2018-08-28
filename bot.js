@@ -28,11 +28,6 @@ client.on('message', message => {
 });
 
 
-client.on('ready', () => {
-client.user.setGame(`=help |=invite |users:${client.users.size} |servers:${client.guilds.size}`,'https://www.twitch.tv/v5bz');
-});
-
-
 
 
 
