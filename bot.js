@@ -3420,7 +3420,7 @@ client.on("message", message => {
 if(!dataPro[message.author.id]) {
             dataPro[message.author.id] = {
                 ai: false,
-                wallSrc: './p2.png' ,
+                wallSrc: './PicsArt_08-28-06.29.27.png' ,
                 walls: {}
             };
         }
@@ -3688,7 +3688,7 @@ if (message.content.startsWith("=profile")) {
           var client = message.author;
           
       }
-  const w = ['./p1.png'];
+  const w = ['./PicsArt_08-28-06.21.07.png'];
 if (!games[getvalueof.id]) games[getvalueof.id] = {wins: 0,loses: 0,points: 0,total: 0,credits: 100,level: 1,};          
             let Image = Canvas.Image,
             canvas = new Canvas(300, 300),
