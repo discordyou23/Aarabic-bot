@@ -34,25 +34,6 @@ client.on('message', msg => {
   }
 });
 
-client.on('message', msg => {
-  if (msg.content === 'تمام') {
-    msg.reply('**😍دوم يا عسسسل😍**');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'سلام') {
-    msg.reply('**😍الله معاك ويحميك وارجع حكينا😍 :heartpulse: **');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'هلا') {
-    msg.reply('**هلا فيك😙 :heartpulse:**');
-  }
-});
-
-
   client.on('message', msg => {//msg
     if (msg.content === '=help') {
       msg.channel.send({file : "https://cdn.discordapp.com/attachments/476028851030458368/482663782200377344/1535146335144.png"})
@@ -72,21 +53,6 @@ client.on('message', msg => {//msg
       msg.channel.send({file : "https://cdn.discordapp.com/attachments/477438358902276099/478177205164310529/004ca53f54b2ff2c.png"})
     }
   });;
-
-
-
-
-client.on('message', msg => {
-  if (msg.content === 'كيفكم') {
-    msg.reply('**😘تمام كيفك انت يا صديقي👍 :heartpulse:**');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'مرحبا') {
-    msg.reply('**🔱اهلا وسهلا فيك منور الشات :heartpulse:**');
-  }
-});
 
 
   client.on('message', msg => {//msg
@@ -140,34 +106,6 @@ client.on('message', msg => {//msg
     }
   });;
 
-
-
-
-client.on('message', msg => {
-  if (msg.content === 'باي') {
-    msg.reply('**😊الله معك يا قلبي😊 :heartpulse:**');
-  }
-});
-
-
-
-client.on('message', msg => {
-  if (msg.content === 'back') {
-    msg.reply('**Welcome Back :heartpulse:**');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'باك') {
-    msg.reply('**😍باكات يا عسسسل صباحك ومساك عسسسسل😍 :heartpulse:**');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'السلام عليكم') {
-    msg.reply('**و عليكم السلام**');
-  }
-});
 
 client.on('message', msg => {
         if (msg.content.startsWith(`=warn`)) {
