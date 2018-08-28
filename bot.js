@@ -3599,7 +3599,7 @@ client.on("message", message => {
   if (message.author.bot) return;
   if(!message.channel.guild)return;
   if (!profile[message.author.id]) profile[message.author.id] = {
-    info: '$info To Set The Info',
+    info: '=info To Set The Info',
     rep: 0,
     reps: 'NOT YET',
     lastDaily:'Not Collected',
@@ -3868,7 +3868,7 @@ message.channel.sendFile(canvas.toBuffer())
 
 
 
-var prefix = "="
+
 
 let dataPro = JSON.parse(fs.readFileSync('./walls.json', 'utf8'));
 client.on("message", message => {
@@ -3892,7 +3892,7 @@ client.on("message",  message => {
     if (message.author.id === client.user.id) return;
 	if(!message.channel.guild) return;   
 let args = message.content.split(' ').slice(1);
-if (message.content.startsWith("=خلفيه")) {
+if (message.content.startsWith("=خلفية")) {
         if(!args[0]) return message.reply('يجب عليك اختيار رقم الخلفيه')
         if(dataPro[message.author.id].walls[args[0]]) {
         dataPro[message.author.id].ai = true;
