@@ -3488,7 +3488,7 @@ client.on('message', msg => {
 
 
 
-var prefix = "="
+
 
 let dataPro = JSON.parse(fs.readFileSync('./walls.json', 'utf8'));
 client.on("message", message => {
@@ -3498,7 +3498,7 @@ client.on("message", message => {
 if(!dataPro[message.author.id]) {
             dataPro[message.author.id] = {
                 ai: false,
-                wallSrc: './walls/p2.png' ,
+                wallSrc: './p2.png' ,
                 walls: {}
             };
         }
