@@ -3485,11 +3485,6 @@ client.on('message', msg => {
 
 
 
-
-
-
-
-
 let dataPro = JSON.parse(fs.readFileSync('./walls.json', 'utf8'));
 client.on("message", message => {
   if (message.author.bot) return;
@@ -3506,124 +3501,9 @@ fs.writeFile('./walls.json', JSON.stringify(dataPro), (err) => {
 if (err) console.error(err);
 });
 });
-//خلفية
-client.on("message",  message => {
-  if (message.author.bot) return;
-    if (message.author.id === client.user.id) return;
-	if(!message.channel.guild) return;   
-let args = message.content.split(' ').slice(1);
-if (message.content.startsWith("=خلفيه")) {
-        if(!args[0]) return message.reply('يجب عليك اختيار رقم الخلفيه')
-        if(dataPro[message.author.id].walls[args[0]]) {
-        dataPro[message.author.id].ai = true;
-        dataPro[message.author.id].wallSrc = dataPro[message.author.id].walls[args[0]].src;
-        message.channel.send(`**${message.author.username}**|  تم تغير الخلفية بنجاح`);
-        } else {
-        message.channel.send(`**${message.author.username}**|  انت لا تملك هذه الخلفية`);
-        }
-        }
-});    
-//خلفياتي
-client.on("message",  message => {
-  if (message.author.bot) return;
-    if (message.author.id === client.user.id) return;
-	if(!message.channel.guild) return;   
-if(message.content.startsWith('=خلفياتي')) {
-var walls = dataPro[message.author.id].walls;
-for(var wall in walls) {
-console.log(walls[wall]);
-message.channel.send(walls[wall]);// ;(
-}
-}
-});
-//سعر الخلفيات
-var wallpapers = {
-                1: {
-                    src: 'walls/p3.png',
-                    price: 0,
-                },
-                2: {
-                    src: 'walls/p4.png',
-                    price: 1000,
-                },
-                3: {
-                    src: 'walls/p7.png',
-                    price: 2300,
-                },
-                4: {
-                    src: 'walls/p12.png',
-                    price: 3000,
-                },
-                5: {
-                    src: 'walls/p5.png',
-                    price: 4000,
-                },
-             6: {
-                    src: 'walls/p6.png',
-                    price: 5500,
-                },
-             7: {
-                    src: 'walls/p7.png',
-                    price: 8000,
-                },
-                 8: {
-                    src: 'walls/le3moree.jpg',
-                    price: 9000,
-                },  
-            }
-//خلفيات
-client.on("message",  message => {
-  if (message.author.bot) return;
-    if (message.author.id === client.user.id) return;
-	if(!message.channel.guild) return;   
-if (message.content===("=خلفيات")) {
-let embed = new Discord.RichEmbed()
-.setDescription(`**لشراء الخلفية استخدم امر $شراء و رقم الخلفية , لوضع الخلفية استخدم امر $خلفية**`)
-.addField('Profile live','سعرها : $0 رقم: 1')
-.addField('Profile snow','سعرها: $1000 رقم: 2')
-.addField('Profile girl','سعرها : $2300 رقم: 3')
-.addField('Profile naruto','سعرها: $3000 رقم: 4')
-.addField('Profile anonymous','سعرها: $4000 رقم: 5')
-.addField('Profile fortnite','سعرها: $5500 رقم: 6')
-.addField('Profile overwatch','سعرها: $8000 رقم: 7')
-.addField('Profile monster','سعرها: $9000 رقم: 8')
-.setImage("https://cdn.discordapp.com/attachments/444184423056015370/445203129470812171/wWu5HdBj.jpg");
-message.channel.send({embed: embed});
-}
-});
-//شراء
-});
-//شراء
-client.on("message",  message => {
-var sender = message.author;
-  if (message.author.bot) return;
-    if (message.author.id === client.user.id) return;
-	if(!message.channel.guild) return;   
-let args = message.content.split(' ').slice(1);
-if (message.content.startsWith("=buy")) {
 
-if (!games[sender.id].credits){
-message.channel.send(`**${sender.username}**| انت لا تملك دراهم بتاتا`)
-return;
-}
 
-if(!args[0]) {
- message.channel.send(`** لشراء الخلفية استخدم امر $شراء و رقم الخلفية , لوضع الخلفية استخدم امر $خلفلية ورقم الخلفية**`);
-} else
-if(dataPro[message.author.id].walls == wallpapers[args[0]]){
-message.reply('انت تملك هذه الخلفيه مسبقاً')
-}else
-if(wallpapers[args[0]].price > games[sender.id].credits) {
-message.channel.send(`**${sender.username}**| انت لا تملك المال الكافي لشراء هذه الخلفية`)
-}else
-if(wallpapers[args[0]].price < games[sender.id].credits) {
-                     games[sender.id].credits = games[sender.id].credits - wallpapers[args[0]].price;
-                     dataPro[message.author.id].ai = true;
-                     dataPro[message.author.id].walls[args[0]] = wallpapers[args[0]];
-                     message.channel.send(`**${message.author.username}**|  تم شراء الخلفية بنجاح استخدم امرخلفية ${args[0]}لاستخدامها`)
-}
-}
-});
+
 ////////////////////بروفايل////////////////////////////
 const profile = JSON.parse(fs.readFileSync('./profile.json', "utf8"));
 
@@ -3631,7 +3511,7 @@ client.on("message", message => {
   if (message.author.bot) return;
   if(!message.channel.guild)return;
   if (!profile[message.author.id]) profile[message.author.id] = {
-    info: '$info To Set The Info',
+    info: '=info To Set The Info',
     rep: 0,
     reps: 'NOT YET',
     lastDaily:'Not Collected',
@@ -3643,7 +3523,7 @@ if (err) console.error(err);
 })
 });
 //لايك//
-/*client.on('message', message => {
+*client.on('message', message => {
   if (message.author.bot) return;
     var sender = message.author
     if (message.author.id === client.user.id) return;
@@ -3661,7 +3541,7 @@ if (games[sender.id].lastDaily != moment().format('day')) {
     }
 	
     }
-    });*/
+    });*
 client.on('message', message => { 
 
     if(message.content.startsWith(prefix + 'rep')) {
@@ -3711,7 +3591,7 @@ if (games[sender.id].lastDaily != moment().format('day')) {
     message.channel.send(`**:stopwatch: | ${message.author.username}, your daily :yen: credits refreshes ${moment().endOf('day').fromNow()}**`)
 }
 }
-});
+})
 //مصاري//
 client.on("message", (message) => {
   if (message.author.bot) return;
