@@ -3523,7 +3523,7 @@ if (err) console.error(err);
 })
 });
 //لايك//
-*client.on('message', message => {
+client.on('message', message => {
   if (message.author.bot) return;
     var sender = message.author
     if (message.author.id === client.user.id) return;
@@ -3541,7 +3541,7 @@ if (games[sender.id].lastDaily != moment().format('day')) {
     }
 	
     }
-    });*
+    });
 client.on('message', message => { 
 
     if(message.content.startsWith(prefix + 'rep')) {
