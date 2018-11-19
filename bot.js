@@ -31,7 +31,7 @@ client.on('message', message => {
 
 
 client.on('ready', () => {                           
-client.user.setGame(`=help |=invite |=support`,'https://www.twitch.tv/fofodiscord');                                                                                                                                                                                                                                                                                                                                                                                                                            
+client.user.setGame(`يتم تحديث البوت`,'https://www.twitch.tv/fofodiscord');                                                                                                                                                                                                                                                                                                                                                                                                                            
 });
 
 
