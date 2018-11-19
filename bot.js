@@ -9,7 +9,7 @@ const userData = JSON.parse(fs.readFileSync('./userData.json', 'utf8'));
 const moment = require('moment');
 var Canvas = require('canvas')
 var jimp = require('jimp')
-const prefix = "=";
+const prefix = "$";
 let done = {};
 
 
@@ -30,8 +30,8 @@ client.on('message', message => {
 
 
 
-client.on('ready', () => {                           
-client.user.setGame(`يتم تحديث البوت`,'https://www.twitch.tv/fofodiscord');                                                                                                                                                                                                                                                                                                                                                                                                                            
+client.on('ready', () => {
+     client.user.setActivity("$help / $invite / $support",{type: 'WATCHING'});
 });
 
 
@@ -44,77 +44,16 @@ client.on('message', msg => {
   }
 });
 
-  client.on('message', msg => {//msg
-    if (msg.content === '=help') {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/476028851030458368/482663782200377344/1535146335144.png"})
-    }
-  });;
-  
- 
-  client.on('message', msg => {//msg
-    if (msg.content === '=color') {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/470638175254216716/482679181553958922/1535149909407.png"})
-    }
-  });;
 
-
-client.on('message', msg => {//msg
-    if (msg.content === 'السلام عليكم') {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/477438358902276099/478177205164310529/004ca53f54b2ff2c.png"})
-    }
-  });;
 
 
   client.on('message', msg => {//msg
-    if (msg.content === '=help-admin') {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/476028851030458368/482643305335750678/1535141472722.png"})
-    }
-  });;
-
-  client.on('message', msg => {//msg
-    if (msg.content === '=help-public') {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/476028851030458368/482643305335750678/1535141472722.png"})
-    }
-  });;
-
-  client.on('message', msg => {//msg
-    if (msg.content === '=help-games') {
+    if (msg.content === 'invite') {
       msg.channel.send({file : "https://cdn.discordapp.com/attachments/476028851030458368/482643305335750678/1535141472722.png"})
     }
   });;
 
 
-  client.on('message', msg => {//msg
-    if (msg.content === '=help-music') {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/476028851030458368/482643305335750678/1535141472722.png"})
-    }
-  });;
-
-client.on('message', msg => {//msg
-    if (msg.content === '=help-color') {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/476028851030458368/482643305335750678/1535141472722.png"})
-    }
-  });;
-
-  client.on('message', msg => {//msg
-    if (msg.content === '=help-welcome') {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/476028851030458368/482643305335750678/1535141472722.png"})
-    }
-  });;
-
-
-  client.on('message', msg => {//msg
-    if (msg.content === '=invite') {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/476028851030458368/482643305335750678/1535141472722.png"})
-    }
-  });;
-
-
-  client.on('message', msg => {//msg
-    if (msg.content === '=support') {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/476028851030458368/482643305335750678/1535141472722.png"})
-    }
-  });;
 
 
 client.on('message', msg => {
