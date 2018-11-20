@@ -39,7 +39,7 @@ client.on('ready', () => {
 
 
 client.on('message', msg => {
-  if (msg.content === '=ownerbot') {
+  if (msg.content === '$ownerbot') {
     msg.reply('**OwnerBot <@382889731316514826>**');
   }
 });
@@ -207,7 +207,7 @@ client.on("message", message => {
 
 
 client.on("message", message => {
- if (message.content === "=help-public") {
+ if (message.content === "$help-public") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription('👑أوامر الأعضاء👑')
