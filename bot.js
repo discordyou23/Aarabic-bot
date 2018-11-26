@@ -31,7 +31,7 @@ client.on('message', message => {
 
 
 client.on('ready', () => {                           
-client.user.setGame(`Elite Community ,`,'https://www.twitch.tv/fofodiscord');                                                                                                                                                                                                                                                                                                                                                                                                                            
+client.user.setGame(`Elite Community / $help`,'https://www.twitch.tv/fofodiscord');                                                                                                                                                                                                                                                                                                                                                                                                                            
 });
 
 
@@ -80,20 +80,11 @@ member.addRole(KinG66S[member.user.id].roles.shift());
 
 
 
-client.on('message', msg => {
-  if (msg.content === '$ownerbot') {
-    msg.reply('**OwnerBot <@382889731316514826>**');
-  }
-});
 
 
 
 
-  client.on('message', msg => {//msg
-    if (msg.content === 'invite') {
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/476028851030458368/482643305335750678/1535141472722.png"})
-    }
-  });;
+
 
 
 
@@ -149,7 +140,7 @@ if(message.author.bot) return;
             .setTitle('USERS & SERVERS')
                   .addField('**SERVERS**' , `[${client.guilds.size}]` , true)
                   .addField('**USERS**' , `[${client.users.size}]` , true)
-                  .setFooter('BomBot©')
+                  .setFooter('system©')
     })
 }
 });
@@ -221,7 +212,6 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription('👑أوامر الأدمن👑')
-	  .addField('❖-|$msgserver', `📑لخاصية البرودكستات📑`)
   	  .addField('❖-|$ping', `🎆يقلك كم بنق البوت🎇`)
 	  .addField('❖-|$kick', `🚫لخاصية طرد🚫`)
 	  .addField('❖-|$ban', `⚠عشان تعطي احد حظر من سيرفر للابد⚠`)
@@ -253,7 +243,6 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription('👑أوامر الأعضاء👑')
-          .addField('❖-|$invite', `👑لاضافة البوت الى سيرفرك💯`)
           .addField('❖-|$profile', `♣لتشوف ملفك الشخصي🌷`)
   	  .addField('❖-|$bot', `🔱لمعرفة معلومات البوت🅱`)
 	  .addField('❖-|$roles', `👑لمعرفة الرتب الي في السيرفر🔱`)
@@ -262,21 +251,17 @@ client.on("message", message => {
   	  .addField('❖-|$channelinfo', `♣ليعطيك معلومات الغرفة🌷`)
   	  .addField('❖-|$say', `🎆البوت يكرر الكلام الي انت تقوله بدون امبد📝`)
   	  .addField('❖-|$userinfo', `➿لمعرفة معلوماتك بلكامل🔱`)
-          .addField('❖-|$servers', `➰يجبلك عدد السيرفرات التي البوت داخله➰`)
           .addField('❖-|$roomsall', `🔰ليقلك اسماء الرومات الموجودة بسيرفر كلها👑`)
 	  .addField('❖-|$embed', `👑البوت يكرر الكلام الي انت تقوله بامبد👑`)
 	  .addField('❖-|$say', `🎆البوت يكرر الكلام الي انت تقوله بدون امبد📝`)
-          .addField('❖-|$support', `🎊سيرفر الدعم حق البوت🎉`)
   	  .addField('❖-|$users', `🎆يعرض لك جميع السيرفراا الموجودة بلبوت📝`)
 	  .addField('❖-|$image', `📷يعرض صورة سيرفر⛺`)
           .addField('❖-|$credits', `👑عشان تشوف الكردتس الخاصة بك👑`)
           .addField('❖-|$daily', `💲عشان تاخذ الكردتس اليومية الخاصة بك💵`)
           .addField('❖-|$trans', `💰عشان تعطي لاحد مبلغ من الكردتس الخاصة بك💳`)
           .addField('❖-|$cal', `📟لاستخدام الالة الحاسبة + للجمع - للطرح * للضرب / للقسمة📝`)
-          .addField('❖-|$owner', `🔰لارسال رسالة لاونر سيرفر🔰`)
           .addField('❖-|$suggest', `🔱لاقتراح شئ و لازم يكون فيه روم اسمه suggestions👑`)
           .addField('❖-|$uptime', `🕞عشان تشوف البوت شغال من متى🅱`)
-          .addField('❖-|$botinfo', `🚩عشان تعرف معلومات البوت🚩`)
           .addField('❖-|$cat', `😍يجبلك صورة قطة🐱`)
   message.author.send({embed});
       message.channel.send(":white_check_mark: | Check Your DM تم الأرسال بلخاص")
@@ -330,19 +315,7 @@ client.on("message", message => {
 });
 
 
-   client.on('message', message => {
-	   if(message.content.startsWith(`${prefix}invite`)){
-		   if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
-		   var embed = new Discord.RichEmbed()
-		   .setTitle(">> ClickHere To Add" + `${client.user.username}` + " <<")
-		   .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "&scope=bot&permissions=8")
-		   .setTimestamp()
-		   .setFooter(`Requested By | ${message.author.username}`)
-		   .setColor("RANDOM")
-		   message.channel.send(":white_check_mark: | Check Your DM! تم الأرسال بلخاص")
-		   message.author.send({embed})
-	   }
-   });
+
 
 
 
@@ -353,13 +326,13 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription(`
-─════════════ {✯BomBot♧✯} ════════════─
+─════════════ {✯system♧✯} ════════════─
 ❖-|welcome|🚩لتفعيل أمر الترحيب أنشاء غرفة أسمها welcome🚩
 ❖-|welcomeleft|🚩لتفيل امر المغادرة أنشاء غرفة أسمها welcome🚩
 ❖-|warn|🚩لتفعيل أمر الأنذار أنشأ غرفة أسمها warns🚩
 ❖-|suggest|🚩لتفعيل الريبورت أنشاء غرفة أسمها suggestions🚩
 ❖-|log|🚩لوق لحماية سيرفرك من تهكير اذا حد طرد شخص يظهر لك مين هو وأشياذ كثيرة🚩
-─════════════ {✯BomBot♧✯} ════════════─
+─════════════ {✯system♧✯} ════════════─
       `)
    message.channel.sendEmbed(embed)
     }
@@ -369,16 +342,7 @@ client.on("message", message => {
 
 
 
-client.on("message", message => {
- if (message.content === "$support") {
-  const embed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-      .setFooter('© BOMbot جميع الحقوق محفوظة 2018 لــبوت')
-      .addField('سيرفر الدعم الفني', `https://discord.gg/R8NKud8`)
-  message.author.send({embed});
-      message.channel.send(":white_check_mark: | Check Your DM تم الأرسال بلخاص")
- }
-});
+
 
 
 
@@ -412,15 +376,6 @@ function hasRole(mem, role) {
 
 
 
-client.on('message', message => {
-     if (message.content === "$servers") {
-		 if(!message.channel.guild) return;
-     let embed = new Discord.RichEmbed()
-  .setColor("RANDOM")
-  .addField("**Servers: **" , client.guilds.size)
-  message.channel.sendEmbed(embed);
-    }
-});
 
 
 
@@ -1204,20 +1159,6 @@ let args = message.content.split(" ").slice(1);
 
 
 
-client.on('message', message => {
-            if(!message.channel.guild) return;
-let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('$bcall')){
- if (message.author.id !== '382889731316514826') return message.reply('** هذا الأمر قفط لصاحب البوت و شكراًً **')
- if(!message.author.id === '382889731316514826') return;
-message.channel.sendMessage('جار ارسال الرسالة |✅')
-client.users.forEach(m =>{
-m.sendMessage(args)
-})
-}
-});
-
-
 
 
 let ar = JSON.parse(fs.readFileSync(`./Data/AutoRole.json`, `utf8`))
@@ -1431,44 +1372,7 @@ if (message.content === prefix + "mutechannel") {
 
 });
 
-client.on('guildCreate', guild => {
-  client.channels.get("477437791702220803").send(`:white_check_mark: **تم اضافة البوت في سيرفر جديد مبروكك
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__
-Server id: __${guild.id}__ 
-Server Count: __${guild.memberCount}__**`)
-});
-client.on('guildDelete', guild => {
-  client.channels.get("477437886275387392").send(`:negative_squared_cross_mark: **طردوني حرام والله ايش سويت انا
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__
-Server id: __${guild.id}__ 
-Server Count: __${guild.memberCount}__**`)
-});
 
-  client.on('message', ReBeeL => {
-  var prefix = "$";
-    if(ReBeeL.author.bot) return;
-      if(ReBeeL.content.startsWith(prefix + "owner")) {
-        let args = ReBeeL.content.split(" ").slice(1);
-           if(!args[0]) {
-              ReBeeL.channel.send("** =owner <message> **")
-                return;
-                  }
-                   var rebel = new Discord.RichEmbed()
-                      .setColor("RANDOM")
-                        .setDescription(`
-تم إرسآل لك رسآلة من السيرفر الخاص بك
-${ReBeeL.guild.name}
-الرسآلة
-${args}
-        `)
-        .setFooter(` بوآسطة ${ReBeeL.author.username}#${ReBeeL.author.discriminator}`)
-       ReBeeL.guild.owner.send(rebel);
-      ReBeeL.channel.send("**تم إرسآل الرسآلة إلى أونر السيرفر**")
-     }
-    }
-  );
 
 client.on("message", message => {
     var prefix = "$";
@@ -1477,9 +1381,9 @@ client.on("message", message => {
       .setColor("RANDOM")
       .setDescription(`
 
-👑Commands BomBot♧|أوامر البوت الأسطورية👑
+👑Commands system♧|أوامر البوت الأسطورية👑
 
-─════════════ {✯BomBot✯} ════════════─
+─════════════ {✯system✯} ════════════─
 ❧ $help-admin ➺ 🔰اوامر الادارة🔰
 
 ❧ $help-public ➺ 👑اوامر العامة👑
@@ -1493,7 +1397,7 @@ client.on("message", message => {
 ❧ $help-color ➺ ✏أوامر الألوان🎉
 
 ❧ $help-use ➺🚩للمزيد من المعلومات للبوت🚩
-─════════════ {✯BomBot✯} ════════════─
+─════════════ {✯system✯} ════════════─
       `)
    message.channel.sendEmbed(embed)
 
@@ -1610,7 +1514,7 @@ client.on('message', async msg => { // eslint-disable-line
 			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 //by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-					.setFooter("BomBot")
+					.setFooter("system")
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
 
 					// eslint-disable-next-line max-depth
@@ -2125,47 +2029,6 @@ client.on('message', message => {
 
 
 
-
-client.on('message', message => {
-     if (message.content === "$bot") {
-            if(!message.channel.guild) return message.reply('** This command only for servers **');
-     let embed = new Discord.RichEmbed()
-  .setColor('RANDOM')
-  .addField("**🔱عدد السيرفرات الي فيها البوت🔱:**" , client.guilds.size)
-  .addField("**👑المستخدمين👑:**", client.users.size)
-  .addField("**🚩قنوات🚩:**", client.channels.size)
-  .setTimestamp()
-message.channel.sendEmbed(embed);
-    }
-});
-
-
-
-
-
-	  
-
-
-
-client.on('guildCreate', guild => {
-  var embed = new Discord.RichEmbed()
-  .setColor(0x5500ff)
-  .setDescription('شكراً لك لإضافه البوت نتمنى أن يعجبك مع تحيات فريق عمل BomBot©')
-      guild.owner.send(embed)
-});
-
-
-
-
-
-
-client.on("guildMemberAdd", member => {
-  member.createDM().then(function (channel) {
-  return channel.send(`👑ولكم نورت السيرفر | Welcome To Server👑 
-اسم العضو المحترم |name member🌷  ${member}
-انت العضو الأسطورة رقم |you member number is👑 ${member.guild.memberCount}`) 
-}).catch(console.error)
-})
 
 
 
