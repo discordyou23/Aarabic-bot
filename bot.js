@@ -10,6 +10,7 @@ const moment = require('moment');
 var Canvas = require('canvas')
 var jimp = require('jimp')
 const prefix = "$";
+const adminprefix = "$";
 let done = {};
 
 
