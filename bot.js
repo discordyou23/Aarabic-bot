@@ -21,19 +21,8 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
-client.on('message', message => {
-    if (message.content ==='$vip') {
-        message.reply('✅**Premium**👑= `1` / 1Month🕢');
-      }
-});
 
 
-
-
-
-client.on('ready', () => {                           
-client.user.setGame(`Elite Community / $help`,'https://www.twitch.tv/fofodiscord');                                                                                                                                                                                                                                                                                                                                                                                                                            
-});
 
 
 
@@ -3695,3 +3684,4 @@ message.channel.sendFile(canvas.toBuffer())
 
 
 client.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_1TOKEN);
