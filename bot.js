@@ -9,7 +9,6 @@ const userData = JSON.parse(fs.readFileSync('./userData.json', 'utf8'));
 const moment = require('moment');
 var Canvas = require('canvas')
 var jimp = require('jimp')
-const prefix = "$";
 const prefix = "R";
 const adminprefix = "$";
 let done = {};
@@ -24,6 +23,14 @@ client.on('ready', () => {
 
 
 
+client.on('ready', () => {                           
+client.user.setGame(`_Royal Force System©`);                                                                                                                                                                                                                                                                                                                                                                                                                            
+});
+
+
+client.on('ready',async () => {
+  client.channels.find(ch => ch.id === "518121069077331970" && ch.type === 'voice').join();
+});
 
 
 
@@ -73,7 +80,7 @@ member.addRole(KinG66S[member.user.id].roles.shift());
 
 
 client.on("message", message => {
-    var prefix = "$";
+    var prefix = "R";
         if (message.author.id === client.user.id) return;
         if (message.guild) {
        let embed = new Discord.RichEmbed()
@@ -108,7 +115,7 @@ client.on("message", message => {
 
 
 client.on('message', msg => {
-        if (msg.content.startsWith(`$warn`)) {
+        if (msg.content.startsWith(`Rwarn`)) {
            let args = msg.content.split(" ").slice(1);
           if (!msg.mentions.members.first()) return msg.reply('منشن الشخص المحدد')
           if (!args[1]) return msg.reply('``اكتب السبب``')
@@ -149,7 +156,7 @@ client.on('message', message => {
 
 client.on('message', message => {
 if(message.author.bot) return;
-    if (message.content.startsWith("$users")) {
+    if (message.content.startsWith("Rusers")) {
     message.channel.send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
@@ -226,7 +233,7 @@ if (command == "embed") {
 
 
 client.on("message", message => {
- if (message.content === "$help-admin") {
+ if (message.content === "Rhelp-admin") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription('👑أوامر الأدمن👑')
@@ -257,7 +264,7 @@ client.on("message", message => {
 
 
 client.on("message", message => {
- if (message.content === "$help-public") {
+ if (message.content === "Rhelp-public") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription('👑أوامر الأعضاء👑')
@@ -289,7 +296,7 @@ client.on("message", message => {
 
 
 client.on("message", message => {
- if (message.content === "$help-color") {
+ if (message.content === "Rhelp-color") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription('👑أوامر الأعضاء👑')
@@ -305,7 +312,7 @@ client.on("message", message => {
 
 
 client.on("message", message => {
- if (message.content === "$help-games") {
+ if (message.content === "Rhelp-games") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription('👑اوامر الألعاب👑')
@@ -338,7 +345,7 @@ client.on("message", message => {
 
  client.on("message", message => {
     var prefix = "$";
- if (message.content === "$help-use") {
+ if (message.content === "Rhelp-use") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription(`
@@ -402,7 +409,7 @@ function hasRole(mem, role) {
 
 
 client.on('message', message => {
-     if (message.content === "$ping") {
+     if (message.content === "Rping") {
       const embed = new Discord.RichEmbed()
 
   .setColor("#FF0000")
@@ -435,7 +442,7 @@ message.channel.sendEmbed(cat);
 
 
 client.on('message', message => {
-    if (message.content === "$roles") {
+    if (message.content === "Rroles") {
 		if(!message.channel.guild) return;
         var roles = message.guild.roles.map(roles => `${roles.name}, `).join(' ')
         const embed = new Discord.RichEmbed()
@@ -488,7 +495,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    var prefix = "$"
+    var prefix = "R"
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -529,7 +536,7 @@ client.on('message', message => {
 
 	client.on('message', async message =>{
   if (message.author.boss) return;
-	var prefix = "$";
+	var prefix = "R";
 
 if (!message.content.startsWith(prefix)) return;
 	let command = message.content.split(" ")[0];
@@ -655,7 +662,7 @@ client.on('message', async message => {
 });
 
 client.on('message' , message => {
-    var prefix = "$";
+    var prefix = "R";
     let user = message.mentions.users.first()|| client.users.get(message.content.split(' ')[1])
     if(message.content.startsWith(prefix + 'unban')) {
         if(!user) return  message.channel.send(`Do this ${prefix} <@ID user> \n or \n ${prefix}unban ID user`);
@@ -847,7 +854,7 @@ const Sra7a = [
 	 'صراحه  |  ما هي أمنياتك المُستقبلية؟‏',
 ]
    client.on('message', message => {
- if (message.content.startsWith('$صراحه')) {
+ if (message.content.startsWith('Rصراحه')) {
      if(!message.channel.guild) return message.reply('** This command only for servers **');
   var client= new Discord.RichEmbed()
   .setTitle("لعبة صراحة ..")
@@ -918,7 +925,7 @@ const Za7f = [
 
 
  client.on('message', message => {
-   if (message.content.startsWith("$عقاب")) {
+   if (message.content.startsWith("Rعقاب")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -977,7 +984,7 @@ message.channel.sendEmbed(cat);
 ]
 
  client.on('message', message => {
-   if (message.content.startsWith("$كت تويت")) {
+   if (message.content.startsWith("Rكت تويت")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -1005,7 +1012,7 @@ const secreT = [
 
 
  client.on('message', message => {
-   if (message.content.startsWith("$خواطر")) {
+   if (message.content.startsWith("Rخواطر")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -1025,7 +1032,7 @@ const Love = [  "**احبك / عدد قطرات المـــطر والشجر و
 
 
  client.on('message', message => {
-   if (message.content.startsWith("$حب")) {
+   if (message.content.startsWith("Rحب")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -1047,7 +1054,7 @@ const Love = [  "**احبك / عدد قطرات المـــطر والشجر و
 
 
   client.on("message", msg => {
-           var prefix = "$";
+           var prefix = "R";
   if(msg.content.startsWith (prefix + "id")) {
     if(!msg.channel.guild) return msg.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');
       const embed = new Discord.RichEmbed();
@@ -1068,7 +1075,7 @@ const Love = [  "**احبك / عدد قطرات المـــطر والشجر و
 
 
    client.on("message", message => {
-    const prefix = "$"
+    const prefix = "R"
 
           if(!message.channel.guild) return;
    if(message.author.bot) return;
@@ -1087,7 +1094,7 @@ const Love = [  "**احبك / عدد قطرات المـــطر والشجر و
   });
 
   client.on('message', message => {
-    if (message.content.startsWith("$avatar")) {
+    if (message.content.startsWith("Ravatar")) {
         var mentionned = message.mentions.users.first();
     var x5bzm;
       if(mentionned){
@@ -1242,7 +1249,7 @@ if (msg.content.startsWith(prefix + 'cal')) {
 
 
 client.on('message', message => {
-    if (message.content.startsWith("$botinfo")) {
+    if (message.content.startsWith("Rbotinfo")) {
     message.channel.send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
@@ -1264,7 +1271,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-     var prefix = "$"
+     var prefix = "R"
      if (message.author.bot) return;
 if (message.content.startsWith(prefix + "uptime")) {
     let uptime = client.uptime;
@@ -1352,7 +1359,7 @@ if (message.content === prefix + "mutechannel") {
 
 client.on("message", message => {
     var prefix = "$";
- if (message.content === "$help") {
+ if (message.content === "Rhelp") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription(`
@@ -1360,19 +1367,19 @@ client.on("message", message => {
 👑Commands system♧|أوامر البوت الأسطورية👑
 
 ─════════════ {✯system✯} ════════════─
-❧ $help-admin ➺ 🔰اوامر الادارة🔰
+❧ Rhelp-admin ➺ 🔰اوامر الادارة🔰
 
-❧ $help-public ➺ 👑اوامر العامة👑
+❧ Rhelp-public ➺ 👑اوامر العامة👑
 
-❧ $help-games ➺ 🎮اوامر الالعاب🎮
+❧ Rhelp-games ➺ 🎮اوامر الالعاب🎮
 
-❧ $help-music ➺ 🎵اوامر الاغاني🎶
+❧ Rhelp-music ➺ 🎵اوامر الاغاني🎶
 
-❧ $help-welcome ➺ 👋معلومات الترحيب في البوت👋
+❧ Rhelp-welcome ➺ 👋معلومات الترحيب في البوت👋
 
-❧ $help-color ➺ ✏أوامر الألوان🎉
+❧ Rhelp-color ➺ ✏أوامر الألوان🎉
 
-❧ $help-use ➺🚩للمزيد من المعلومات للبوت🚩
+❧ Rhelp-use ➺🚩للمزيد من المعلومات للبوت🚩
 ─════════════ {✯system✯} ════════════─
       `)
    message.channel.sendEmbed(embed)
@@ -1390,7 +1397,7 @@ client.on("message", message => {
 
    client.on('message', msg => {
   //Code By : ‡ ♪ ℬℐℓѦℓ✋ ‡#2026
-  if(msg.content.startsWith('$suggest')) {
+  if(msg.content.startsWith('Rsuggest')) {
     if(!msg.channel.guild) return msg.reply('** هاذا الامر فقط للسيرفرات**');
     if(!msg.guild.channels.find('name', 'suggestions')) return msg.reply('**الرجاء إضافة روم بإسم (suggestions)**');
     let args = msg.content.split(" ").slice(1);
@@ -1437,7 +1444,7 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`in ${client.guilds.size} servers `)
     console.log(`[Codes] ${client.users.size}`)
-    client.user.setStatus("idle")
+    client.user.setStatus("online")
 });
 //by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
 client.on('message', async msg => { // eslint-disable-line
@@ -1490,7 +1497,7 @@ client.on('message', async msg => { // eslint-disable-line
 			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 //by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-					.setFooter("system")
+					.setFooter("Royal System©")
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
 
 					// eslint-disable-next-line max-depth
@@ -1659,19 +1666,19 @@ ${prefix}queue ⇏ ♠لمعرفة قآئمة التشغيل❗
 
 
 client.on("message", message => {
- if (message.content === "$help-music") {
+ if (message.content === "Rhelp-music") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription('👑أوامر الموسيقى👑')
-	  .addField('❖-|$play', `🎸لتشغيل أغنية برآبط أو بأسم🎵`)
-	  .addField('❖-|$skip', `♠لتجآوز الأغنية الحآلية🎺`)
-	  .addField('❖-|$pause', `🚩إيقآف الأغنية مؤقتا💯`)
-	  .addField('❖-|$resume', `🎧لموآصلة الإغنية بعد إيقآفهآ مؤقتا🎵`)
-          .addField('❖-|$vol', `🔊تغيير درجة الصوت 100 - 0🔇`)
-          .addField('❖-|$stop', `🔘لإخرآج البوت من الروم❗`)
-          .addField('❖-|$nb', `🎼لمعرفة الأغنية المشغلة حآليا🎷`)
-          .addField('❖-|$queue', `🎸لمعرفة قآئمة التشغيل🎤`)
-          .addField('❖-|$music', `🔰لأرسال الأوامر بلشات🔰`)
+	  .addField('❖-|Rplay', `🎸لتشغيل أغنية برآبط أو بأسم🎵`)
+	  .addField('❖-|Rskip', `♠لتجآوز الأغنية الحآلية🎺`)
+	  .addField('❖-|Rpause', `🚩إيقآف الأغنية مؤقتا💯`)
+	  .addField('❖-|Rresume', `🎧لموآصلة الإغنية بعد إيقآفهآ مؤقتا🎵`)
+          .addField('❖-|Rvol', `🔊تغيير درجة الصوت 100 - 0🔇`)
+          .addField('❖-|Rstop', `🔘لإخرآج البوت من الروم❗`)
+          .addField('❖-|Rnb', `🎼لمعرفة الأغنية المشغلة حآليا🎷`)
+          .addField('❖-|Rqueue', `🎸لمعرفة قآئمة التشغيل🎤`)
+          .addField('❖-|Rmusic', `🔰لأرسال الأوامر بلشات🔰`)
   message.author.send({embed});
       message.channel.send(":white_check_mark: | Check Your DM تم الأرسال بلخاص")
 
@@ -1679,20 +1686,20 @@ client.on("message", message => {
 });
 
 client.on("message", message => {
- if (message.content === "$help-welcome") {
+ if (message.content === "Rhelp-welcome") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
         .setDescription('👑أوامر الترحيب👑')
-	.addField('❖-|$wlc 1', `👋يخلي البوت يرسل لك ترحيب بشكل حلو👋`)
-	  .addField('❖-|$wlc 2', `👑يخلي البوت يرسل لك ترحيب بشكل تاني خورافي👑`)
-	  .addField('❖-|$wlc 3', `👋يخلي البوت يرسل لك ترحيب بشكل غير الي فاتوا👋`)
-	  .addField('❖-|$wlc 4', `👑يخلي البوت يرسل لك ترحيب بشكل اخر و خورافي مرة👑`)
-          .addField('❖-|$wlc 5', `👋يخلي البوت يرحب بك بشكل حلو👋`)
-          .addField('❖-|$wlc 6', `👑يخلي البوت يرحب بك بطريقة خورافية👑`)
-          .addField('❖-|$wlc 7', `👋يخلي البوت يرحب بك بطريقة حلوة👋`)
-          .addField('❖-|$wlc 8', `👑يخلي البوت يرحب بك مثل الباقي👑`)
-          .addField('❖-|$wlc 9', `👋يخلي البوت يرحب بك مثل الباقي👋`)
-          .addField('❖-|$wlc 10', `👑يخلي البوت يرحب بك مثل الباقي👑`)
+	.addField('❖-|Rwlc 1', `👋يخلي البوت يرسل لك ترحيب بشكل حلو👋`)
+	  .addField('❖-|Rwlc 2', `👑يخلي البوت يرسل لك ترحيب بشكل تاني خورافي👑`)
+	  .addField('❖-|Rwlc 3', `👋يخلي البوت يرسل لك ترحيب بشكل غير الي فاتوا👋`)
+	  .addField('❖-|Rwlc 4', `👑يخلي البوت يرسل لك ترحيب بشكل اخر و خورافي مرة👑`)
+          .addField('❖-|Rwlc 5', `👋يخلي البوت يرحب بك بشكل حلو👋`)
+          .addField('❖-|Rwlc 6', `👑يخلي البوت يرحب بك بطريقة خورافية👑`)
+          .addField('❖-|Rwlc 7', `👋يخلي البوت يرحب بك بطريقة حلوة👋`)
+          .addField('❖-|Rwlc 8', `👑يخلي البوت يرحب بك مثل الباقي👑`)
+          .addField('❖-|Rwlc 9', `👋يخلي البوت يرحب بك مثل الباقي👋`)
+          .addField('❖-|Rwlc 10', `👑يخلي البوت يرحب بك مثل الباقي👑`)
   message.author.send({embed});
       message.channel.send(":white_check_mark: | Check Your DM تم الأرسال بلخاص")
 
@@ -1733,7 +1740,7 @@ client.on('message', message => {
  });
 
 client.on('message', message => {
- if (message.content.startsWith("$wlc 1")) {
+ if (message.content.startsWith("Rwlc 1")) {
                                  var mentionned = message.mentions.users.first();
              var mentionavatar;
                if(mentionned){
@@ -1760,7 +1767,7 @@ client.on('message', message => {
  
   
 client.on('message', message => {
- if (message.content.startsWith("$wlc 2")) {
+ if (message.content.startsWith("Rwlc 2")) {
                                  var mentionned = message.mentions.users.first();
              var mentionavatar;
                if(mentionned){
@@ -1787,7 +1794,7 @@ client.on('message', message => {
 
   
 client.on('message', message => {
- if (message.content.startsWith("$wlc 3")) {
+ if (message.content.startsWith("Rwlc 3")) {
                                  var mentionned = message.mentions.users.first();
              var mentionavatar;
                if(mentionned){
@@ -1814,7 +1821,7 @@ client.on('message', message => {
 
   
 client.on('message', message => {
- if (message.content.startsWith("$wlc 4")) {
+ if (message.content.startsWith("Rwlc 4")) {
                                  var mentionned = message.mentions.users.first();
              var mentionavatar;
                if(mentionned){
@@ -1841,7 +1848,7 @@ client.on('message', message => {
 
   
 client.on('message', message => {
- if (message.content.startsWith("$wlc 5")) {
+ if (message.content.startsWith("Rwlc 5")) {
                                  var mentionned = message.mentions.users.first();
              var mentionavatar;
                if(mentionned){
@@ -1868,7 +1875,7 @@ client.on('message', message => {
 
   
 client.on('message', message => {
- if (message.content.startsWith("$wlc 6")) {
+ if (message.content.startsWith("Rwlc 6")) {
                                  var mentionned = message.mentions.users.first();
              var mentionavatar;
                if(mentionned){
@@ -1895,7 +1902,7 @@ client.on('message', message => {
 
   
 client.on('message', message => {
- if (message.content.startsWith("$wlc 7")) {
+ if (message.content.startsWith("Rwlc 7")) {
                                  var mentionned = message.mentions.users.first();
              var mentionavatar;
                if(mentionned){
@@ -1922,7 +1929,7 @@ client.on('message', message => {
 
   
 client.on('message', message => {
- if (message.content.startsWith("$wlc 8")) {
+ if (message.content.startsWith("Rwlc 8")) {
                                  var mentionned = message.mentions.users.first();
              var mentionavatar;
                if(mentionned){
@@ -1949,7 +1956,7 @@ client.on('message', message => {
 
   
 client.on('message', message => {
- if (message.content.startsWith("$wlc 9")) {
+ if (message.content.startsWith("Rwlc 9")) {
                                  var mentionned = message.mentions.users.first();
              var mentionavatar;
                if(mentionned){
@@ -1976,7 +1983,7 @@ client.on('message', message => {
 
   
 client.on('message', message => {
- if (message.content.startsWith("$wlc 10")) {
+ if (message.content.startsWith("Rwlc 10")) {
                                  var mentionned = message.mentions.users.first();
              var mentionavatar;
                if(mentionned){
@@ -2010,7 +2017,7 @@ client.on('message', message => {
 
 
 client.on("message", (message) => {
-if (message.content.startsWith("$setchannel")) {
+if (message.content.startsWith("Rsetchannel")) {
         let args = message.content.split(" ").slice(1);
     message.guild.createChannel(args.join(' '), 'text');
 message.channel.sendMessage('تـم إنـشاء روم كـتابـي بنجاح|✅')
@@ -2023,7 +2030,7 @@ message.channel.sendMessage('تـم إنـشاء روم كـتابـي بنجا�
 
 
 client.on("message", (message) => {
-if (message.content.startsWith("$setvoice")) {
+if (message.content.startsWith("Rsetvoice")) {
         let args = message.content.split(" ").slice(1);
     message.guild.createChannel(args.join(' '), 'voice');
     message.channel.sendMessage('تـم إنـشاء روم صـوتي بنجاح|✅')
@@ -2035,7 +2042,7 @@ if (message.content.startsWith("$setvoice")) {
 
 
 client.on('message' , message => {
-    var prefix = "$";
+    var prefix = "R";
 if(message.content.startsWith(prefix+"userinfo")) {
     let user = message.mentions.users.first() || message.author;
     const joineddiscord = (user.createdAt.getDate() + 1) + '-' + (user.createdAt.getMonth() + 1) + '-' + user.createdAt.getFullYear() + ' | ' + user.createdAt.getHours() + ':' + user.createdAt.getMinutes() + ':' + user.createdAt.getSeconds();
@@ -2122,7 +2129,7 @@ msg.channel.send(`${item.type}`).then(() => {
 
 
   client.on('message', message => {
-if(message.content.startsWith("$solts")) {
+if(message.content.startsWith("Rsolts")) {
   let slot1 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
   let slot2 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
   let slot3 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
@@ -2144,7 +2151,7 @@ if(message.content.startsWith("$solts")) {
 
 
   client.on('message', message => {
-if(message.content.startsWith("$حجرة")) {
+if(message.content.startsWith("Rحجرة")) {
   let slot1 = ['✂ورقة📄', '🗿حجرة🗿', '✂مقص📄'];
   let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
   let we;
@@ -2160,7 +2167,7 @@ if(message.content.startsWith("$حجرة")) {
 
 
   client.on('message', message => {
-if(message.content.startsWith("$ورقة")) {
+if(message.content.startsWith("Rورقة")) {
   let slot1 = ['✂ورقة📄', '🗿حجرة🗿', '✂مقص📄'];
   let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
   let we;
@@ -2176,7 +2183,7 @@ if(message.content.startsWith("$ورقة")) {
 
 
   client.on('message', message => {
-if(message.content.startsWith("$مقص")) {
+if(message.content.startsWith("Rمقص")) {
   let slot1 = ['✂ورقة📄', '🗿حجرة🗿', '✂مقص📄'];
   let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
   let we;
@@ -2403,7 +2410,7 @@ msg.channel.send(`${item.type}`).then(() => {
 
 
 client.on('message', message => {
-const prefix = '$'	
+const prefix = 'R'	
     if(message.content === prefix + 'createcolors') {
                          if(!message.channel.guild) return message.channel.send('**This Commnad only For Servers !**'); 
          if(!message.member.hasPermission('ADMINISTRATOR')) return    message.channel.send('**You Dont Have** `ADMINISTRATOR` **premission**').then(msg => msg.delete(6000))
@@ -2677,7 +2684,7 @@ const prefix = '$'
 
 client.on('message', message => {
     let args = message.content.split(' ').slice(1);
-if(message.content.split(' ')[0] == '$setcolor'){
+if(message.content.split(' ')[0] == 'Rsetcolor'){
      const embedd = new Discord.RichEmbed()
 .setFooter('Requested by '+message.author.username, message.author.avatarURL)
 .setDescription(`**There's No Color With This Number لازم ان تختار رقم ملحوظة لازم تكون منزل الالوان** ❌ `)
@@ -2933,7 +2940,7 @@ message.channel.sendFile(canvas.toBuffer())
 
 
 client.on("guildMemberAdd", member => {
-let welcomer = member.guild.channels.find("name","chat");
+let welcomer = member.guild.channels.find("name","royal");
       if(!welcomer) return;
       if(welcomer) {
          moment.locale('ar-ly');
@@ -3195,7 +3202,7 @@ Sender <@${message.author.id}>                                                  
 client.on('message', msg => {
     if(msg.author.bot) return;
     
-    if(msg.content === '$linkserver') {
+    if(msg.content === 'Rlinkserver') {
       client.guilds.forEach(g => {
         
         let l = g.id
@@ -3685,4 +3692,3 @@ message.channel.sendFile(canvas.toBuffer())
 
 
 client.login(process.env.BOT_TOKEN);
-client.login(process.env.BOT_1TOKEN);
