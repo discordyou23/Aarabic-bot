@@ -28,9 +28,7 @@ client.user.setGame(`_Royal Force System©`);
 });
 
 
-client.on('ready',async () => {
-  client.channels.find(ch => ch.id === "518121069077331970" && ch.type === 'voice').join();
-});
+
 
 
 
