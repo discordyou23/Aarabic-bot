@@ -319,21 +319,7 @@ CopyRight: By Elite Server.
 
 
 
-client.on("message", message => {
-    var prefix = "$";
- if (message.content === "$vip") {
-  const embed = new Discord.RichEmbed()
-      .setDescription(`
-Bot Name : Elite System.
-**Premium**
-``N"347``
-**Month**
-C: 3 . 12 . 2018
-T: 3 . 1 . 2019
-      `)
-   message.channel.sendEmbed(embed)
-    }
-   });
+
 
 
 
