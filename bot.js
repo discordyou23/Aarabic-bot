@@ -16,14 +16,36 @@ let done = {};
 
 
 
+
+
+client.on('message', message => {
+    if (message.content ==='=vip') {
+        message.reply('**Premium**=`N"345`/1Month');
+      }
+});
+
+
+
+
+
 client.on('ready', () => {
     console.log('I am ready!');
 });
 
 
 client.on('ready', () => {                           
-client.user.setGame(`_Elite System`);                                                                                                                                                                                                                                                                                                                                                                                                                            
+client.user.setGame(`Elite Community , | =help`);                                                                                                                                                                                                                                                                                                                                                                                                                            
 });
+
+
+
+client.on('ready', () => {
+    console.log(`Logged in as ${client.user.tag}!`);
+    console.log(`in ${client.guilds.size} servers `)
+    console.log(`[Codes] ${client.users.size}`)
+    client.user.setStatus("online")
+});
+
 
 client.on('guildMemberAdd', member =>{
     member.addRole(member.guild.roles.find(x => x.name === 'Members ♪..'), "Auto-Role")
