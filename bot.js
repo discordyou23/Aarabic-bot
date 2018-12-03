@@ -21,9 +21,13 @@ client.on('ready', () => {
 });
 
 
+client.on('ready', () => {                           
+client.user.setGame(`_Elite System`);                                                                                                                                                                                                                                                                                                                                                                                                                            
+});
 
-
-
+client.on('guildMemberAdd', member =>{
+    member.addRole(member.guild.roles.find(x => x.name === 'Members ♪..'), "Auto-Role")
+});
 
 
 
@@ -299,9 +303,9 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription(`
-─════════════ {✯Royal_System©✯} ════════════─
-CopyRight: By Server Royal Force.
-─════════════ {✯Royal_System©✯} ════════════─
+─════════════ {✯Elite_System©✯} ════════════─
+CopyRight: By Elite Server.
+─════════════ {✯Elite_System©✯} ════════════─
       `)
    message.channel.sendEmbed(embed)
     }
@@ -876,7 +880,7 @@ const Za7f = [
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL)
- .addField('Royal System' ,
+ .addField('Elite System' ,
   `${Za7f[Math.floor(Math.random() * Za7f.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[38ab] Send By: ' + message.author.username)
@@ -983,7 +987,7 @@ const Love = [  "**احبك / عدد قطرات المـــطر والشجر و
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL)
- .addField('Royal System©' ,
+ .addField('Elite System©' ,
   `${Love[Math.floor(Math.random() * Love.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[id] Send By: ' + message.author.username)
@@ -1201,7 +1205,7 @@ client.on('message', message => {
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
-            .setTitle('``INFO  BomBot`` ')
+            .setTitle('``INFO  Elite System`` ')
             .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``servers``', [client.guilds.size], true)
             .addField('``channels``' , `[ ${client.channels.size} ]` , true)
@@ -1312,7 +1316,7 @@ client.on("message", message => {
 
 👑Commands Royal Force|أوامر البوت الأسطورية👑
 
-─════════════ {✯Royal Force©✯} ════════════─
+─════════════ {✯Elite System©✯} ════════════─
 ❧ =help-admin ➺ 🔰اوامر الادارة🔰
 
 ❧ =help-public ➺ 👑اوامر العامة👑
@@ -1324,7 +1328,7 @@ client.on("message", message => {
 ❧ =help-color ➺ ✏أوامر الألوان🎉
 
 ❧ =help-use ➺🚩للمزيد من المعلومات للبوت🚩
-─════════════ {✯Royal Force©✯} ════════════─
+─════════════ {✯Elite System©✯} ════════════─
       `)
    message.channel.sendEmbed(embed)
 
