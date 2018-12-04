@@ -3409,7 +3409,8 @@ const w = ['./Sans_titre391-1.png'];
             let BG = Canvas.Image;
             let ground = new Image;
             ground.src = Background;
-          
+            ctx.drawImage(ground, 0, 0, 400, 200);
+             
 
                 let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(100) + ".png" : member.user.displayAvatarURL;
                 jimp.read(url, (err, ava) => {
