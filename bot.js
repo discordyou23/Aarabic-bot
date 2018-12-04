@@ -3399,7 +3399,7 @@ client.on('guildMemberAdd', member => {
 
 
 
-const w = ['./welcome_4.png'];
+const w = ['./Sans_titre391-1.png'];
 
          let Image = Canvas.Image,
             canvas = new Canvas(400, 200),
@@ -3409,8 +3409,6 @@ const w = ['./welcome_4.png'];
             let BG = Canvas.Image;
             let ground = new Image;
             ground.src = Background;
-            ctx.drawImage(ground, 0, 0, 400, 200);
-             
           
 
                 let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(100) + ".png" : member.user.displayAvatarURL;
@@ -3420,16 +3418,10 @@ const w = ['./welcome_4.png'];
                         if (err) return console.log(err);
                         
                         ctx.font = "bold 12px Arial";
-                        ctx.fontSize = '20px';
+                        ctx.fontSize = '41px';
                         ctx.fillStyle = "#f1f1f1";
                         ctx.textAlign = "center";
-                        ctx.fillText(`welcome to ${member.guild.name}`, 300, 130);
-                        
-                        ctx.font = "bold 12px Arial";
-                        ctx.fontSize = '20px';
-                        ctx.fillStyle = "#f1f1f1";
-                        ctx.textAlign = "center";
-                        ctx.fillText(member.user.username, 200, 150);
+                        ctx.fillText(member.user.username, 405, 290);
  
                 let Avatar = Canvas.Image;
                               let ava = new Avatar;
@@ -3438,7 +3430,7 @@ const w = ['./welcome_4.png'];
                               ctx.arc(77, 101, 62, 0, Math.PI*2);
                               ctx.stroke();
                                  ctx.clip();
-                                 ctx.drawImage(ava, 13, 38, 128, 126);  
+                                 ctx.drawImage(ava, 19, 144, 212, 212);  
                           
                 
                              
