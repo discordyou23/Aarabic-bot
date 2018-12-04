@@ -3419,7 +3419,13 @@ const w = ['./Sans_titre391-1.png'];
                         if (err) return console.log(err);
                         
                         ctx.font = "bold 12px Arial";
-                        ctx.fontSize = '41px';
+                        ctx.fontSize = '30px';
+                        ctx.fillStyle = "#f1f1f1";
+                        ctx.textAlign = "center";
+                        ctx.fillText(`WELCOME`, 300, 130);
+			
+			ctx.font = "bold 12px Arial";
+                        ctx.fontSize = '30px';
                         ctx.fillStyle = "#f1f1f1";
                         ctx.textAlign = "center";
                         ctx.fillText(member.user.username, 405, 290);
