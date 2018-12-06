@@ -87,7 +87,7 @@ client.on('message',async Epic => {
       SPEAK: false
     });
     setInterval(() => {
-      c.setName(` Silver online: ${Epic.guild.members.filter(m => m.voiceChannel).size}`)
+      c.setName(` SC Voice [ ${Epic.guild.members.filter(m => m.voiceChannel).size} ]`)
     },1000);
   });
   }
