@@ -80,10 +80,10 @@ const w = ['./welcome.png'];
                         if (err) return console.log(err);
                         
                         ctx.font = "bold 12px Arial";
-                        ctx.fontSize = '20px';
+                        ctx.fontSize = '59px';
                         ctx.fillStyle = "#f1f1f1";
                         ctx.textAlign = "center";
-                        ctx.fillText(`welcome to ${member.guild.name}`, 300, 130);
+                        ctx.fillText(``, 300, 130);
                         
                         ctx.font = "bold 12px Arial";
                         ctx.fontSize = '20px';
