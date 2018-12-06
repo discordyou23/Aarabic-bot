@@ -19,7 +19,7 @@ client.on('ready', () => {
 
 
 client.on('ready', () => {                           
-client.user.setGame(`Elite Community , | $help`);                                                                                                                                                                                                                                                                                                                                                                                                                            
+client.user.setGame(`Silver Community`);                                                                                                                                                                                                                                                                                                                                                                                                                            
 });
 
 
@@ -33,7 +33,7 @@ client.on('ready', () => {
 
 
 client.on('guildMemberAdd', member =>{
-    member.addRole(member.guild.roles.find(x => x.name === 'Members ♪..'), "Auto-Role")
+    member.addRole(member.guild.roles.find(x => x.name === '« Silver Member'), "Auto-Role")
 });
 
 
@@ -107,7 +107,7 @@ client.on('message', message => {
                                             if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
         if (!message.member.hasPermissions(['ADMINISTRATOR'])){
         message.delete()
-    return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
+    return message.reply(`**ممنوع إرسال روابط في سيرفر العقاب ميوت|`)
     }
 }
 });
@@ -126,7 +126,7 @@ if(message.author.bot) return;
             .setTitle('USERS & SERVERS')
                   .addField('**SERVERS**' , `[${client.guilds.size}]` , true)
                   .addField('**USERS**' , `[${client.users.size}]` , true)
-                  .setFooter('system©')
+                  .setFooter('Silver Community©')
     })
 }
 });
@@ -308,9 +308,9 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription(`
-─════════════ {✯Elite_System©✯} ════════════─
-CopyRight: By Elite Server.
-─════════════ {✯Elite_System©✯} ════════════─
+─════════════ {✯Silver_Community©✯} ════════════─
+CopyRight: By Silver Community.
+─════════════ {✯Silver_Community©✯} ════════════─
       `)
    message.channel.sendEmbed(embed)
     }
@@ -884,7 +884,7 @@ const Za7f = [
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL)
- .addField('Elite System' ,
+ .addField('Silver System' ,
   `${Za7f[Math.floor(Math.random() * Za7f.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[38ab] Send By: ' + message.author.username)
@@ -991,7 +991,7 @@ const Love = [  "**احبك / عدد قطرات المـــطر والشجر و
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL)
- .addField('Elite System©' ,
+ .addField('silver System©' ,
   `${Love[Math.floor(Math.random() * Love.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[id] Send By: ' + message.author.username)
@@ -1048,7 +1048,7 @@ const Love = [  "**احبك / عدد قطرات المـــطر والشجر و
   });
 
   client.on('message', message => {
-    if (message.content.startsWith("=avatar")) {
+    if (message.content.startsWith("$avatar")) {
         var mentionned = message.mentions.users.first();
     var x5bzm;
       if(mentionned){
@@ -1203,13 +1203,13 @@ if (msg.content.startsWith(prefix + 'cal')) {
 
 
 client.on('message', message => {
-    if (message.content.startsWith("=botinfo")) {
+    if (message.content.startsWith("$botinfo")) {
     message.channel.send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
-            .setTitle('``INFO  Elite System`` ')
+            .setTitle('``INFO  Silver System`` ')
             .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``servers``', [client.guilds.size], true)
             .addField('``channels``' , `[ ${client.channels.size} ]` , true)
@@ -1225,7 +1225,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-     var prefix = "="
+     var prefix = "$"
      if (message.author.bot) return;
 if (message.content.startsWith(prefix + "uptime")) {
     let uptime = client.uptime;
@@ -1318,9 +1318,9 @@ client.on("message", message => {
       .setColor("RANDOM")
       .setDescription(`
 
-👑Commands Royal Force|أوامر البوت الأسطورية👑
+👑Commands Silver Community|أوامر البوت الأسطورية👑
 
-─════════════ {✯Elite System©✯} ════════════─
+─════════════ {✯Silver System©✯} ════════════─
 ❧ $help-admin ➺ 🔰اوامر الادارة🔰
 
 ❧ $help-public ➺ 👑اوامر العامة👑
@@ -1332,7 +1332,7 @@ client.on("message", message => {
 ❧ $help-color ➺ ✏أوامر الألوان🎉
 
 ❧ $help-use ➺🚩للمزيد من المعلومات للبوت🚩
-─════════════ {✯Elite System©✯} ════════════─
+─════════════ {✯Silver System©✯} ════════════─
       `)
    message.channel.sendEmbed(embed)
 
