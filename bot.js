@@ -19,7 +19,7 @@ client.on('ready', () => {
 
 
 client.on('ready', () => {                           
-client.user.setGame(`Silver Community`);                                                                                                                                                                                                                                                                                                                                                                                                                            
+client.user.setGame(`Silver System | $help`);                                                                                                                                                                                                                                                                                                                                                                                                                            
 });
 
 
