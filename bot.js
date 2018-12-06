@@ -116,7 +116,7 @@ welcomer.sendFile(canvas.toBuffer())
       });                    
  }
 });
-
+//fofo
 
 
 
