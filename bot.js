@@ -45,10 +45,6 @@ client.on('guildMemberAdd', member =>{
 
 
 
-client.on('message', msg => {
-  if(msg.content === 'رابط')
-  msg.reply('https://discord.gg/rN3saTD')
-});
 
 
 client.on("message", message => {
@@ -189,19 +185,28 @@ client.on("message", message => {
 
 
 client.on("message", message => {
+ if (message.content === "ip") {
+  const embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setDescription('رابط سيرفر SMART MOON RP')
+	  .addField('mtasa://51.255.215.208:22270')
+  message.author.send({embed});
+      message.channel.send("تم ارسال ايبي سيرفر في الخاص!!!")
+ }
+});
+
+
+
+client.on("message", message => {
  if (message.content === "رابط") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription('رابط سيرفر SMART MOON RP')
 	  .addField('https://discord.gg/rN3saTD')
   message.author.send({embed});
-      message.channel.send(":white_check_mark: | Check Your DM تم الأرسال بلخاص")
+      message.channel.send("تم ارسال رابط سيرفر دسكورد فلخاص!!!!")
  }
 });
-
-
-
-
 
 
 
