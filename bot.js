@@ -189,6 +189,23 @@ client.on("message", message => {
 
 
 client.on("message", message => {
+ if (message.content === "رابط") {
+  const embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setDescription('رابط سيرفر SMART MOON RP')
+	  .addField('https://discord.gg/rN3saTD')
+  message.author.send({embed});
+      message.channel.send(":white_check_mark: | Check Your DM تم الأرسال بلخاص")
+ }
+});
+
+
+
+
+
+
+
+client.on("message", message => {
  if (message.content === "$help-color") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
