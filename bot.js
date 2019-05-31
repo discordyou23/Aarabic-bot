@@ -19,7 +19,7 @@ client.on('ready', () => {
 
 
 client.on('ready', () => {                           
-client.user.setGame(`Silver System | $help`);                                                                                                                                                                                                                                                                                                                                                                                                                            
+client.user.setGame(`Smart Moon RP BOT`);                                                                                                                                                                                                                                                                                                                                                                                                                            
 });
 
 
@@ -33,7 +33,7 @@ client.on('ready', () => {
 
 
 client.on('guildMemberAdd', member =>{
-    member.addRole(member.guild.roles.find(x => x.name === '« Silver Member'), "Auto-Role")
+    member.addRole(member.guild.roles.find(x => x.name === 'SM Player'), "Auto-Role")
 });
 
 
@@ -46,8 +46,8 @@ client.on('guildMemberAdd', member =>{
 
 
 client.on('message', msg => {
-  if(msg.content === 'ارحب')
-  msg.reply('**🕊Welcome To Silver|نتمنى لك أفضل الأوقات معنا🔱**')
+  if(msg.content === 'رابط')
+  msg.reply('https://discord.gg/rN3saTD')
 });
 
 
@@ -83,51 +83,11 @@ client.on("message", message => {
 
 
 
-client.on('message',async Epic => {
-  var codes = "$";
-  if(Epic.content.startsWith(codes + "online")) {
-  if(!Epic.guild.member(Epic.author).hasPermissions('MANAGE_CHANNELS')) return Epic.reply(':x: **ليس لديك الصلاحيات الكافية**');
-  if(!Epic.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return Epic.reply(':x: **ليس معي الصلاحيات الكافية**');
-  Epic.guild.createChannel(`Voice Online : [ ${Epic.guild.members.filter(m => m.voiceChannel).size} ]` , 'voice').then(c => {
-    console.log(`Voice Online Is Activation In ${Epic.guild.name}`);
-    c.overwritePermissions(Epic.guild.id, {
-      CONNECT: false,
-      SPEAK: false
-    });
-    setInterval(() => {
-      c.setName(` SC Voice [ ${Epic.guild.members.filter(m => m.voiceChannel).size} ]`)
-    },1000);
-  });
-  }
-});
 
 
 
-client.on('message', msg => {
-        if (msg.content.startsWith(`$warn`)) {
-           let args = msg.content.split(" ").slice(1);
-          if (!msg.mentions.members.first()) return msg.reply('منشن الشخص المحدد')
-          if (!args[1]) return msg.reply('``اكتب السبب``')
-          //غير اسم الروم او سوي روم بذا الاسم
-          if (msg.guild.channels.find('name', 'warns')) {
-            //اذا غيرت فوق غير هنا كمان
-            msg.guild.channels.find('name', 'warns').send(`
-          تم اعطائك تنبيه : ${msg.mentions.members.first()}
-          لأنك قمت بما يلي
-          ${args.join(" ").split(msg.mentions.members.first()).slice(' ')}
-          `)
-          }
-        }
-})
 
-
-  client.on('message', message => {
-     if(message.content.startsWith(prefix +"bans")) {
-        message.guild.fetchBans()
-        .then(bans => message.channel.send(`The ban count **${bans.size}** Person`))
-  .catch(console.error);
-}
-});
+  
 
 
 client.on('message', message => {
@@ -143,63 +103,7 @@ client.on('message', message => {
 
 
 
-client.on('message', message => {
-if(message.author.bot) return;
-    if (message.content.startsWith("$users")) {
-    message.channel.send({
-        embed: new Discord.RichEmbed()
-            .setAuthor(client.user.username,client.user.avatarURL)
-            .setThumbnail(client.user.avatarURL)
-            .setColor('#00ff47')
-            .setTitle('USERS & SERVERS')
-                  .addField('**SERVERS**' , `[${client.guilds.size}]` , true)
-                  .addField('**USERS**' , `[${client.users.size}]` , true)
-                  .setFooter('Silver Community©')
-    })
-}
-});
 
-
-
-
-
-client.on('message', function(message) {
-    if(message.content.startsWith(prefix + "report")) {
-        let messageArgs = message.content.split(" ").slice(1).join(" ");
-        let messageReason = message.content.split(" ").slice(2).join(" ");
-        if(!messageReason) return message.reply("**# Specify a reason!**");
-    let mUser = message.mentions.users.first();
-    if(!mUser) return message.channel.send("Couldn't find user.");
-    let Rembed = new Discord.RichEmbed()
-    .setTitle("`New Report!`")
-    .setThumbnail(message.author.avatarURL)
-    .addField("**# - Reported User:**",mUser,true)
-    .addField("**# - Reported User ID:**",mUser.id,true)
-    .addField("**# - Reason:**",messageReason,true)
-    .addField("**# - Channel:**",message.channel,true)
-    .addField("**# - Time:**",message.createdAt,true)
-    .setFooter("لو ان الابلاغ فيه مزح راح يتعرض صاحب الابلاغ لقوبات")
-message.channel.send(Rembed)
-message.channel.send("__Are you sure you want to send this to the Server owner??__").then(msg => {
-    msg.react("✅")
-    msg.react("❌")
-.then(() => msg.react('❌'))
-.then(() =>msg.react('✅'))
-let reaction1Filter = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;
-let reaction2Filter = (reaction, user) => reaction.emoji.name === '❌' && user.id === message.author.id;
-
-let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });
-let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
-reaction1.on("collect", r => {
-    message.guild.owner.send(Rembed)
-    message.reply("**# - Done! 🎇**");
-})
-reaction2.on("collect", r => {
-    message.reply("**# - Canceled!**");
-})
-})
-}
-});
 
 client.on('message', message => {
   if (message.author.bot) return;
@@ -336,9 +240,9 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription(`
-─════════════ {✯Silver_Community©✯} ════════════─
+─════════════ {✯SM_RP©✯} ════════════─
 CopyRight: By Silver Community.
-─════════════ {✯Silver_Community©✯} ════════════─
+─════════════ {✯SM_RP©✯} ════════════─
       `)
    message.channel.sendEmbed(embed)
     }
@@ -403,36 +307,8 @@ client.on('message', message => {
 
 
 
-var cats = [
-
-"https://static.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg",
-"https://www.petfinder.com/wp-content/uploads/2012/11/101438745-cat-conjunctivitis-causes.jpg",
-"http://www.i-love-cats.com/images/2015/04/12/cat-wallpaper-38.jpg",
-"https://www.aspca.org/sites/default/files/cat-care_urine-marking_main-image.jpg",
-"https://vignette1.wikia.nocookie.net/houseofnight/images/8/8b/Cats.jpg/revision/latest?cb=20130812053537",
-"https://s-media-cache-ak0.pinimg.com/originals/f0/3b/76/f03b7614dfadbbe4c2e8f88b69d12e04.jpg",
-"http://www.rd.com/wp-content/uploads/sites/2/2016/04/15-cat-wants-to-tell-you-attention.jpg"
-]
-    client.on('message', message => {
-        var args = message.content.split(" ").slice(1);
-    if(message.content.startsWith(prefix + 'cat')) {
-         var cat = new Discord.RichEmbed()
-.setImage(cats[Math.floor(Math.random() * cats.length)])
-message.channel.sendEmbed(cat);
-    }
-});
 
 
-client.on('message', message => {
-    if (message.content === "$roles") {
-		if(!message.channel.guild) return;
-        var roles = message.guild.roles.map(roles => `${roles.name}, `).join(' ')
-        const embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .addField('Roles:',`**[${roles}]**`)
-        message.channel.sendEmbed(embed);
-    }
-});
 
 
 
@@ -912,7 +788,7 @@ const Za7f = [
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL)
- .addField('Silver System' ,
+ .addField('SM System' ,
   `${Za7f[Math.floor(Math.random() * Za7f.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[38ab] Send By: ' + message.author.username)
@@ -1126,105 +1002,6 @@ let args = message.content.split(" ").slice(1);
 
 
 
-let ar = JSON.parse(fs.readFileSync(`./Data/AutoRole.json`, `utf8`))
-
-
-client.on('guildMemberAdd', member => {
-  if(!ar[member.guild.id]) ar[member.guild.id] = {
-  onoff: 'Off',
-  role: 'Member'
-  }
-  if(ar[member.guild.id].onoff === 'Off') return;
-member.addRole(member.guild.roles.find(`name`, ar[member.guild.id].role)).catch(console.error)
-})
-
-client.on('message', message => {
-
-if(!message.guild) return
-  if(!ar[message.guild.id]) ar[message.guild.id] = {
-  onoff: 'Off',
-  role: 'Member'
-  }
-
-if(message.content.startsWith(prefix + `autorole`)) {
-  let perms = message.member.hasPermission(`MANAGE_ROLES`)
-
-  if(!perms) return message.reply(`You don't have permissions, required permission : Manage Roles.`)
-  let args = message.content.split(" ").slice(1)
-  if(!args.join(" ")) return message.reply(`${prefix}autorle toggle/setrole [ROLE NAME]`)
-  let state = args[0]
-  if(!state.trim().toLowerCase() == 'toggle' || !state.trim().toLowerCase() == 'setrole') return message.reply(`Please type a right state, ${prefix}modlogs toggle/setrole [ROLE NAME]`)
-    if(state.trim().toLowerCase() == 'toggle') {
-     if(ar[message.guild.id].onoff === 'Off') return [message.channel.send(`**The Autorole Is __𝐎𝐍__ !**`), ar[message.guild.id].onoff = 'On']
-     if(ar[message.guild.id].onoff === 'On') return [message.channel.send(`**The Autorole Is __𝐎𝐅𝐅__ !**`), ar[message.guild.id].onoff = 'Off']
-    }
-   if(state.trim().toLowerCase() == 'set') {
-   let newRole = message.content.split(" ").slice(2).join(" ")
-   if(!newRole) return message.reply(`${prefix}autorole setrole [ROLE NAME]`)
-     if(!message.guild.roles.find(`name`,newRole)) return message.reply(`I Cant Find This Role.`)
-    ar[message.guild.id].role = newRole
-     message.channel.send(`**The AutoRole Has Been Changed to ${newRole}.**`)
-   }
-         }
-
-if(message.content === prefix + 'info') {
-    let perms = message.member.hasPermission(`MANAGE_GUILD`)
-    if(!perms) return message.reply(`You don't have permissions.`)
-    var embed = new Discord.RichEmbed()
-
-.addField(`Autorole : :sparkles:  `, `
-
-State : __${ar[message.guild.id].onoff}__
-Role : __${ar[message.guild.id].role}__`)
-
-
-    .setColor(`BLUE`)
-    message.channel.send({embed})
-  }
-
-
-    fs.writeFile("./Data/AutoRole.json", JSON.stringify(ar), (err) => {
-    if (err) console.error(err)
-  });
-
-
-})
-
-
-
-client.on('ready', () => {
-  console.log(`AutoRole Code Started By Friends Team`);
-    client.user.setStatus("online")
-});
-
-
-  const math = require('math-expression-evaluator');
-const stripIndents = require('common-tags').stripIndents;
-
-client.on('message', msg => {
-if (msg.content.startsWith(prefix + 'cal')) {
-  let args = msg.content.split(" ").slice(1);
-      const question = args.join(' ');
-  if (args.length < 1) {
-      msg.reply('**من فضلك .. قم بكتابة سؤال **.');
-} else {    let answer;
-  try {
-      answer = math.eval(question);
-  } catch (err) {
-      return msg.reply(`Error: ${err}`);
-  }
-
-  const embed = new Discord.RichEmbed()
-  .setThumbnail('https://banner2.kisspng.com/20180215/ade/kisspng-office-supplies-animation-calculator-5a85e764e3aa68.4914103215187249649325.jpg')
-.setDescription(`**
- السؤال يقولك :thinking:  : ${question}
-
- طبعا الاجابة :writing_hand: : ${answer}**
-`)
-  msg.channel.send(embed)
-  }
-};
-});
 
 
 
@@ -1346,9 +1123,9 @@ client.on("message", message => {
       .setColor("RANDOM")
       .setDescription(`
 
-👑Commands Silver Community|أوامر البوت الأسطورية👑
+👑Commands SM RP|أوامر البوت الأسطورية👑
 
-─════════════ {✯Silver System©✯} ════════════─
+─════════════ {✯SM System©✯} ════════════─
 ❧ $help-admin ➺ 🔰اوامر الادارة🔰
 
 ❧ $help-public ➺ 👑اوامر العامة👑
@@ -1360,7 +1137,7 @@ client.on("message", message => {
 ❧ $help-color ➺ ✏أوامر الألوان🎉
 
 ❧ $help-use ➺🚩للمزيد من المعلومات للبوت🚩
-─════════════ {✯Silver System©✯} ════════════─
+─════════════ {✯SM System©✯} ════════════─
       `)
    message.channel.sendEmbed(embed)
 
@@ -1375,32 +1152,7 @@ client.on("message", message => {
 
 
 
-   client.on('message', msg => {
-  //Code By : ‡ ♪ ℬℐℓѦℓ✋ ‡#2026
-  if(msg.content.startsWith('$suggest')) {
-    if(!msg.channel.guild) return msg.reply('** هاذا الامر فقط للسيرفرات**');
-    if(!msg.guild.channels.find('name', 'suggestions')) return msg.reply('**الرجاء إضافة روم بإسم (suggestions)**');
-    let args = msg.content.split(" ").slice(1);
-    if(!args[1]) return msg.reply(`**الرجاء كتابة اقتراح**`)
-    //غيره على حسب اسم روم الاقتراحات او سوي مثل اسم الروم الموجود هنا
-    if(msg.guild.channels.find('name', 'suggestions')) {
-      //غيره هنا كمان اذا غيرت فوق
-      msg.guild.channels.find('name', 'suggestions').send(`
-    **New Suggestion By** : ${msg.member}
-
-      **The Suggestion** :
-      ${args.join(" ").split(msg.mentions.members.first()).slice(' ')}
-      `)
-      .then(function (message) {
-        message.react('✅')
-        message.react('❌')
-      })
-      }
-    }
-
-});
-
-
+ 
 			
 
 client.on("message", message => {
@@ -2900,29 +2652,6 @@ Sender <@${message.author.id}>                                                  
 
 
  
-client.on('message', msg => {
-    if(msg.author.bot) return;
-    
-    if(msg.content === '$linkserver') {
-      client.guilds.forEach(g => {
-        
-        let l = g.id
-        g.channels.get(g.channels.first().id).createInvite({
-          maxUses: 5,
-          maxAge: 86400
-        }).then(i => msg.channel.send(`
-        **
-        Invite Link : <https://discord.gg/${i.code}>
-        Server : ${g.name} | Id : ${g.id} 
-        Owner ID : ${g.owner.id}
-        **
-        `))
-  
-  
-      })
-    }
-    
-  })
 
 
 
@@ -2960,424 +2689,6 @@ fs.writeFile('./walls.json', JSON.stringify(dataPro), (err) => {
 if (err) console.error(err);
 });
 });
-
-
-
-////////////////////بروفايل////////////////////////////
-const profile = JSON.parse(fs.readFileSync('./profile.json', "utf8"));
-
-client.on("message", message => {
-  if (message.author.bot) return;
-  if(!message.channel.guild)return;
-  if (!profile[message.author.id]) profile[message.author.id] = {
-    info: '=info To Set The Info',
-    rep: 0,
-    reps: 'NOT YET',
-    lastDaily:'Not Collected',
-    level: 0,
-    points: 0,
-  };
-fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
-if (err) console.error(err);
-})
-});
-//لايك//
-client.on('message', message => {
-  if (message.author.bot) return;
-    var sender = message.author
-    if (message.author.id === client.user.id) return;
-	if(!message.channel.guild) return;       
-    if(message.content.startsWith(prefix + 'لايك')) {
-    let ment = message.mentions.users.first()  
-if (games[sender.id].lastDaily != moment().format('day')) {
-    games[sender.id].lastDaily = moment().format('day')
-        if(!ment) return message.channel.send(`**:mag: |  ${message.author.username}, the user could not be found.    **`);
-        if(ment = message.author.id) return message.channel.send(`**${message.author.username}, you cant give yourself a reputation !**`)
-    profile[ment.id].rep += 1; 
-    message.channel.send(`** :up:  |  ${message.author.username} has given ${ment} a reputation point!**`)
-    }else {
-    message.channel.send(`**:stopwatch: |  ${message.author.username}, you can award more reputation  ${moment().endOf('day').fromNow()} **`)
-    }
-	
-    }
-    });
-client.on('message', message => { 
-
-    if(message.content.startsWith(prefix + 'rep')) {
-      if(!message.channel.guild) return;
-                    moment.locale('en');
-                  var getvalueof = message.mentions.users.first() 
-                    if(!getvalueof) return message.channel.send(`**:mag: |  ${message.author.username}, the user could not be found.    **`);
-                       if(getvalueof.id == message.author.id) return message.channel.send(`**${message.author.username}, you cant give yourself a reputation !**`)
-    if(profile[message.author.id].reps != moment().format('L')) {
-            profile[message.author.id].reps = moment().format('L');
-            profile[getvalueof.id].rep += 1; // يضيف واحد كل مره يستخدم الامر
-         message.channel.send(`** :up:  |  ${message.author.username} has given ${getvalueof} a reputation point!**`)
-        } else {
-         message.channel.send(`**:stopwatch: |  ${message.author.username}, you can raward more reputation  ${moment().endOf('day').fromNow()} **`)
-        }
-       }
-});
-client.on('message', message => {
-  if (message.author.bot) return;
-    if (message.author.id === client.user.id) return;
-	if(!message.channel.guild) return;       
-    if(message.content.startsWith(prefix+ 'rep')) {
-    let ment = message.mentions.users.first()  
-    if(!ment) return message.channel.send(`**:mag: |  ${message.author.username}, the user could not be found.    **`);
-    if(profile[message.author.id].reps != (new Date).getTime());{
-    profile[message.author.id].reps =  profile[message.author.id].reps = (new Date).getTime();
-    profile[ment.id].rep += 1; 
-    message.channel.send(`** :up:  |  ${message.author.username} has given ${ment} a reputation point!**`).then(()=> profile[message.author.id].lastDaily = (new Date).getTime());
-    }
-    	if(profile[message.author.id].reps && (new Date).getTime() - message.mentions.users.first() < 60*1000*60*24) {
-        let r = (new Date).getTime() - profile[message.author.id].reps;
-          r = 60*1000*60*24 - r;
-        return message.channel.send(`:stopwatch: |  ${message.author.username}, you can award more reputation in ${pretty(r, {verbose:true})}`);
-	}
-    }
-    }); 
-
-//هدية//
-client.on("message", (message) => {
-  var sender = message.author
-if(message.content.startsWith(prefix + 'daily')) {
-if (games[sender.id].lastDaily != moment().format('day')) {
-    games[sender.id].lastDaily = moment().format('day')
- games[message.author.id].credits += 200;
-    message.channel.send(`**${message.author.username} you collect your \`200\` :dollar: daily pounds**`)
-} else {
-    message.channel.send(`**:stopwatch: | ${message.author.username}, your daily :yen: credits refreshes ${moment().endOf('day').fromNow()}**`)
-}
-}
-})
-//مصاري//
-client.on("message", (message) => {
-  if (message.author.bot) return;
-    if (message.author.id === client.user.id) return;
-	if(!message.channel.guild) return;       
-if (message.content === '$credits') {
-message.channel.send(`** ${message.author.username}, your :credit_card: balance is ${games[message.author.id].credits}.**`)
-}
-});
-//معلوماتي
-client.on('message', message => {
-  if (message.author.bot) return;
-    if (message.author.id === client.user.id) return;
-	if(!message.channel.guild) return;       
-        if(message.content.startsWith('=info')) {
-        let args = message.content.split(' ').slice(1).join(' ')
-        if(!args) return message.channel.send(`**${message.author.username}, يرجى كتابة المعلومات**`)
-        if(args.length > 25) return message.channel.send(`**${message.author.username} يجب ان لا تكون المعلومات اكثر من 25 حرف**`)
-        profile[message.author.id].info = args
-        message.channel.send(`**${message.author.username}**| تم تغير معلوماتك الى  =${args}>`)
-    }
-});
-//لفل
-client.on('message', message => {
-  if (message.author.bot) return;
-    if (message.author.id === client.user.id) return;
-	if(!message.channel.guild) return;   
-var sender = message.author;
-const games =profile;
-games[sender.id].points += 1;
-if (!profile[sender.id].points) profile[sender.id].points= 0 ;
-if (!profile[sender.id].level) profile[sender.id].level= 0 ;
-if (profile[sender.id].points == 50) profile[sender.id].level = 1 ;
-
-if (profile[sender.id].points == 120) profile[sender.id].level = 2;
-
-if (profile[sender.id].points == 260) profile[sender.id].level = 3;
-
-if (profile[sender.id].points == 400) profile[sender.id].level = 4;
-
-if (profile[sender.id].points == 560) profile[sender.id].level = 5;
-
-if (profile[sender.id].points == 780) profile[sender.id].level = 6;
-
-if (profile[sender.id].points == 900) profile[sender.id].level = 7;
-
-if (profile[sender.id].points == 1100) profile[sender.id].level = 8;
-
-if (profile[sender.id].points == 1350) profile[sender.id].level = 9;
-
-if (profile[sender.id].points == 1700) profile[sender.id].level = 10;
-
-if (profile[sender.id].points == 2100) profile[sender.id].level = 11;
-
-if (profile[sender.id].points == 2300) profile[sender.id].level = 12;
-
-if (profile[sender.id].points == 2500) profile[sender.id].level = 13;
-
-if (profile[sender.id].points == 2800) profile[sender.id].level = 14;
-
-if (profile[sender.id].points == 3200) profile[sender.id].level = 15;
-
-if (profile[sender.id].points == 3600) profile[sender.id].level = 16;
-
-if (profile[sender.id].points == 4000) profile[sender.id].level = 17;
-
-if (profile[sender.id].points == 4500) profile[sender.id].level = 18;
-
-if (profile[sender.id].points == 5000) profile[sender.id].level = 19;
-
-if (profile[sender.id].points == 5700) profile[sender.id].level = 20;
-
-if (profile[sender.id].points == 6200) profile[sender.id].level = 21;
-
-if (profile[sender.id].points == 6800) profile[sender.id].level = 22;
-
-if (profile[sender.id].points == 7500) profile[sender.id].level = 23;
-
-if (profile[sender.id].points == 8500) profile[sender.id].level = 24;
-
-if (profile[sender.id].points == 9600) profile[sender.id].level = 25;
-
-if (profile[sender.id].points == 11000) profile[sender.id].level = 26;
-
-if (profile[sender.id].points == 12500) profile[sender.id].level = 27;
-
-if (profile[sender.id].points == 14000) profile[sender.id].level = 28;
-
-if (profile[sender.id].points == 16000) profile[sender.id].level = 29;
-
-if (profile[sender.id].points == 18500) profile[sender.id].level = 30;
-
-if (profile[sender.id].points == 20000) profile[sender.id].level = 31;
-
-if (profile[sender.id].points == 22000) profile[sender.id].level = 32;
-
-if (profile[sender.id].points == 24500) profile[sender.id].level = 33;
-
-if (profile[sender.id].points == 27000) profile[sender.id].level = 34;
-
-if (profile[sender.id].points == 30000) profile[sender.id].level = 35;
-
-if (profile[sender.id].points == 33000) profile[sender.id].level = 36;
-
-if (profile[sender.id].points == 36000) profile[sender.id].level = 37;
-
-if (profile[sender.id].points == 40000) profile[sender.id].level = 38;
-
-if (profile[sender.id].points == 45000) profile[sender.id].level = 39;
-
-if (profile[sender.id].points == 50000) profile[sender.id].level = 40;
-
-if (profile[sender.id].points == 56000) profile[sender.id].level = 41;
-
-if (profile[sender.id].points == 61000) profile[sender.id].level = 42;
-
-if (profile[sender.id].points == 68000) profile[sender.id].level = 43;
-
-if (profile[sender.id].points == 75000) profile[sender.id].level = 44;
-
-if (profile[sender.id].points == 83000) profile[sender.id].level = 45;
-
-if (profile[sender.id].points == 90000) profile[sender.id].level = 46;
-
-if (profile[sender.id].points == 95000) profile[sender.id].level = 47;
-
-if (profile[sender.id].points == 100000) profile[sender.id].level = 48;
-
-if (profile[sender.id].points == 106000) profile[sender.id].level = 49;
-
-if (profile[sender.id].points == 111000) profile[sender.id].level = 50;
-
-});
-//**بروفايل**//
-client.on("message", message => {
-  if (message.author.bot) return;
-	if(!message.channel.guild) return;       
-if (message.content.startsWith("$prfile")) {
-                               let user = message.mentions.users.first();
-         var men = message.mentions.users.first();
-            var heg;
-            if(men) {
-                heg = men
-            } else {
-                heg = message.author
-            }
-          var mentionned = message.mentions.members.first();
-             var h;
-            if(mentionned) {
-                h = mentionned
-            } else {
-                h = message.member
-            }
-            var ment = message.mentions.users.first();
-            var getvalueof;
-            if(ment) {
-              getvalueof = ment;
-            } else {
-              getvalueof = message.author;
-            }//var ghost = tf 3lek xD
-   var mentionned = message.mentions.users.first();
-
-    var client;
-      if(mentionned){
-          var client = mentionned;
-      } else {
-          var client = message.author;
-          
-      }
-  const w = ['./PicsArt_08-28-06.21.07.png'];
-if (!games[getvalueof.id]) games[getvalueof.id] = {wins: 0,loses: 0,points: 0,total: 0,credits: 100,level: 1,};          
-            let Image = Canvas.Image,
-            canvas = new Canvas(300, 300),
-            ctx = canvas.getContext('2d');       
-      fs.readFile(`${dataPro[getvalueof.id].wallSrc}`, function (err, Background) {
-          fs.readFile(`${w[0]}`, function (err, Background) {
-          if (err) return console.log(err);
-          let BG = Canvas.Image;
-          let ground = new Image;
-          ground.src = Background;
-          ctx.drawImage(ground, 0, 0, 297, 305);
-});
-          if (err) return console.log(err);
-          let BG = Canvas.Image;
-          let ground = new Image;
-          ground.src = Background;
-          ctx.drawImage(ground, 0, 0, 300, 305);
-});
-
-
-
-                let url = getvalueof.displayAvatarURL.endsWith(".webp") ? getvalueof.displayAvatarURL.slice(5, -20) + ".png" : getvalueof.displayAvatarURL;
-                jimp.read(url, (err, ava) => {
-                    if (err) return console.log(err);
-                    ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
-                        if (err) return console.log(err);
-                        
-
-                        //Avatar
-                       let Avatar = Canvas.Image;
-                        let ava = new Avatar;
-                        ava.src = buf;
-                     ctx.drawImage(ava, 8, 43, 80, 85); // احداثيات صورتك
-                        
-                        //ur name
-                        ctx.font = 'bold 16px Arial'; // حجم الخط و نوعه
-                        ctx.fontSize = '40px'; // عرض الخط
-                        ctx.fillStyle = "#000000"; // لون الخط
-                        ctx.textAlign = "left"; // محاذا ة النص
-                        ctx.fillText(`${getvalueof.username}`, 130, 125) // احداثيات اسمك          
-
-                         //bord
-                        ctx.font = "regular 12px Cairo" // نوع الخط وحجمه
-                        ctx.fontSize = '50px'; // عرض الخط
-                        ctx.fillStyle = "#f0ff00" // لون الخط    
-                        ctx.textAlign = "left"; // محاذا ة النص
-                        ctx.fillText(`Soon...`, 170, 198) // احداثيات ترتيبك
-                        
-                        //credit
-                        ctx.font = "bold 10px Arial" // نوع الخط وحجمه
-                        ctx.fontSize = '10px'; // عرض الخط
-                        ctx.fillStyle = '#FFFFFF' // لون الخط  
-                        ctx.textAlign = "left"; // محاذا ة النص
-                        ctx.fillText(`$ ${games[getvalueof.id].credits}`, 156, 163) // احداثيات المصاري                        
-                        
-                        //poits
-                        ctx.font = "bold 13px Arial" // ن
-                        ctx.fontSize = '10px'; // عرض الخطوع الخط وحجمه
-                        ctx.fillStyle = "#FFFFFF" // لون الخط 
-                        ctx.textAlign = "left"; // محاذا ة النص
-                        ctx.fillText(`${profile[getvalueof.id].points}`, 173, 182) // احداثيات النقاط
-
-                        //Level
-                        ctx.font = "bold 27px Arial" // نوع الخط و حجمه
-                        ctx.fontSize = '50px'; // عرض الخط
-                        ctx.fillStyle = "#FFFFFF" // لون الخط
-                        ctx.textAlign = "left"; // محاذا ة النص
-                        ctx.fillText(`${profile[getvalueof.id].level}`, 30, 200) // احداثيات اللفل
-                       
-                        //info
-                        ctx.font = "blod 13px Arial" // ن
-                        ctx.fontSize = '10px'; // عرض الخطوع الخط وحجمه
-                        ctx.fillStyle = "#FFFFFF" // لون الخط 
-                        ctx.textAlign = "left"; // محاذا ة النص
-                        ctx.fillText(`${profile[getvalueof.id].info}`, 118, 40) // احداثيات النقاط
-
-                        // REP
-                        ctx.font = "bold 27px Arial";
-                        ctx.fontSize = "100px";
-                        ctx.fillStyle = "#FFFFFF";
-                        ctx.textAlign = "left";
-                        ctx.fillText(`+${profile[getvalueof.id].rep}`, 18,270)
-                      
-message.channel.sendFile(canvas.toBuffer())
-})
-})
-}
-
-});
-
-
-
-
- client.on('message' , message => {
-  var prefix = "$";
-  if(message.author.bot) return;
-
-  if(message.content.startsWith(prefix + "xo")) {
- let array_of_mentions = message.mentions.users.array();
-  let symbols = [':o:', ':heavy_multiplication_x:'] 
-  var grid_message;
-
-  if (array_of_mentions.length == 1 || array_of_mentions.length == 2) {
-    let random1 = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
-    let random2 = Math.abs(random1 - 1); 
-    if (array_of_mentions.length == 1) {
-      random1 = 0;
-      random2 = 0;
-    }
-    let player1_id = array_of_mentions[random1].id;
-    let player2_id = array_of_mentions[random2].id;
-    var turn_id = player1_id;
-    var symbol = symbols[0];
-    let initial_message = `مباراة بين <@${player1_id}> و <@${player2_id}>!`;
-    if (player1_id == player2_id) {
-      initial_message += '\n_(من الخاسر, انت تلعب هذا الدور مع نفسك :joy:)_'
-    }
-    message.channel.send(`xo! ${initial_message}`)
-    .then(console.log("Successful tictactoe introduction"))
-    .catch(console.error);
-    message.channel.send(':one::two::three:' + '\n' +
-                         ':four::five::six:' + '\n' +
-                         ':seven::eight::nine:')
-    .then((new_message) => {
-      grid_message = new_message;
-    })
-    .then(console.log("Successful xo game initialization"))
-    .catch(console.error);
-    message.channel.send('يتم تحميل... انتظر الريئاكشن :ok:')
-    .then(async (new_message) => {
-      await new_message.react('1⃣');
-      await new_message.react('2⃣');
-      await new_message.react('3⃣');
-      await new_message.react('4⃣');
-      await new_message.react('5⃣');
-      await new_message.react('6⃣');
-      await new_message.react('7⃣');
-      await new_message.react('8⃣');
-      await new_message.react('9⃣');
-      await new_message.react('🆗');
-      await new_message.edit(`انه دور <@${turn_id}> علامتك هي${symbol}`)
-      .then((new_new_message) => {
-        require('./alpha.js')(client, message, new_new_message, player1_id, player2_id, turn_id, symbol, symbols, grid_message);
-      })
-      .then(console.log("Successful xo listener initialization"))
-      .catch(console.error);
-    })
-    .then(console.log("Successful xo react initialization"))
-    .catch(console.error);
-  }
-  else {
-    message.reply(`_مهلا مهلا_ :anger: \`(استعمل هذا: ${prefix}xo @player1 @player2)\``)
-    .then(console.log("Successful error reply"))
-    .catch(console.error);
-  }
-}
- });
 
 
 
