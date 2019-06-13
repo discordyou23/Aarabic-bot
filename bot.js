@@ -14,7 +14,7 @@ let done = {};
 
 
 client.on('ready', () => {
-    console.log('I am ready!');
+    console.log('I am redy!');
 });
 
 
